@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using HotelManagement.Models;
+using System.Collections;
 
 namespace HotelManagement.Services.Interfaces
 {
-    public interface IHotelChainService : IServiceBase
+    public interface IServiceBase
     {
+        IList GetAll<T>();
     }
 }

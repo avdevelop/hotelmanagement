@@ -6,7 +6,8 @@ using HotelManagement.Services.Interfaces;
 
 namespace HotelManagement.Services
 {
-    public class HotelChainService : IHotelChainService
+    public class HotelChainService : ServiceBase, IHotelChainService
     {
+
     }
 }

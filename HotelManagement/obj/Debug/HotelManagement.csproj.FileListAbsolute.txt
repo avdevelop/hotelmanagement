@@ -41,3 +41,4 @@ C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement\bin\System.Web.WebPages
 C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement\bin\System.Web.WebPages.Razor.xml
 C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement\obj\Debug\HotelManagement.dll
 C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement\obj\Debug\HotelManagement.pdb
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement\bin\hibernate.cfg.xml

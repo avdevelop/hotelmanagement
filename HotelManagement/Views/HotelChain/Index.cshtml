@@ -1,0 +1,12 @@
+﻿@using HotelManagement.Models;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach (HotelChain hotelChain in ViewBag.HotelChains)
+{ 
+    <h1>@hotelChain.Name</h1>
+}

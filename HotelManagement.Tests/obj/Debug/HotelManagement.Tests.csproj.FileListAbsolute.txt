@@ -42,3 +42,4 @@ C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Tests\bin\Debug\NHibern
 C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Tests\bin\Debug\Iesi.Collections.dll
 C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Tests\bin\Debug\NHibernate.xml
 C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Tests\bin\Debug\Iesi.Collections.xml
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Tests\bin\Debug\hibernate.cfg.xml
