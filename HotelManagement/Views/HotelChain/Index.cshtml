@@ -1,12 +1,14 @@
 ﻿@using HotelManagement.Models;
 
 @{
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
     ViewBag.Title = "Index";
 }
-
 <h2>Index</h2>
-
-@foreach (HotelChain hotelChain in ViewBag.HotelChains)
+        
+@*foreach (HotelChain hotelChain in ViewBag.HotelChains)
 { 
     <h1>@hotelChain.Name</h1>
-}
+}*@
+
+<h1>@ViewBag.HotelChains.Name</h1>

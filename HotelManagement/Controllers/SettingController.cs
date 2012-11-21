@@ -8,23 +8,26 @@ using HotelManagement.Models;
 
 namespace HotelManagement.Controllers
 {
-    public class HotelChainController : Controller
+    public class SettingController : Controller
     {
-        private IHotelChainService hotelChainService;
+        private ISettingService settingService;
 
-        public HotelChainController(IHotelChainService service)
+        public SettingController(ISettingService service)
         {
-            this.hotelChainService = service;
+            this.settingService = service;
         }
 
         //
-        // GET: /HotelChain/
+        // GET: /Setting/
 
         public ActionResult Index()
         {
-            ViewBag.HotelChains = hotelChainService.Get<HotelChain>(2);
             return View();
         }
 
+        public string GetSetting(string name)
+        {
+            return settingService.Get<Setting>(name).Value;
+        }
     }
 }

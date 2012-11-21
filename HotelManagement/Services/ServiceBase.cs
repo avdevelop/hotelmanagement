@@ -7,22 +7,32 @@ using NHibernate;
 using HotelManagement.Models.Mappings;
 using HotelManagement.Models;
 using System.Collections;
+using NHibernate.Criterion;
 
 namespace HotelManagement.Services
 {
     public class ServiceBase : IServiceBase
     {
-        public IList GetAll<T>()
+        public IList Get<T>()
+        {
+            ISession session = NHibernateHelper.GetCurrentSession();
+            ITransaction tran = session.BeginTransaction();
+            
+            ICriteria criteria = session.CreateCriteria(typeof(T).Name);
+            
+            return (IList)criteria.List();
+        }
+
+
+        public T Get<T>(int id)
         {
             ISession session = NHibernateHelper.GetCurrentSession();
             ITransaction tran = session.BeginTransaction();
 
-            session = NHibernateHelper.GetCurrentSession();
-            tran = session.BeginTransaction();
-
             ICriteria criteria = session.CreateCriteria(typeof(T).Name);
-            
-            return (IList)criteria.List();
+            criteria.Add(Expression.Eq("Id", id));
+
+            return (T)criteria.UniqueResult();
         }
     }
 }

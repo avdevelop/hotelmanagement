@@ -2,15 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using HotelManagement.Models;
-using System.Collections;
 
 namespace HotelManagement.Services.Interfaces
 {
-    public interface IServiceBase
+    public interface ISettingService : IServiceBase
     {
-        IList Get<T>();
-
-        T Get<T>(int id);
+        T Get<T>(string name);
     }
 }

@@ -126,13 +126,17 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelChainController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
+    <Compile Include="Controllers\SettingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AppCache.cs" />
+    <Compile Include="Helpers\SessionCache.cs" />
     <Compile Include="Models\Hotel.cs" />
     <Compile Include="Models\HotelChain.cs" />
     <Compile Include="Models\Mappings\NHibernateHelper.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\Setting.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\HotelChainService.cs" />
@@ -141,9 +145,11 @@
     <Compile Include="Services\Interfaces\IHotelService.cs" />
     <Compile Include="Services\Interfaces\IRoomService.cs" />
     <Compile Include="Services\Interfaces\IServiceBase.cs" />
+    <Compile Include="Services\Interfaces\ISettingService.cs" />
     <Compile Include="Services\Interfaces\IUserService.cs" />
     <Compile Include="Services\RoomService.cs" />
     <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="Services\SettingService.cs" />
     <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +161,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Models\Mappings\Hotel.hbm.xml" />
     <EmbeddedResource Include="Models\Mappings\HotelChain.hbm.xml" />
+    <EmbeddedResource Include="Models\Mappings\Setting.hbm.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -172,6 +179,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\HotelChain\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_SiteLayout.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
