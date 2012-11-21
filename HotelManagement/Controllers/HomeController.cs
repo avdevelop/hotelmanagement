@@ -10,8 +10,17 @@ namespace HotelManagement.Controllers
     {
         //
         // GET: /Home/
+        // GET: /Home/Index
 
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        //
+        // GET: /Home/InvalidParams
+
+        public ActionResult InvalidParams()
         {
             return View();
         }

@@ -6,7 +6,7 @@ using HotelManagement.Services.Interfaces;
 
 namespace HotelManagement.Services
 {
-    public class RoomService : IRoomService
+    public class RoomService : ServiceBase, IRoomService
     {
     }
 }
