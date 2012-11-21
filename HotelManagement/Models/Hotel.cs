@@ -7,5 +7,14 @@ namespace HotelManagement.Models
 {
     public class Hotel
     {
+        public virtual int Id { get; set; }
+        public virtual string Name { get; set; }
+        public virtual HotelChain HotelChain { get; set; }
+        public virtual string Address1 { get; set; }
+        public virtual string Address2 { get; set; }
+        public virtual string Address3 { get; set; }
+        public virtual string Address4 { get; set; }
+        public virtual string Address5 { get; set; }
+        public virtual bool InOperation { get; set; }
     }
 }

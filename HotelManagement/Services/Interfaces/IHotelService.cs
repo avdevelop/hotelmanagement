@@ -5,8 +5,10 @@ using System.Text;
 
 namespace HotelManagement.Services.Interfaces
 {
-    public interface IHotelService
+    public interface IHotelService : IServiceBase
     {
-        
+        T Get<T>(string name);
+        T GetEnabled<T>();
+        T GetDisabled<T>();
     }
 }

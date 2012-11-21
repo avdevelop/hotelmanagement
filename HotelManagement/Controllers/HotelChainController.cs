@@ -11,10 +11,13 @@ namespace HotelManagement.Controllers
     public class HotelChainController : Controller
     {
         private IHotelChainService hotelChainService;
+        private IHotelService hotelService;
 
-        public HotelChainController(IHotelChainService service)
+        public HotelChainController(IHotelChainService hotelChainService,
+            IHotelService hotelService)
         {
-            this.hotelChainService = service;
+            this.hotelChainService = hotelChainService;
+            this.hotelService = hotelService;
         }
 
         //
@@ -22,9 +25,10 @@ namespace HotelManagement.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.HotelChains = hotelChainService.Get<HotelChain>(2);
+            ViewBag.HotelChains = hotelChainService.Get<HotelChain>();
+            ViewBag.Hotels = hotelService.Get<Hotel>();
+            
             return View();
         }
-
     }
 }

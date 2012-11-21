@@ -1,4 +1,5 @@
 ﻿@using HotelManagement.Models;
+@using System.Collections;
 
 @{
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
@@ -6,9 +7,13 @@
 }
 <h2>Index</h2>
         
-@*foreach (HotelChain hotelChain in ViewBag.HotelChains)
+@foreach (HotelChain hotelChain in ViewBag.HotelChains)
 { 
     <h1>@hotelChain.Name</h1>
-}*@
+    foreach (Hotel hotel in ((ArrayList)ViewBag.Hotels).OfType<Hotel>().Where(h => h.HotelChain.Name == hotelChain.Name))
+    { 
+            @Html.ActionLink(@hotel.Name, "Index", "Hotel", null, null);<br />
+    }
+}
 
-<h1>@ViewBag.HotelChains.Name</h1>
+

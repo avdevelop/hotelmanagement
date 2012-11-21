@@ -11,7 +11,7 @@
 
     <property name="Name">
       <column name="HotelChainName" not-null="true"></column>
-    </property>
+    </property>    
     
   </class>
   
