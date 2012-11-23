@@ -9,8 +9,8 @@ namespace HotelManagement.Services.Interfaces
 {
     public interface IServiceBase
     {
-        IList Get<T>();
-
+        IEnumerable<T> Get<T>();
         T Get<T>(int id);
+        void SaveOrUpdate<T>(T obj);
     }
 }

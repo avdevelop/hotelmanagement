@@ -19,7 +19,7 @@ namespace HotelManagement.Helpers
             { 
                 get 
                 {
-                    HttpContext.Current.Application["AppCache.AppSettings.HeaderText"] = AllSettings.OfType<Setting>().First(s => s.Name == "HeaderText").Value;
+                    HttpContext.Current.Application["AppCache.AppSettings.HeaderText"] = AllSettings.FirstOrDefault(s => s.Name == "HeaderText").Value;
                     
                     return (string)HttpContext.Current.Application["AppCache.AppSettings.HeaderText"];
                 }
@@ -49,7 +49,7 @@ namespace HotelManagement.Helpers
                 }
             }
 
-            public static IList AllSettings
+            public static IEnumerable<Setting> AllSettings
             {
                 get
                 {
@@ -65,7 +65,7 @@ namespace HotelManagement.Helpers
                         HttpContext.Current.Application["AppCache.AppSettings.AllSettings"] = service.Get<Setting>();
                     }
 
-                    return (IList)HttpContext.Current.Application["AppCache.AppSettings.AllSettings"];
+                    return (IEnumerable<Setting>)HttpContext.Current.Application["AppCache.AppSettings.AllSettings"];
                 }
 
                 set

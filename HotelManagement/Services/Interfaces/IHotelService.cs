@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using HotelManagement.Models;
 
 namespace HotelManagement.Services.Interfaces
 {
     public interface IHotelService : IServiceBase
     {
         T Get<T>(string name);
-        T GetEnabled<T>();
-        T GetDisabled<T>();
+        IEnumerable<Hotel>  GetEnabled();
+        IEnumerable<Hotel> GetDisabled();
+        string Validate(Hotel hotel);
     }
 }

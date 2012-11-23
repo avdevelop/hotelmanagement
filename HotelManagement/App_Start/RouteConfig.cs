@@ -18,7 +18,13 @@ namespace HotelManagement
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
-            );            
+            );
+
+            routes.MapRoute(
+                name: "Default_NoParam",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Home", action = "Index" }
+            );
 
             routes.MapRoute(
                 name: "Default",

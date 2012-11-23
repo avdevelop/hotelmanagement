@@ -13,26 +13,25 @@ namespace HotelManagement.Services
 {
     public class ServiceBase : IServiceBase
     {
-        public IList Get<T>()
+        public IEnumerable<T> Get<T>()
         {
             ISession session = NHibernateHelper.GetCurrentSession();
-            ITransaction tran = session.BeginTransaction();
-            
-            ICriteria criteria = session.CreateCriteria(typeof(T).Name);
-            
-            return (IList)criteria.List();
+            ICriteria criteria = session.CreateCriteria(typeof(T).Name);            
+            return criteria.List().OfType<T>();
         }
-
-
+        
         public T Get<T>(int id)
         {
-            ISession session = NHibernateHelper.GetCurrentSession();
-            ITransaction tran = session.BeginTransaction();
-
+            ISession session = NHibernateHelper.GetCurrentSession();            
             ICriteria criteria = session.CreateCriteria(typeof(T).Name);
             criteria.Add(Expression.Eq("Id", id));
-
             return (T)criteria.UniqueResult();
+        }
+
+        public void SaveOrUpdate<T>(T obj)
+        {
+            ISession session = NHibernateHelper.GetCurrentSession();
+            session.SaveOrUpdate(obj);
         }
     }
 }

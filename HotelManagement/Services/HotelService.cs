@@ -24,26 +24,45 @@ namespace HotelManagement.Services
             return (T)criteria.UniqueResult();
         }
 
-        public T GetEnabled<T>()
+        public IEnumerable<Hotel> GetEnabled()
         {
             ISession session = NHibernateHelper.GetCurrentSession();
             ITransaction tran = session.BeginTransaction();
 
-            ICriteria criteria = session.CreateCriteria(typeof(T).Name);
+            ICriteria criteria = session.CreateCriteria("Hotel");
             criteria.Add(Expression.Eq("InOperation", true));
 
-            return (T)criteria.UniqueResult();
+            return criteria.List<Hotel>();
         }
 
-        public T GetDisabled<T>()
+        public IEnumerable<Hotel> GetDisabled()
         {
             ISession session = NHibernateHelper.GetCurrentSession();
             ITransaction tran = session.BeginTransaction();
 
-            ICriteria criteria = session.CreateCriteria(typeof(T).Name);
+            ICriteria criteria = session.CreateCriteria("Hotel");
             criteria.Add(Expression.Eq("InOperation", false));
 
-            return (T)criteria.UniqueResult();
+            return criteria.List<Hotel>();
+        }
+
+        public string Validate(Hotel hotel)
+        {
+            string error = String.Empty;
+
+            if (String.IsNullOrEmpty(hotel.Name))
+            {
+                error = "Invalid Hotel Name entered.";
+                return error;
+            }
+
+            if (hotel.HotelChain == null || hotel.HotelChain.Id <= 0)
+            {
+                error = "Please select a valid Hotel Chain for this Hotel.";
+                return error;
+            }
+            
+            return error;
         }
     }
 }
