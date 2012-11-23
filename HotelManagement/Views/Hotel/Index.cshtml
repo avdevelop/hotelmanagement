@@ -1,6 +1,33 @@
-﻿@{
+﻿@using HotelManagement.Models;
+
+@model IEnumerable<Hotel>
+
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
 }
 
 <h2>Index</h2>
+
+<table>
+    <tr>
+        <th>
+            Hotel Name
+        </th>
+        <th>
+            Click to edit
+        </th>
+    </tr>
+    @foreach (Hotel hotel in Model)
+    {
+        <tr>
+            <td>
+                <div>@hotel.Name</div>
+            </td>
+            <td>
+                <div>@Html.ActionLink("Edit", "Edit", new { id = hotel.Id })</div>
+            </td>
+        </tr>
+    }
+</table>
+

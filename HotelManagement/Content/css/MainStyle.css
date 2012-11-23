@@ -1,0 +1,18 @@
+﻿body 
+{
+    background-color: Gray;
+    font-family: Verdana;
+    font-size: larger;
+}
+
+topmenu
+{
+    text-align: justify;
+    background-color: White;
+    color: Red;
+}
+
+.topmenu fieldset a
+{    
+    color: Blue;    
+}
