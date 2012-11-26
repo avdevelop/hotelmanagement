@@ -137,6 +137,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AppCache.cs" />
+    <Compile Include="Helpers\MiscHelper.cs" />
+    <Compile Include="Helpers\ModelHelpers\RoomTypeHelper.cs" />
     <Compile Include="Helpers\SessionCache.cs" />
     <Compile Include="Models\Hotel.cs" />
     <Compile Include="Models\HotelChain.cs" />
@@ -151,10 +153,12 @@
     <Compile Include="Services\Interfaces\IHotelChainService.cs" />
     <Compile Include="Services\Interfaces\IHotelService.cs" />
     <Compile Include="Services\Interfaces\IRoomService.cs" />
+    <Compile Include="Services\Interfaces\IRoomTypeService.cs" />
     <Compile Include="Services\Interfaces\IServiceBase.cs" />
     <Compile Include="Services\Interfaces\ISettingService.cs" />
     <Compile Include="Services\Interfaces\IUserService.cs" />
     <Compile Include="Services\RoomService.cs" />
+    <Compile Include="Services\RoomTypeService.cs" />
     <Compile Include="Services\ServiceBase.cs" />
     <Compile Include="Services\SettingService.cs" />
     <Compile Include="Services\UserService.cs" />

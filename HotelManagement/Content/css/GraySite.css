@@ -31,8 +31,9 @@ linkbutton {
 }
 
 .main_image 
-{
-    src: ../images/main_image.jpg;
-    width: 400px;
+{   
+    background-image: url('../images/main_image.jpg');
+    backgro
+    width: 800px;
     height:200px;
 }

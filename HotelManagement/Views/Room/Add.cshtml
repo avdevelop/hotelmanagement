@@ -16,9 +16,17 @@
             An error occurred while saving Hotel - @ViewBag.ValidationError</div>
     }
     <fieldset>
-        @Html.LabelFor(h => h.Name)
-        @Html.EditorFor(h => h.Name)
-    </fieldset>    
+        @Html.LabelFor(r => r.Name)
+        @Html.EditorFor(r => r.Name)
+    </fieldset>
+    <fieldset>
+        @Html.LabelFor(r => r.RoomType)
+        @Html.DropDownListFor(r => r.RoomType.Id, (IEnumerable<SelectListItem>)((SelectList)ViewBag.RoomTypeList).ToList())
+    </fieldset>
+    <fieldset>
+        @Html.LabelFor(r => r.Hotel)
+        @Html.DropDownListFor(r => r.Hotel.Id, (IEnumerable<SelectListItem>)((SelectList)ViewBag.HotelList).ToList())
+    </fieldset>
     <fieldset>
         <input type="submit" value="Add" />
     </fieldset>

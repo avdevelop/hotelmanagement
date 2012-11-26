@@ -16,5 +16,8 @@ namespace HotelManagement.Models
         
         [DisplayName("Hotel")]
         public virtual Hotel Hotel { get; set; }
+
+        [DisplayName("RoomType")]
+        public virtual RoomType RoomType { get; set; }
     }
 }

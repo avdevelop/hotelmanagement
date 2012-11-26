@@ -11,16 +11,20 @@ namespace HotelManagement.Controllers
     public class RoomController : Controller
     {
         private IRoomService roomService;
+        private IHotelService hotelService;
+        private IRoomTypeService roomTypeService;
 
-        public RoomController(IRoomService roomService)
+        public RoomController(IRoomService roomService,
+            IHotelService hotelService,
+            IRoomTypeService roomTypeService)
         {
             this.roomService = roomService;
+            this.hotelService = hotelService;
+            this.roomTypeService = roomTypeService;
         }
-
-
+        
         //
         // GET: /Room/
-
         public ActionResult Index()
         {
             IEnumerable<Room> rooms = roomService.Get<Room>();
@@ -51,16 +55,36 @@ namespace HotelManagement.Controllers
         //
         // GET: /Room/Add
         public ActionResult Add(Room room)
-        {            
-            if (room == null || room.Id == 0)
-            {                
+        {
+            IEnumerable<Hotel> hotels = hotelService.Get<Hotel>();
+            SelectList hotelList;
+
+            if (room == null || TempData["HotelSelectedId"] == null)
+            {
+                hotelList = new SelectList(hotels, "Id", "Name");
                 room = new Room();
             }
             else
-            {                
+            {
+                hotelList = new SelectList(hotels, "Id", "Name", TempData["HotelSelectedId"]);
                 ViewBag.ValidationError = TempData["ValidationError"];
             }
-            
+            ViewBag.HotelList = hotelList;
+
+            IEnumerable<RoomType> roomTypes = roomTypeService.Get<RoomType>("Name (MaxOccupants)");
+            SelectList roomTypeList;
+            if (room == null || TempData["RoomTypeSelectedId"] == null)
+            {
+                roomTypeList = new SelectList(roomTypes, "Id", "Name");
+                room = new Room();
+            }
+            else
+            {
+                roomTypeList = new SelectList(roomTypes, "Id", "Name", TempData["RoomTypeSelectedId"]);
+                ViewBag.ValidationError = TempData["ValidationError"];
+            }
+            ViewBag.RoomTypeList = roomTypeList;
+
             return View(room);
         }
 

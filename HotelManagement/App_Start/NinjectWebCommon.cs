@@ -58,6 +58,7 @@ namespace HotelManagement.App_Start
             kernel.Bind<IHotelChainService>().To<HotelChainService>();
             kernel.Bind<IHotelService>().To<HotelService>();
             kernel.Bind<IRoomService>().To<RoomService>();
+            kernel.Bind<IRoomTypeService>().To<RoomTypeService>();
             kernel.Bind<IUserService>().To<UserService>();
         }        
     }

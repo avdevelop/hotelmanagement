@@ -45,7 +45,8 @@ namespace HotelManagement.Controllers
         // GET: /Hotel/Add
         public ActionResult Add(Hotel hotel)
         {   
-            IEnumerable<HotelChain> hotelChains = hotelService.Get<HotelChain>();
+            List<HotelChain> hotelChains = hotelService.Get<HotelChain>().ToList();
+            hotelChains.Insert(0, new HotelChain { Id = 0, Name = String.Empty });
             SelectList hotelChainList;
 
             if (hotel == null || TempData["HotelChainSelectedId"] == null)

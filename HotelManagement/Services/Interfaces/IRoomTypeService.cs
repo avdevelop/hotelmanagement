@@ -6,8 +6,8 @@ using HotelManagement.Models;
 
 namespace HotelManagement.Services.Interfaces
 {
-    public interface IRoomService : IServiceBase
+    public interface IRoomTypeService : IServiceBase
     {
-        string ValidateSave(Room room);
+        IEnumerable<RoomType> Get<T>(string nameFormat);
     }
 }
