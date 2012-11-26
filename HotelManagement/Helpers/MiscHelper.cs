@@ -14,6 +14,17 @@ namespace HotelManagement.Helpers
             item.Text = String.Empty;
             item.Value = "0";
             return item;
-        }        
+        }
+
+        public static string SettingFromCache(this HtmlHelper helper, string settingName)
+        {
+            switch(settingName)
+            {
+                case "HeaderImage":
+                    return AppCache.AppSettings.HeaderImage;                    
+                default:
+                    return String.Empty;
+            }            
+        }
     }
 }

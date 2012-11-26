@@ -30,6 +30,21 @@ namespace HotelManagement.Helpers
                 }
             }
 
+            public static string HeaderImage
+            {
+                get
+                {
+                    HttpContext.Current.Application["AppCache.AppSettings.HeaderImage"] = AllSettings.FirstOrDefault(s => s.Name == "HeaderImage").Value;
+
+                    return (string)HttpContext.Current.Application["AppCache.AppSettings.HeaderImage"];
+                }
+
+                set
+                {
+                    HttpContext.Current.Application["AppCache.AppSettings.HeaderImage"] = value;
+                }
+            }
+
             public static int AppCacheValidity
             {
                 get

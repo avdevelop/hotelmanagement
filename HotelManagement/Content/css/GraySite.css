@@ -26,14 +26,18 @@ topmenu
 linkbutton {
 	cursor: pointer;
 	cursor: hand;
-        background-color: transparent;
+    background-color: transparent;
 	text-decoration: underline;
 }
 
 .main_image 
 {   
-    background-image: url('../images/main_image.jpg');
-    backgro
+    background-image: url('../images/main_image.jpg');    
     width: 800px;
     height:200px;
+}
+
+.deleteform
+{
+    background-color: Lime;    
 }

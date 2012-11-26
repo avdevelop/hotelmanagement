@@ -28,7 +28,7 @@
                 <div>@Html.ActionLink("Edit", "Edit", new { id = hotel.Id })</div>
             </td>
             <td>
-                @using(Html.BeginForm("Delete", "Hotel", FormMethod.Post))
+                @using (Html.BeginForm("Delete", "Hotel", FormMethod.Post, new { id = "form" + hotel.Id, @class = "deleteform" }))
                 {
                     @Html.Hidden("id", hotel.Id)
                     <input type="submit" value="Delete" class="linkbutton" />
@@ -39,4 +39,13 @@
 </table>
 
 <div>@Html.ActionLink("Add New Hotel", "Add")</div>
+
+<script type="text/javascript">
+    $("#deleteform").submit(function ()
+    {
+        var form = $(this);
+        $.post(form.attr("href"), form.serialize(), function (data) { /*manipulate page*/ }, "text")
+        return false;
+    });
+</script>
 

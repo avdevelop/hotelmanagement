@@ -5,7 +5,8 @@ using System.Text;
 
 namespace HotelManagement.Services.Interfaces
 {
-    interface IUserService : IServiceBase
+    public interface IUserMenuService : IServiceBase
     {
+
     }
 }

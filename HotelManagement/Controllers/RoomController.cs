@@ -109,5 +109,30 @@ namespace HotelManagement.Controllers
                 return RedirectToAction("Add", "Room", room);
             }
         }
+
+        //
+        // GET: /Room/Sucess
+        public ActionResult Success(string message)
+        {
+            return View("Success", (object)message);
+        }
+
+        //
+        // POST: /Room/Delete/room
+        public ActionResult Delete(Room room, int? id)
+        {
+            string error = roomService.ValidateDelete(room);
+
+            if (error.Length == 0)
+            {
+                room = roomService.Get<Room>(room.Id);
+                roomService.Delete<Room>(room);
+                return View("Success", (object)"Room deleted successfully.");
+            }
+            else
+            {
+                return Redirect((string)ViewData["DeleteReturn"]);
+            }
+        }
     }
 }

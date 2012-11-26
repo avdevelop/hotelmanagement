@@ -6,7 +6,7 @@ using HotelManagement.Services.Interfaces;
 
 namespace HotelManagement.Services
 {
-    public class UserService : ServiceBase, IUserService
+    public class MenuService : ServiceBase, IMenuService
     {
 
     }

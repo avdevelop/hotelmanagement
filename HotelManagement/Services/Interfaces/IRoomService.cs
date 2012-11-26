@@ -9,5 +9,6 @@ namespace HotelManagement.Services.Interfaces
     public interface IRoomService : IServiceBase
     {
         string ValidateSave(Room room);
+        string ValidateDelete(Room room);
     }
 }

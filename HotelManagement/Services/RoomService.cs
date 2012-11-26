@@ -33,5 +33,12 @@ namespace HotelManagement.Services
 
             return error;
         }
+
+        public string ValidateDelete(Room room)
+        {
+            string error = String.Empty;
+
+            return error;
+        }
     }
 }

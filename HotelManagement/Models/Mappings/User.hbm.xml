@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="HotelManagement.Models" assembly="HotelManagement">
+
+  <class name="User" table="[User]">
+
+    <id name="Id">
+      <column name="UserId" sql-type="int" not-null="true"></column>
+      <generator class="identity"></generator>
+    </id>
+
+    <property name="Email">
+      <column name="Email"></column>
+    </property>
+    
+    <property name="Password">
+      <column name="Password" not-null="true"></column>
+    </property>
+
+    <many-to-one name="UserType" column="UserTypeId"></many-to-one>
+
+        
+  </class>
+
+</hibernate-mapping>
