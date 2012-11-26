@@ -56,7 +56,8 @@ namespace HotelManagement.Controllers
         // GET: /Room/Add
         public ActionResult Add(Room room)
         {
-            IEnumerable<Hotel> hotels = hotelService.Get<Hotel>();
+            List<Hotel> hotels = hotelService.Get<Hotel>().ToList();
+            hotels.Insert(0, new Hotel() { Id = 0, Name = String.Empty });
             SelectList hotelList;
 
             if (room == null || TempData["HotelSelectedId"] == null)
@@ -71,7 +72,8 @@ namespace HotelManagement.Controllers
             }
             ViewBag.HotelList = hotelList;
 
-            IEnumerable<RoomType> roomTypes = roomTypeService.Get<RoomType>("Name (MaxOccupants)");
+            List<RoomType> roomTypes = roomTypeService.Get<RoomType>("Name (MaxOccupants)").ToList();
+            roomTypes.Insert(0, new RoomType() { Id = 0, Name = String.Empty });
             SelectList roomTypeList;
             if (room == null || TempData["RoomTypeSelectedId"] == null)
             {
@@ -88,5 +90,24 @@ namespace HotelManagement.Controllers
             return View(room);
         }
 
+        //
+        // POST: /Room/Create
+        public ActionResult Create(Room room)
+        {
+            string error = roomService.ValidateSave(room);
+
+            if (error.Length == 0)
+            {
+                hotelService.SaveOrUpdate<Room>(room);
+                return RedirectToAction("Success", "Room", new { message = "Successfully saved the Room." });
+            }
+            else
+            {
+                TempData["ValidationError"] = error;
+                TempData["HotelSelectedId"] = room.Hotel.Id;
+                TempData["RoomTypeSelectedId"] = room.RoomType.Id;
+                return RedirectToAction("Add", "Room", room);
+            }
+        }
     }
 }
