@@ -1,0 +1,26 @@
+﻿@using HotelManagement.Models;
+
+@model Room
+
+@{
+    ViewBag.Title = "Add New Room";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+<h2>
+    Add New Room</h2>
+<form action="/Room/Create" method="post">
+<div>
+    @if (ViewBag.ValidationError != null)
+    { 
+        <div class="validationerror">
+            An error occurred while saving Hotel - @ViewBag.ValidationError</div>
+    }
+    <fieldset>
+        @Html.LabelFor(h => h.Name)
+        @Html.EditorFor(h => h.Name)
+    </fieldset>    
+    <fieldset>
+        <input type="submit" value="Add" />
+    </fieldset>
+</div>
+</form>

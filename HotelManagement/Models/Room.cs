@@ -13,8 +13,8 @@ namespace HotelManagement.Models
 
         [DisplayName("Room Name")]
         public virtual string Name { get; set; }
-
-        [DisplayName("Room Type")]
-        public virtual RoomType RoomType { get; set; }
+        
+        [DisplayName("Hotel")]
+        public virtual Hotel Hotel { get; set; }
     }
 }

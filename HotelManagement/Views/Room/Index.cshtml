@@ -1,6 +1,38 @@
-﻿@{
+﻿@using HotelManagement.Models;
+
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Room Maintenance</h2>
+
+<table>
+    <tr>
+        <th>
+            Room
+        </th>
+        <th>
+            Click to edit Room
+        </th>
+    </tr>
+    @foreach (Room room in Model)
+    {
+        <tr>
+            <td>
+                <div>@room.Name</div>
+            </td>
+            <td>
+                <div>@Html.ActionLink("Edit", "Edit", new { id = room.Id })</div>
+            </td>
+            <td>
+                @using(Html.BeginForm("Delete", "Room", FormMethod.Post))
+                {
+                    @Html.Hidden("id", room.Id)
+                    <input type="submit" value="Delete" class="linkbutton" />
+                }
+            </td>
+        </tr>
+    }
+</table>
+<div>@Html.ActionLink("Add New Room", "Add")</div>

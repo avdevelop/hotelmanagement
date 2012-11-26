@@ -26,8 +26,7 @@ namespace HotelManagement.Controllers
         public ActionResult Index()
         {
             ViewBag.HotelChains = hotelChainService.Get<HotelChain>();
-            ViewBag.Hotels = hotelService.Get<Hotel>();
-            
+            ViewBag.Hotels = hotelService.Get<Hotel>();            
             return View();
         }
     }

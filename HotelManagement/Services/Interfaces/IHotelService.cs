@@ -11,6 +11,7 @@ namespace HotelManagement.Services.Interfaces
         T Get<T>(string name);
         IEnumerable<Hotel>  GetEnabled();
         IEnumerable<Hotel> GetDisabled();
-        string Validate(Hotel hotel);
+        string ValidateSave(Hotel hotel);
+        string ValidateDelete(Hotel hotel);
     }
 }

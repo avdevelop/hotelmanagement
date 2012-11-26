@@ -46,7 +46,7 @@ namespace HotelManagement.Services
             return criteria.List<Hotel>();
         }
 
-        public string Validate(Hotel hotel)
+        public string ValidateSave(Hotel hotel)
         {
             string error = String.Empty;
 
@@ -62,6 +62,13 @@ namespace HotelManagement.Services
                 return error;
             }
             
+            return error;
+        }
+
+        public string ValidateDelete(Hotel hotel)
+        {
+            string error = String.Empty;
+
             return error;
         }
     }

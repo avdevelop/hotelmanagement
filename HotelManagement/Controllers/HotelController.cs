@@ -26,7 +26,7 @@ namespace HotelManagement.Controllers
         public ActionResult Index()
         {
             var hotels = hotelService.Get<Hotel>().OfType<Hotel>();
-
+            ViewData["DeleteReturn"] = HttpContext.Request.UrlReferrer.OriginalString;
 
             return View(hotels);
         }
@@ -68,7 +68,7 @@ namespace HotelManagement.Controllers
         // POST: /Hotel/Create
         public ActionResult Create(Hotel hotel)
         {
-            string error = hotelService.Validate(hotel);
+            string error = hotelService.ValidateSave(hotel);
 
             if (error.Length == 0)
             {
@@ -88,6 +88,24 @@ namespace HotelManagement.Controllers
         public ActionResult Success(string message)
         {
             return View("Success", (object)message);
+        }
+
+        //
+        // POST: /Hotel/Delete/hotel
+        public ActionResult Delete(Hotel hotel, int? id)
+        {            
+            string error = hotelService.ValidateDelete(hotel);
+
+            if (error.Length == 0)
+            {
+                hotel = hotelService.Get<Hotel>(hotel.Id);
+                hotelService.Delete<Hotel>(hotel);
+                return View("Success", (object)"Hotel deleted successfully.");
+            }
+            else
+            {
+                return Redirect((string)ViewData["DeleteReturn"]);
+            }
         }
     }
 }

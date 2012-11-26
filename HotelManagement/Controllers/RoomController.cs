@@ -23,13 +23,12 @@ namespace HotelManagement.Controllers
 
         public ActionResult Index()
         {
-            var room = roomService.Get<Room>();
-            return View();
+            IEnumerable<Room> rooms = roomService.Get<Room>();
+            return View(rooms);
         }
 
         //
-        // GET: /Room/
-
+        // GET: /Room/Detail/id
         public ActionResult Detail(int? id)
         {
             if (id == null)
@@ -47,6 +46,22 @@ namespace HotelManagement.Controllers
 
                 return View(room);
             }
+        }
+
+        //
+        // GET: /Room/Add
+        public ActionResult Add(Room room)
+        {            
+            if (room == null || room.Id == 0)
+            {                
+                room = new Room();
+            }
+            else
+            {                
+                ViewBag.ValidationError = TempData["ValidationError"];
+            }
+            
+            return View(room);
         }
 
     }

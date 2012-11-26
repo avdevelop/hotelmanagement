@@ -12,5 +12,6 @@ namespace HotelManagement.Services.Interfaces
         IEnumerable<T> Get<T>();
         T Get<T>(int id);
         void SaveOrUpdate<T>(T obj);
+        void Delete<T>(T obj);
     }
 }

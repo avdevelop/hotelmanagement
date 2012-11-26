@@ -27,6 +27,13 @@
             <td>
                 <div>@Html.ActionLink("Edit", "Edit", new { id = hotel.Id })</div>
             </td>
+            <td>
+                @using(Html.BeginForm("Delete", "Hotel", FormMethod.Post))
+                {
+                    @Html.Hidden("id", hotel.Id)
+                    <input type="submit" value="Delete" class="linkbutton" />
+                }
+            </td>
         </tr>
     }
 </table>

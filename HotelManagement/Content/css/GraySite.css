@@ -22,3 +22,17 @@ topmenu
     color: Red;
     font-weight: bold;    
 }
+
+linkbutton {
+	cursor: pointer;
+	cursor: hand;
+        background-color: transparent;
+	text-decoration: underline;
+}
+
+.main_image 
+{
+    src: ../images/main_image.jpg;
+    width: 400px;
+    height:200px;
+}

@@ -33,5 +33,13 @@ namespace HotelManagement.Services
             ISession session = NHibernateHelper.GetCurrentSession();
             session.SaveOrUpdate(obj);
         }
+
+        public void Delete<T>(T obj)
+        {
+            ISession session = NHibernateHelper.GetCurrentSession();
+            session.Delete(obj);
+            session.Flush();
+            session.Close();
+        }
     }
 }
