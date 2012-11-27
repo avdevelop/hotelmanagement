@@ -64,6 +64,36 @@ namespace HotelManagement.Helpers
                 }
             }
 
+            public static string HotelName
+            {
+                get
+                {
+                    HttpContext.Current.Application["AppCache.AppSettings.HotelName"] = AllSettings.FirstOrDefault(s => s.Name == "HotelName").Value;
+
+                    return (string)HttpContext.Current.Application["AppCache.AppSettings.HotelName"];
+                }
+
+                set
+                {
+                    HttpContext.Current.Application["AppCache.AppSettings.HotelName"] = value;
+                }
+            }
+
+            public static string HotelHeaderPhone
+            {
+                get
+                {
+                    HttpContext.Current.Application["AppCache.AppSettings.HotelHeaderPhone"] = AllSettings.FirstOrDefault(s => s.Name == "HotelHeaderPhone").Value;
+
+                    return (string)HttpContext.Current.Application["AppCache.AppSettings.HotelHeaderPhone"];
+                }
+
+                set
+                {
+                    HttpContext.Current.Application["AppCache.AppSettings.HotelHeaderPhone"] = value;
+                }
+            }
+            
             public static IEnumerable<Setting> AllSettings
             {
                 get
@@ -88,11 +118,6 @@ namespace HotelManagement.Helpers
                     HttpContext.Current.Application["AppCache.AppSettings.HeaderText"] = value;
                 }
             }
-        }
-
-        public static class WebConfigSettings
-        { 
-        
-        }
+        }       
     }
 }

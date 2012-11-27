@@ -18,13 +18,7 @@ namespace HotelManagement.Helpers
 
         public static string SettingFromCache(this HtmlHelper helper, string settingName)
         {
-            switch(settingName)
-            {
-                case "HeaderImage":
-                    return AppCache.AppSettings.HeaderImage;                    
-                default:
-                    return String.Empty;
-            }            
+            return AppCache.AppSettings.AllSettings.FirstOrDefault(s => s.Name == settingName).Value;                        
         }
     }
 }

@@ -1,22 +1,13 @@
 ﻿@using HotelManagement.Helpers;
 
-<div class="main_image">
-    <div class="topmenu">
-        <fieldset>
-            @Html.ActionLink("HotelChains", "Index", "HotelChain")
-            &nbsp;
-            @Html.ActionLink("Hotels", "Index", "Hotel")
-            &nbsp;
-            @Html.ActionLink("Rooms", "Index", "Room")
-            &nbsp;
-        </fieldset>
-    </div>
+<div class="inner">
+    <ul class="nav">
+        <li>@Html.ActionLink("Home Page", "Index", "Home")</li>
+        <li>@Html.ActionLink("Hotel Chains", "Index", "HotelChain")</li>
+        <li>@Html.ActionLink("Hotels", "Index", "Hotel")</li>
+        <li>@Html.ActionLink("Rooms", "Index", "Room")</li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="booking.html">Booking</a></li>
+    </ul>
 </div>
-
-<script type="text/javascript">
-    $(document).ready(function ()
-    {
-        $('.main_image').css('background-image', 'url("@Html.SettingFromCache("HeaderImage")")');
-    });
-</script>
 

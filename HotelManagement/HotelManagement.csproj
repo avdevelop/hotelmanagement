@@ -173,8 +173,11 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Content Include="Content\css\GraySite.css" />
+    <Content Include="Content\css\layout.css" />
+    <Content Include="Content\css\style.css" />
     <Content Include="Content\images\main_image.jpg" />
     <Content Include="Content\scripts\jquery-1.8.3.min.js" />
+    <Content Include="Content\scripts\maxheight.js" />
     <Content Include="Content\scripts\script.js" />
     <Content Include="Global.asax" />
     <EmbeddedResource Include="hibernate.cfg.xml">
@@ -265,7 +268,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>57155</DevelopmentServerPort>
+          <DevelopmentServerPort>50785</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
