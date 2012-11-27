@@ -1,6 +1,6 @@
 USE [HotelManagement]
 GO
-/****** Object:  Table [dbo].[Hotel]    Script Date: 26/11/12 17:30:16 ******/
+/****** Object:  Table [dbo].[Hotel]    Script Date: 27/11/12 16:25:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -28,7 +28,7 @@ CREATE TABLE [dbo].[Hotel](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[HotelChain]    Script Date: 26/11/12 17:30:16 ******/
+/****** Object:  Table [dbo].[HotelChain]    Script Date: 27/11/12 16:25:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -47,7 +47,7 @@ CREATE TABLE [dbo].[HotelChain](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Menu]    Script Date: 26/11/12 17:30:16 ******/
+/****** Object:  Table [dbo].[Menu]    Script Date: 27/11/12 16:25:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -68,7 +68,7 @@ CREATE TABLE [dbo].[Menu](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Room]    Script Date: 26/11/12 17:30:16 ******/
+/****** Object:  Table [dbo].[Room]    Script Date: 27/11/12 16:25:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -90,7 +90,7 @@ CREATE TABLE [dbo].[Room](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[RoomImage]    Script Date: 26/11/12 17:30:16 ******/
+/****** Object:  Table [dbo].[RoomImage]    Script Date: 27/11/12 16:25:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -110,7 +110,7 @@ CREATE TABLE [dbo].[RoomImage](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[RoomType]    Script Date: 26/11/12 17:30:16 ******/
+/****** Object:  Table [dbo].[RoomType]    Script Date: 27/11/12 16:25:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -130,7 +130,7 @@ CREATE TABLE [dbo].[RoomType](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Setting]    Script Date: 26/11/12 17:30:16 ******/
+/****** Object:  Table [dbo].[Setting]    Script Date: 27/11/12 16:25:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -151,7 +151,7 @@ CREATE TABLE [dbo].[Setting](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[User]    Script Date: 26/11/12 17:30:16 ******/
+/****** Object:  Table [dbo].[User]    Script Date: 27/11/12 16:25:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -173,7 +173,7 @@ CREATE TABLE [dbo].[User](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[UserLevel]    Script Date: 26/11/12 17:30:16 ******/
+/****** Object:  Table [dbo].[UserLevel]    Script Date: 27/11/12 16:25:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -192,7 +192,7 @@ CREATE TABLE [dbo].[UserLevel](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[UserMenu]    Script Date: 26/11/12 17:30:16 ******/
+/****** Object:  Table [dbo].[UserMenu]    Script Date: 27/11/12 16:25:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -208,7 +208,7 @@ CREATE TABLE [dbo].[UserMenu](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[UserType]    Script Date: 26/11/12 17:30:16 ******/
+/****** Object:  Table [dbo].[UserType]    Script Date: 27/11/12 16:25:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -292,6 +292,18 @@ GO
 INSERT [dbo].[Setting] ([SettingId], [Name], [Value], [Description]) VALUES (2, N'AppCacheValidity', N'1', N'The no. of minutes after which the AppCache will be refreshed')
 GO
 INSERT [dbo].[Setting] ([SettingId], [Name], [Value], [Description]) VALUES (5, N'HeaderImage', N'../../Content/images/main_image.jpg', N'The main image to display on the header')
+GO
+INSERT [dbo].[Setting] ([SettingId], [Name], [Value], [Description]) VALUES (6, N'HotelName', N'Beach View', N'Beach View')
+GO
+INSERT [dbo].[Setting] ([SettingId], [Name], [Value], [Description]) VALUES (7, N'HotelHeaderPhone', N'08001111111', N'Free Phone no')
+GO
+INSERT [dbo].[Setting] ([SettingId], [Name], [Value], [Description]) VALUES (8, N'BookingHeaderText', N'Online Booking', N'Online Booking')
+GO
+INSERT [dbo].[Setting] ([SettingId], [Name], [Value], [Description]) VALUES (9, N'CheckInHeaderText', N'Arrival', N'Check-In')
+GO
+INSERT [dbo].[Setting] ([SettingId], [Name], [Value], [Description]) VALUES (10, N'CheckOutHeaderText', N'Departure', N'Check-Out')
+GO
+INSERT [dbo].[Setting] ([SettingId], [Name], [Value], [Description]) VALUES (11, N'SpecialOffersHeaderText', N'Latest Offers', N'Current Offers')
 GO
 SET IDENTITY_INSERT [dbo].[Setting] OFF
 GO

@@ -1,0 +1,26 @@
+﻿@using HotelManagement.Helpers;
+
+<div class="box maxheight">
+    <div class="inner">
+        <h3>@Html.SettingFromCache("BookingHeaderText")</h3>
+        <form action="" id="reservation-form">
+        <fieldset>
+            <div class="field">
+                <label>
+                    @Html.SettingFromCache("CheckInHeaderText")</label><select class="select1"><option>30</option>
+                    </select><select class="select2"><option>April 2009</option>
+                    </select></div>
+            <div class="field">
+                <label>
+                    @Html.SettingFromCache("CheckOutHeaderText")</label><select class="select1"><option>01</option>
+                    </select><select class="select2"><option>May 2009</option>
+                    </select></div>
+            <div class="field">
+                Persons: &nbsp;<input type="text" value="1" />&nbsp; &nbsp; &nbsp; &nbsp; Rooms:&nbsp;
+                <input type="text" value="1" /></div>
+            <div class="button">
+                <span><span><a href="#" onclick="document.getElementById('reservationm-form').submit()">Check Availability</a></span></span></div>
+        </fieldset>
+        </form>
+    </div>
+</div>
