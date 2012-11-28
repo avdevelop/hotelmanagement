@@ -24,23 +24,11 @@ namespace HotelManagement.Tests.Controllers
             userMenuRepository = MockRepository.GenerateStub<IRepository<UserMenu>>();
             homeController = new HomeController(userMenuRepository);
         }
-                
+        
         [TestMethod]
         public void IndexShouldRenderViewIndex()
         {
-            var userMenu = new List<UserMenu>         
-            {            
-                new UserMenu 
-                { 
-                    Id = 1, Menu = new Menu 
-                    { 
-                        Id = 1, Name = "Hotels" 
-                    }, User = new User 
-                    { 
-                        Id = 1, Email = "test@test.com" 
-                    }
-                }
-            }.AsQueryable();
+            var userMenu = TestDataHelper.TestUserMenus();            
 
             userMenuRepository.Expect(um => um.Get()).Return(userMenu);
 
@@ -49,21 +37,5 @@ namespace HotelManagement.Tests.Controllers
                 .AssertAreSame("Index", v => v.ViewName)
                 .WithModel<UserMenu>();
         }
-    }
-
-
-
-
-    //[TestClass]
-    //public class HomeControllerTest
-    //{
-    //    [TestMethod]
-    //    public void IndexTest(IUserMenuService userMenuService)
-    //    {
-    //        var controller = new HomeController(userMenuService);
-    //        var result = controller.Index() as ViewResult;
-
-    //        Assert.AreEqual("Index", result.ViewName);
-    //    }
-    //}
+    }    
 }

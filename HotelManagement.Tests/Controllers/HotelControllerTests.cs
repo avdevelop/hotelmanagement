@@ -11,7 +11,7 @@ using Rhino.Mocks;
 namespace HotelManagement.Tests.Controllers
 {
     [TestClass]
-    class HotelControllerTests
+    public class HotelControllerTests
     {
         HotelController hotelController;
         IRepository<Hotel> hotelRepository;
@@ -21,8 +21,9 @@ namespace HotelManagement.Tests.Controllers
         {
             hotelRepository = MockRepository.GenerateStub<IRepository<Hotel>>();
             hotelChainRepository = MockRepository.GenerateStub<IRepository<HotelChain>>();
-            hotelController = new HotelController();
+            hotelController = new HotelController(hotelRepository, hotelChainRepository);            
         }
 
+        
     }
 }
