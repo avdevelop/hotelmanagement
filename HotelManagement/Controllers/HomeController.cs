@@ -24,7 +24,7 @@ namespace HotelManagement.Controllers
         {
             List<UserMenu> menuItems = menuRepository.Get().ToList();
             string s = menuItems[0].User.Email;
-            return View();
+            return View("Index");
         }
 
         //
@@ -32,7 +32,7 @@ namespace HotelManagement.Controllers
 
         public ActionResult InvalidParams()
         {
-            return View();
+            return View("InvalidParams");
         }
     }
 }
