@@ -10,11 +10,11 @@ namespace HotelManagement.Controllers
 {
     public class HomeController : Controller
     {
-        IUserMenuService menuService;
+        IRepository<UserMenu> menuRepository;
 
-        public HomeController(IUserMenuService menuService)
+        public HomeController(IRepository<UserMenu> menuRepository)
         {
-            this.menuService = menuService;
+            this.menuRepository = menuRepository;
         }
 
         //
@@ -22,7 +22,7 @@ namespace HotelManagement.Controllers
         // GET: /Home/Index
         public ActionResult Index()
         {
-            List<UserMenu> menuItems =  menuService.Get<UserMenu>().ToList();
+            List<UserMenu> menuItems = menuRepository.Get().ToList();
             string s = menuItems[0].User.Email;
             return View();
         }

@@ -10,24 +10,24 @@ namespace HotelManagement.Controllers
 {
     public class RoomController : Controller
     {
-        private IRoomService roomService;
-        private IHotelService hotelService;
-        private IRoomTypeService roomTypeService;
+        private IRepository<Room> roomRepository;
+        private IRepository<Hotel> hotelRepository;
+        private IRepository<RoomType> roomTypeRepository;
 
-        public RoomController(IRoomService roomService,
-            IHotelService hotelService,
-            IRoomTypeService roomTypeService)
+        public RoomController(IRepository<Room> roomRepository,
+            IRepository<Hotel> hotelRepository,
+            IRepository<RoomType> roomTypeRepository)
         {
-            this.roomService = roomService;
-            this.hotelService = hotelService;
-            this.roomTypeService = roomTypeService;
+            this.roomRepository = roomRepository;
+            this.hotelRepository = hotelRepository;
+            this.roomTypeRepository = roomTypeRepository;
         }
         
         //
         // GET: /Room/
         public ActionResult Index()
         {
-            IEnumerable<Room> rooms = roomService.Get<Room>();
+            IEnumerable<Room> rooms = roomRepository.Get();
             return View(rooms);
         }
 
@@ -41,7 +41,7 @@ namespace HotelManagement.Controllers
             }
             else
             {
-                var room = roomService.Get<Room>(id.Value);
+                var room = roomRepository.Get(id.Value);
 
                 if (room == null)
                 {
@@ -56,7 +56,7 @@ namespace HotelManagement.Controllers
         // GET: /Room/Add
         public ActionResult Add(Room room)
         {
-            List<Hotel> hotels = hotelService.Get<Hotel>().ToList();
+            List<Hotel> hotels = hotelRepository.Get().ToList();
             hotels.Insert(0, new Hotel() { Id = 0, Name = String.Empty });
             SelectList hotelList;
 
@@ -72,7 +72,8 @@ namespace HotelManagement.Controllers
             }
             ViewBag.HotelList = hotelList;
 
-            List<RoomType> roomTypes = roomTypeService.Get<RoomType>("Name (MaxOccupants)").ToList();
+            //List<RoomType> roomTypes = roomTypeRepository.Get("Name (MaxOccupants)").ToList();
+            List<RoomType> roomTypes = roomTypeRepository.Get().ToList();
             roomTypes.Insert(0, new RoomType() { Id = 0, Name = String.Empty });
             SelectList roomTypeList;
             if (room == null || TempData["RoomTypeSelectedId"] == null)
@@ -94,11 +95,11 @@ namespace HotelManagement.Controllers
         // POST: /Room/Create
         public ActionResult Create(Room room)
         {
-            string error = roomService.ValidateSave(room);
+            string error = ""; // roomRepository.ValidateSave(room);
 
             if (error.Length == 0)
             {
-                hotelService.SaveOrUpdate<Room>(room);
+                roomRepository.SaveOrUpdate(room);
                 return RedirectToAction("Success", "Room", new { message = "Successfully saved the Room." });
             }
             else
@@ -121,12 +122,12 @@ namespace HotelManagement.Controllers
         // POST: /Room/Delete/room
         public ActionResult Delete(Room room, int? id)
         {
-            string error = roomService.ValidateDelete(room);
+            string error = ""; // roomRepository.ValidateDelete(room);
 
             if (error.Length == 0)
             {
-                room = roomService.Get<Room>(room.Id);
-                roomService.Delete<Room>(room);
+                room = roomRepository.Get(room.Id);
+                roomRepository.Delete(room);
                 return View("Success", (object)"Room deleted successfully.");
             }
             else

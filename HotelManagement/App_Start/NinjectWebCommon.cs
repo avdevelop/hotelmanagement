@@ -12,6 +12,7 @@ namespace HotelManagement.App_Start
     using Ninject.Web.Common;
     using HotelManagement.Services;
     using HotelManagement.Services.Interfaces;
+    using HotelManagement.Models;
 
     public static class NinjectWebCommon 
     {
@@ -55,13 +56,12 @@ namespace HotelManagement.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IHotelChainService>().To<HotelChainService>();
-            kernel.Bind<IHotelService>().To<HotelService>();
-            kernel.Bind<IRoomService>().To<RoomService>();
-            kernel.Bind<IRoomTypeService>().To<RoomTypeService>();
-            kernel.Bind<IUserService>().To<UserService>();
-            kernel.Bind<IMenuService>().To<MenuService>();
-            kernel.Bind<IUserMenuService>().To<UserMenuService>();
-        }        
+            kernel.Bind<IRepository<Hotel>>().To<NHibernateRepository<Hotel>>();
+            kernel.Bind<IRepository<HotelChain>>().To<NHibernateRepository<HotelChain>>();
+            kernel.Bind<IRepository<Room>>().To<NHibernateRepository<Room>>();
+            kernel.Bind<IRepository<Setting>>().To<NHibernateRepository<Setting>>();
+            kernel.Bind<IRepository<User>>().To<NHibernateRepository<User>>();
+            kernel.Bind<IRepository<UserMenu>>().To<NHibernateRepository<UserMenu>>();
+        }
     }
 }

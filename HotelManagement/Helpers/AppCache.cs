@@ -51,8 +51,8 @@ namespace HotelManagement.Helpers
                 {
                     if (HttpContext.Current.Application["AppCache.AppSettings.AppCacheValidity"] == null)
                     {
-                        SettingService service = new SettingService();
-                        HttpContext.Current.Application["AppCache.AppSettings.AppCacheValidity"] = service.Get<Setting>("AppCacheValidity").Value;
+                        NHibernateRepository<Setting> service = new NHibernateRepository<Setting>();
+                        HttpContext.Current.Application["AppCache.AppSettings.AppCacheValidity"] = service.GetByName("AppCacheValidity").Value;
                     }
 
                     return int.Parse(HttpContext.Current.Application["AppCache.AppSettings.AppCacheValidity"].ToString());
@@ -106,8 +106,8 @@ namespace HotelManagement.Helpers
 
                     if (HttpContext.Current.Application["AppCache.AppSettings.AllSettings"] == null)
                     {
-                        SettingService service = new SettingService();
-                        HttpContext.Current.Application["AppCache.AppSettings.AllSettings"] = service.Get<Setting>();
+                        NHibernateRepository<Setting> service = new NHibernateRepository<Setting>();
+                        HttpContext.Current.Application["AppCache.AppSettings.AllSettings"] = service.Get();
                     }
 
                     return (IEnumerable<Setting>)HttpContext.Current.Application["AppCache.AppSettings.AllSettings"];

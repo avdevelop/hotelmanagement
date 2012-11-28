@@ -11,13 +11,13 @@ namespace HotelManagement.Controllers
 {
     public class HotelController : Controller
     {
-        private IHotelService hotelService;
-        private IHotelChainService hotelChainService;
+        private IRepository<Hotel> hotelRepository;
+        private IRepository<HotelChain> hotelChainRepository;
 
-        public HotelController(IHotelService hotelService, IHotelChainService hotelChainService)
+        public HotelController(IRepository<Hotel> hotelRepository, IRepository<HotelChain> hotelChainRepository)
         {
-            this.hotelService = hotelService;
-            this.hotelChainService = hotelChainService;
+            this.hotelRepository = hotelRepository;
+            this.hotelChainRepository = hotelChainRepository;
         }
 
         //
@@ -25,7 +25,7 @@ namespace HotelManagement.Controllers
         // GET: /Hotel/Index
         public ActionResult Index()
         {
-            var hotels = hotelService.Get<Hotel>().OfType<Hotel>();
+            var hotels = hotelRepository.Get().OfType<Hotel>();
             ViewData["DeleteReturn"] = HttpContext.Request.UrlReferrer.OriginalString;
 
             return View(hotels);
@@ -35,7 +35,7 @@ namespace HotelManagement.Controllers
         // GET: /Hotel/Edit/id
         public ActionResult Edit(int id)
         {
-            var hotel = hotelService.Get<Hotel>(id);
+            var hotel = hotelRepository.Get(id);
 
 
             return View(hotel);
@@ -44,8 +44,8 @@ namespace HotelManagement.Controllers
         //
         // GET: /Hotel/Add
         public ActionResult Add(Hotel hotel)
-        {   
-            List<HotelChain> hotelChains = hotelService.Get<HotelChain>().ToList();
+        {
+            List<HotelChain> hotelChains = hotelChainRepository.Get().ToList();
             hotelChains.Insert(0, new HotelChain { Id = 0, Name = String.Empty });
             SelectList hotelChainList;
 
@@ -69,11 +69,11 @@ namespace HotelManagement.Controllers
         // POST: /Hotel/Create
         public ActionResult Create(Hotel hotel)
         {
-            string error = hotelService.ValidateSave(hotel);
+            string error = ""; // hotelRepository.ValidateSave(hotel);
 
             if (error.Length == 0)
             {
-                hotelService.SaveOrUpdate<Hotel>(hotel);
+                hotelRepository.SaveOrUpdate(hotel);
                 return RedirectToAction("Success", "Hotel", new { message = "Successfully saved the Hotel." });
             }
             else
@@ -94,13 +94,13 @@ namespace HotelManagement.Controllers
         //
         // POST: /Hotel/Delete/hotel
         public ActionResult Delete(Hotel hotel, int? id)
-        {            
-            string error = hotelService.ValidateDelete(hotel);
+        {
+            string error = ""; // hotelRepository.ValidateDelete(hotel);
 
             if (error.Length == 0)
             {
-                hotel = hotelService.Get<Hotel>(hotel.Id);
-                hotelService.Delete<Hotel>(hotel);
+                hotel = hotelRepository.Get(hotel.Id);
+                hotelRepository.Delete(hotel);
                 return View("Success", (object)"Hotel deleted successfully.");
             }
             else

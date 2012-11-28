@@ -10,11 +10,11 @@ namespace HotelManagement.Controllers
 {
     public class SettingController : Controller
     {
-        private ISettingService settingService;
+        private IRepository<Setting> settingRepository;
 
-        public SettingController(ISettingService service)
+        public SettingController(IRepository<Setting> settingRepository)
         {
-            this.settingService = service;
+            this.settingRepository = settingRepository;
         }
 
         //
@@ -27,7 +27,7 @@ namespace HotelManagement.Controllers
 
         public string GetSetting(string name)
         {
-            return settingService.Get<Setting>(name).Value;
+            return settingRepository.GetByName(name).Value;
         }
     }
 }

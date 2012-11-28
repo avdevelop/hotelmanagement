@@ -10,14 +10,14 @@ namespace HotelManagement.Controllers
 {
     public class HotelChainController : Controller
     {
-        private IHotelChainService hotelChainService;
-        private IHotelService hotelService;
+        readonly private IRepository<HotelChain> hotelChainRepository;
+        readonly private IRepository<Hotel> hotelRepository;
 
-        public HotelChainController(IHotelChainService hotelChainService,
-            IHotelService hotelService)
+        public HotelChainController(IRepository<HotelChain> hotelChainRepository,
+            IRepository<Hotel> hotelRepository)
         {
-            this.hotelChainService = hotelChainService;
-            this.hotelService = hotelService;
+            this.hotelChainRepository = hotelChainRepository;
+            this.hotelRepository = hotelRepository;
         }
 
         //
@@ -25,8 +25,8 @@ namespace HotelManagement.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.HotelChains = hotelChainService.Get<HotelChain>();
-            ViewBag.Hotels = hotelService.Get<Hotel>();            
+            ViewBag.HotelChains = hotelChainRepository.Get();
+            ViewBag.Hotels = hotelRepository.Get();
             return View();
         }
     }
