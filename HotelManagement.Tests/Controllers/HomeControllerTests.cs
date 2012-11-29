@@ -28,14 +28,13 @@ namespace HotelManagement.Tests.Controllers
         [TestMethod]
         public void IndexShouldRenderViewIndex()
         {
-            var userMenu = TestDataHelper.TestUserMenus();            
+            var userMenus = TestDataHelper.UserMenus();            
 
-            userMenuRepository.Expect(um => um.Get()).Return(userMenu);
+            userMenuRepository.Expect(um => um.Get()).Return(userMenus);
 
             homeController.Index()
-                .ReturnsViewResult()            
-                .AssertAreSame("Index", v => v.ViewName)
-                .WithModel<UserMenu>();
+                .ReturnsViewResult()
+                .AssertAreSame("Index", v => v.ViewName);
         }
     }    
 }

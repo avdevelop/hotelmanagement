@@ -26,9 +26,17 @@ namespace HotelManagement.Controllers
         public ActionResult Index()
         {
             var hotels = hotelRepository.Get().OfType<Hotel>();
-            ViewData["DeleteReturn"] = HttpContext.Request.UrlReferrer.OriginalString;
 
-            return View(hotels);
+            if (HttpContext.Request.UrlReferrer != null)
+            {
+                ViewData["DeleteReturn"] = HttpContext.Request.UrlReferrer.OriginalString;
+            }
+            else
+            {
+                ViewData["DeleteReturn"] = String.Empty;
+            }
+
+            return View("Index", hotels);
         }
 
         //
@@ -38,7 +46,7 @@ namespace HotelManagement.Controllers
             var hotel = hotelRepository.Get(id);
 
 
-            return View(hotel);
+            return View("Edit", hotel);
         }
 
         //
