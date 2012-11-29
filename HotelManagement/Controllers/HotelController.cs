@@ -70,7 +70,7 @@ namespace HotelManagement.Controllers
 
             ViewBag.HotelChainList = hotelChainList;
 
-            return View(hotel);
+            return View("Add", hotel);
         }
 
         //

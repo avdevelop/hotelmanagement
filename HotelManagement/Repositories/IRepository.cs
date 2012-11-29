@@ -7,21 +7,6 @@ using System.Collections;
 
 namespace HotelManagement.Services.Interfaces
 {
-    //public IEnumerable<RoomType> Get<T>(string nameFormat)
-    //    {
-    //        ISession session = NHibernateHelper.GetCurrentSession();
-    //        ICriteria criteria = session.CreateCriteria(typeof(T).Name);
-
-    //        List<RoomType> roomTypes = new List<RoomType>();
-
-    //        foreach (RoomType roomType in criteria.List().OfType<RoomType>())
-    //        { 
-    //            roomTypes.Add(roomType.Instance(nameFormat));
-    //        }
-            
-    //        return roomTypes;
-    //    }
-
     public interface IRepository
     {
         IEnumerable Get();

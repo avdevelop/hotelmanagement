@@ -23,20 +23,25 @@ namespace HotelManagement.Tests.Controllers
 
         public HotelControllerTests()
         {
-            hotelRepository = MockRepository.GenerateStub<IRepository<Hotel>>();            
-            hotelChainRepository = MockRepository.GenerateStub<IRepository<HotelChain>>();
-            hotelController = new HotelController(hotelRepository, hotelChainRepository);            
+            hotelRepository = MockRepository.GenerateMock<IRepository<Hotel>>();
+            hotelChainRepository = MockRepository.GenerateMock<IRepository<HotelChain>>();
+            hotelController = new HotelController(hotelRepository, hotelChainRepository);
+
+            hotelRepository.Expect(h => h.Get()).Return(TestDataHelper.Hotels());
+            hotelRepository.Expect(h => h.Get(1)).Return(hotelRepository.Get().First(h => h.Id == 1));
+            hotelRepository.Expect(h => h.Get(2)).Return(hotelRepository.Get().First(h => h.Id == 2) );
+            hotelRepository.Expect(h => h.Get(10)).Return(hotelRepository.Get().FirstOrDefault(h => h.Id == 10));
+
+            hotelChainRepository.Expect(h => h.Get()).Return(TestDataHelper.HotelChains());
+            hotelChainRepository.Expect(h => h.Get(1)).Return(hotelChainRepository.Get().First(hc => hc.Id == 1));
+            hotelChainRepository.Expect(h => h.Get(2)).Return(hotelChainRepository.Get().First(hc => hc.Id == 2));
+
+            hotelController.AddMockHttpContext();
         }
 
         [TestMethod]
         public void IndexShouldRenderViewIndex()
         {
-            var hotels = TestDataHelper.Hotels();
-            var hotelChains = TestDataHelper.HotelChains();
-
-            hotelRepository.Expect(h => h.Get()).Return(hotels);
-            hotelController.AddMockHttpContext();
-                        
             hotelController.Index()
                 .ReturnsViewResult()            
                 .AssertAreSame("Index", v => v.ViewName)
@@ -46,19 +51,34 @@ namespace HotelManagement.Tests.Controllers
         [TestMethod]
         public void EditShouldRenderViewEdit()
         {
-            var hotel = TestDataHelper.Hotel1();
-            var hotelChains = TestDataHelper.HotelChains();
-
-            hotelRepository.Expect(h => h.Get(hotel.Id)).Return(hotel);
-            hotelController.AddMockHttpContext();
-
-
             hotelController.Edit(1)
                 .ReturnsViewResult()
                 .AssertAreSame("Edit", v => v.ViewName)
                 .WithModel<Hotel>()
-                .Id.Equals(hotel.Id);
+                .Id.Equals(1);
         }
-        
+
+        [TestMethod]
+        public void AddShouldRenderViewAdd()
+        {
+            hotelController.Add(hotelRepository.Get(1))
+                .ReturnsViewResult()
+                .AssertAreSame("Add", v => v.ViewName)
+                .WithModel<Hotel>()
+                .Id.Equals(1);
+        }
+
+        [TestMethod]
+        public void CreateShouldRenderViewSuccess()
+        {
+            var hotel = new Hotel { Id = 10, Name = "Testing", HotelChain = hotelChainRepository.Get(1) };
+            
+            hotelController.Create(hotel)
+                .ReturnsRedirectToRouteResult();
+
+            hotelRepository.Delete
+
+            hotelRepository.Get(10).IsNotNull();
+        }
     }
 }
