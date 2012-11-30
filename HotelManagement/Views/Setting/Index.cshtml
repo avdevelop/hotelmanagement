@@ -1,0 +1,46 @@
+﻿@using HotelManagement.Models;
+@model IEnumerable<Setting>
+
+@{
+    ViewBag.Title = "Settings";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+<h2>
+    Application Settings</h2>
+<table>
+    <tr>
+        <th>
+            Setting
+        </th>
+        <th>
+            Click to edit
+        </th>
+    </tr>
+    @foreach (Setting setting in Model)
+    {
+        <tr>
+            <td>
+                <div>@setting.Name</div>
+            </td>
+            <td>
+                <div>@Html.ActionLink("Edit", "Edit", new { id = setting.Id })</div>
+            </td>
+            <td>
+                @using (Html.BeginForm("Delete", "Setting", FormMethod.Post, new { id = "form" + setting.Id, @class = "deleteform" }))
+                {
+                    @Html.Hidden("id", setting.Id)
+                    <input type="submit" value="Delete" class="linkbutton" />
+                }
+            </td>
+        </tr>
+    }
+</table>
+<div>@Html.ActionLink("Add New Setting", "Add")</div>
+<script type="text/javascript">
+    $("#deleteform").submit(function ()
+    {
+        var form = $(this);
+        $.post(form.attr("href"), form.serialize(), function (data) { /*manipulate page*/ }, "text")
+        return false;
+    });
+</script>

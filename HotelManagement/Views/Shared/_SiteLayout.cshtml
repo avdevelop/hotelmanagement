@@ -26,12 +26,13 @@
             <div class="row-1">
                 <div class="wrapper">
                     <div class="logo">
-                        <h1>@Html.ActionLink(Html.SettingFromCache("HotelName"), "Index", "Home")</h1>
+                        <h1>@Html.ActionLink(Html.AppSetting("HotelName"), "Index", "Home")</h1>
                         <em>Hotel</em> <strong>True Luxury</strong>
                     </div>                    
                     <div class="phones">
                         Call Us <br />
-                        @Html.SettingFromCache("HotelHeaderPhone")
+                        @Html.AppSetting("HotelHeaderPhone")<br />
+                        @RenderPage("~/Views/Shared/LoginInfo.cshtml")
                     </div>
                 </div>
             </div>
@@ -80,7 +81,7 @@
     $(document).ready(function ()
     {
         /*Set the header-box image*/
-        $('.header-box').css('background-image', 'url("@Html.SettingFromCache("HeaderImage")")');
+        $('.header-box').css('background-image', 'url("@Html.AppSetting("HeaderImage")")');
 
 
     });

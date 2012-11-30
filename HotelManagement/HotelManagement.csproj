@@ -137,16 +137,19 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelChainController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\RoomTypeController.cs" />
     <Compile Include="Controllers\SettingController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\AppCache.cs" />
+    <Compile Include="Helpers\CacheHelpers\AppCache.cs" />
     <Compile Include="Helpers\MiscHelper.cs" />
     <Compile Include="Helpers\ModelHelpers\RoomTypeHelper.cs" />
-    <Compile Include="Helpers\SessionCache.cs" />
+    <Compile Include="Helpers\CacheHelpers\SessionCache.cs" />
+    <Compile Include="Helpers\ModelHelpers\UserHelper.cs" />
     <Compile Include="Models\Hotel.cs" />
     <Compile Include="Models\HotelChain.cs" />
     <Compile Include="Models\Mappings\NHibernateHelper.cs" />
@@ -245,6 +248,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\BookingSection.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\LoginInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Setting\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

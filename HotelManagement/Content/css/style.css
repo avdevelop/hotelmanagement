@@ -80,6 +80,7 @@ h6 {font-size:1em;color:#e7e7e7}
 #header .logo em {position:absolute;top:25px;text-transform:uppercase;font-style:normal;font-size:16px;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-weight:bold;padding-left:5px}
 #header .logo strong {color:#ad0000;font-size:.91em;padding-left:5px}
 #header .phones {float:right;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:25px;line-height:1em;color:#c30000;padding:43px 48px 0 0;letter-spacing:-1px}
+#header .phones .login a {float:left;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:25px;line-height:1em;color:#ffd455;letter-spacing:-1px}
 .header-box {background:url(images/header-bg1.jpg) no-repeat left top;width:950px;height:364px}
 .header-box .inner {padding:307px 0 0 2px}
 .header-box-small {background:url(images/header-bg-small.jpg) no-repeat left top;width:950px;height:252px;}

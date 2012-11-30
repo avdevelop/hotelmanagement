@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Login Details:";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<h2>Secure Login</h2>
+<form action="/Login/DoLogin" method="post">
+<div>
+    @if (ViewBag.ValidationError != null)
+    { 
+        <div class="validationerror">@ViewBag.ValidationError</div>
+    }
+    <fieldset>
+        @Html.Label("email", "Email:")
+        @Html.TextBox("email", "", new { maxlength = 100, autocomplete = "off" })
+    </fieldset>
+    <fieldset>
+        @Html.Label("password", "Password:")
+        @Html.Password("password", "", new { maxlength = 100, autocomplete = "off" })
+    </fieldset>    
+    <fieldset>
+        <input type="submit" value="Login" />
+    </fieldset>
+</div>
+</form>

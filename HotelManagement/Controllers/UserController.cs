@@ -1,5 +1,5 @@
 ﻿/***************************************************************************\
-Module Name:    Setting
+Module Name:    UserController
 Author:         Viral Christian
 Description:    
 
@@ -9,14 +9,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
-namespace HotelManagement.Models
+namespace HotelManagement.Controllers
 {
-    public class Setting
+    public class UserController : Controller
     {
-        public virtual int Id { get; set; }
-        public virtual string Name { get; set; }
-        public virtual string Value { get; set; }
-        public virtual string Description { get; set; }
+        //
+        // GET: /User/
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
     }
 }

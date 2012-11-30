@@ -1,4 +1,11 @@
-﻿using System;
+﻿/***************************************************************************\
+Module Name:    HotelController
+Author:         Viral Christian
+Description:    
+
+\***************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,7 +32,7 @@ namespace HotelManagement.Controllers
         // GET: /Hotel/Index
         public ActionResult Index()
         {
-            var hotels = hotelRepository.Get().OfType<Hotel>();
+            var hotels = hotelRepository.Get();
 
             if (HttpContext.Request.UrlReferrer != null)
             {

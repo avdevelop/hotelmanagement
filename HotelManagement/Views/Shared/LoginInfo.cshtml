@@ -1,0 +1,14 @@
+﻿@using HotelManagement.Helpers.CacheHelpers
+
+@if (SessionCache.UserId == null)
+{
+    <span class="login">
+        @Html.ActionLink("Login", "Index", "Login")
+    </span>
+}
+else
+{ 
+    <span class="login">
+        @Html.ActionLink("Login", "Index", "Login")
+    </span>
+}

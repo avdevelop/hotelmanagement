@@ -1,4 +1,11 @@
-﻿using System;
+﻿/***************************************************************************\
+Module Name:    HomeController
+Author:         Viral Christian
+Description:    
+
+\***************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -29,7 +36,6 @@ namespace HotelManagement.Controllers
 
         //
         // GET: /Home/InvalidParams
-
         public ActionResult InvalidParams()
         {
             return View("InvalidParams");

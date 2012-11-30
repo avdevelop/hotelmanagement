@@ -1,5 +1,5 @@
 ﻿/***************************************************************************\
-Module Name:    RoomTypeHelper
+Module Name:    UserHelper
 Author:         Viral Christian
 Description:    
 
@@ -13,18 +13,18 @@ using HotelManagement.Models;
 
 namespace HotelManagement.Helpers.ModelHelpers
 {
-    public static class RoomTypeHelper
+    public static class UserHelper
     {
-        public static RoomType Instance(this RoomType roomType, string format)
+        public static bool Login(User user, string pass)
         {
-            switch (format)
-            { 
-                case "Name (MaxOccupants)":
-                    roomType.Name = roomType.Name += " (" + roomType.MaxOccupants + ")";
-                    break;                
+            if (user.Password.Equals(pass))
+            {
+                return true;
             }
-            
-            return roomType;
+            else
+            {
+                return false;
+            }
         }
     }
 }
