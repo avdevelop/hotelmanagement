@@ -10,6 +10,7 @@ using NUnit.Framework;
 using Rhino.Mocks;
 using HotelManagement.Models;
 using HotelManagement.Tests.TestHelpers;
+using Rhino.Mocks.Impl;
 
 namespace HotelManagement.Tests.Controllers
 {
@@ -21,6 +22,8 @@ namespace HotelManagement.Tests.Controllers
 
         public HomeControllerTests()
         {
+            RhinoMocks.Logger = new TextWriterExpectationLogger(Console.Out);
+
             userMenuRepository = MockRepository.GenerateStub<IRepository<UserMenu>>();
             homeController = new HomeController(userMenuRepository);
         }
