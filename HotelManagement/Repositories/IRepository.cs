@@ -15,6 +15,7 @@ namespace HotelManagement.Services.Interfaces
         void Delete(object obj);
         object GetByName(string name);
         object GetByEmail(string email);
+        IEnumerable GetByUser(User user);
     }
 
     public interface IRepository<T> where T : class
@@ -25,6 +26,7 @@ namespace HotelManagement.Services.Interfaces
         void Delete(T obj);
         T GetByName(string name);
         T GetByEmail(string email);
+        IEnumerable<T> GetByUser(User user);
     }
 
     public interface IRepositoryFactory<T> where T : class

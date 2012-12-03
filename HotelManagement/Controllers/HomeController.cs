@@ -15,7 +15,7 @@ using HotelManagement.Models;
 
 namespace HotelManagement.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         IRepository<UserMenu> userMenuRepository;
 

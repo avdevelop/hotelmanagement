@@ -19,7 +19,19 @@
     
     <property name="Order">
       <column name="[Order]" not-null="true"></column>
-    </property>    
+    </property>
+
+    <property name="Action">
+      <column name="[Action]" not-null="true"></column>
+    </property>
+
+    <property name="Controller">
+      <column name="[Controller]" not-null="true"></column>
+    </property>
+
+    <property name="Tooltip">
+      <column name="[Tooltip]" not-null="true"></column>
+    </property>
 
   </class>
 

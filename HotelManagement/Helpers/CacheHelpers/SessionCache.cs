@@ -16,10 +16,19 @@ namespace HotelManagement.Helpers.CacheHelpers
     public static class SessionCache
     {
         public static void CreateSession(int userId,
-            string email)
+            string userEmail,
+            List<Menu> userMenus)
         {
             UserId = userId;
-            UserEmail = UserEmail;
+            UserEmail = userEmail;
+            LoginFailCount = 0;
+            UserMenus = userMenus;
+        }
+
+        public static void DestroySession()
+        {
+            UserId = null;
+            UserEmail = null;
             LoginFailCount = 0;
         }
 
@@ -53,12 +62,30 @@ namespace HotelManagement.Helpers.CacheHelpers
         {
             get
             {
+                if (HttpContext.Current.Session["SessionCache.LoginFailCount"] == null)
+                {
+                    HttpContext.Current.Session["SessionCache.LoginFailCount"] = 0;
+                }
+
                 return (int)HttpContext.Current.Session["SessionCache.LoginFailCount"];
             }
 
             set
             {
                 HttpContext.Current.Session["SessionCache.LoginFailCount"] = value;
+            }
+        }
+
+        public static List<Menu> UserMenus
+        {
+            get
+            {
+                return (List<Menu>)HttpContext.Current.Session["SessionCache.UserMenus"];               
+            }
+
+            set
+            {
+                HttpContext.Current.Session["SessionCache.UserMenus"] = value;
             }
         }
     }

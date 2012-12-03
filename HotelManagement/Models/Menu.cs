@@ -17,6 +17,9 @@ namespace HotelManagement.Models
         public virtual int Id { get; set; }
         public virtual string Name { get; set; }
         public virtual string Description { get; set; }
-        public virtual int Order { get; set; }        
+        public virtual int Order { get; set; }
+        public virtual string Action { get; set; }
+        public virtual string Controller { get; set; }
+        public virtual string Tooltip { get; set; }
     }
 }

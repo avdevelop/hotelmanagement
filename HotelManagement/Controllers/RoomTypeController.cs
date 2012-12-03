@@ -13,7 +13,7 @@ using System.Web.Mvc;
 
 namespace HotelManagement.Controllers
 {
-    public class RoomTypeController : Controller
+    public class RoomTypeController : BaseController
     {
         //
         // GET: /RoomType/

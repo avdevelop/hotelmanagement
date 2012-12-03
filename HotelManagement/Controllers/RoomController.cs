@@ -15,7 +15,7 @@ using HotelManagement.Models;
 
 namespace HotelManagement.Controllers
 {
-    public class RoomController : Controller
+    public class RoomController : BaseController
     {
         private IRepository<Room> roomRepository;
         private IRepository<Hotel> hotelRepository;

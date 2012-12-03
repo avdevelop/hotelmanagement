@@ -59,9 +59,11 @@ namespace HotelManagement.App_Start
             kernel.Bind<IRepository<Hotel>>().To<NHibernateRepository<Hotel>>();
             kernel.Bind<IRepository<HotelChain>>().To<NHibernateRepository<HotelChain>>();
             kernel.Bind<IRepository<Room>>().To<NHibernateRepository<Room>>();
+            kernel.Bind<IRepository<RoomType>>().To<NHibernateRepository<RoomType>>();
             kernel.Bind<IRepository<Setting>>().To<NHibernateRepository<Setting>>();
             kernel.Bind<IRepository<User>>().To<NHibernateRepository<User>>();
             kernel.Bind<IRepository<UserMenu>>().To<NHibernateRepository<UserMenu>>();
+            kernel.Bind<IRepository<Menu>>().To<NHibernateRepository<Menu>>();
         }
     }
 }

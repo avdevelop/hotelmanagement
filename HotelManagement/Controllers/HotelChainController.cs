@@ -15,7 +15,7 @@ using HotelManagement.Models;
 
 namespace HotelManagement.Controllers
 {
-    public class HotelChainController : Controller
+    public class HotelChainController : BaseController
     {
         readonly private IRepository<HotelChain> hotelChainRepository;
         readonly private IRepository<Hotel> hotelRepository;

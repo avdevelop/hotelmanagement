@@ -16,7 +16,7 @@ using System.Collections;
 
 namespace HotelManagement.Controllers
 {
-    public class HotelController : Controller
+    public class HotelController : BaseController
     {
         private IRepository<Hotel> hotelRepository;
         private IRepository<HotelChain> hotelChainRepository;
@@ -33,16 +33,7 @@ namespace HotelManagement.Controllers
         public ActionResult Index()
         {
             var hotels = hotelRepository.Get();
-
-            if (HttpContext.Request.UrlReferrer != null)
-            {
-                ViewData["DeleteReturn"] = HttpContext.Request.UrlReferrer.OriginalString;
-            }
-            else
-            {
-                ViewData["DeleteReturn"] = String.Empty;
-            }
-
+            ReturnUrlSet();
             return View("Index", hotels);
         }
 
@@ -51,8 +42,7 @@ namespace HotelManagement.Controllers
         public ActionResult Edit(int id)
         {
             var hotel = hotelRepository.Get(id);
-
-
+            ReturnUrlSet();
             return View("Edit", hotel);
         }
 
@@ -76,7 +66,7 @@ namespace HotelManagement.Controllers
             }
 
             ViewBag.HotelChainList = hotelChainList;
-
+            ReturnUrlSet();
             return View("Add", hotel);
         }
 
@@ -85,7 +75,7 @@ namespace HotelManagement.Controllers
         public ActionResult Create(Hotel hotel)
         {
             string error = ""; // hotelRepository.ValidateSave(hotel);
-
+            ReturnUrlSet();
             if (error.Length == 0)
             {
                 hotelRepository.SaveOrUpdate(hotel);
@@ -103,6 +93,7 @@ namespace HotelManagement.Controllers
         // GET: /Hotel/Sucess
         public ActionResult Success(string message)
         {
+            ReturnUrlSet();
             return View("Success", (object)message);
         }
 
@@ -111,7 +102,7 @@ namespace HotelManagement.Controllers
         public ActionResult Delete(Hotel hotel, int? id)
         {
             string error = ""; // hotelRepository.ValidateDelete(hotel);
-
+            ReturnUrlSet();
             if (error.Length == 0)
             {
                 hotel = hotelRepository.Get(hotel.Id);
@@ -120,7 +111,7 @@ namespace HotelManagement.Controllers
             }
             else
             {
-                return Redirect((string)ViewData["DeleteReturn"]);
+                return Redirect((string)TempData["ReturnUrl"]);
             }
         }
     }

@@ -16,7 +16,7 @@ using HotelManagement.Helpers.CacheHelpers;
 
 namespace HotelManagement.Controllers
 {
-    public class SettingController : Controller
+    public class SettingController : BaseController
     {
         private IRepository<Setting> settingRepository;
 

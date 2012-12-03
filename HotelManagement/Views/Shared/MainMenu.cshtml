@@ -1,13 +1,25 @@
 ﻿@using HotelManagement.Helpers;
+@using HotelManagement.Models;
+@using HotelManagement.Helpers.CacheHelpers;
 
 <div class="inner">
     <ul class="nav">
-        <li>@Html.ActionLink("Home Page", "Index", "Home")</li>
-        <li>@Html.ActionLink("Hotel Chains", "Index", "HotelChain")</li>
-        <li>@Html.ActionLink("Hotels", "Index", "Hotel")</li>
-        <li>@Html.ActionLink("Rooms", "Index", "Room")</li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="booking.html">Booking</a></li>
+        @if (SessionCache.UserId == null)
+        { 
+            <li>@Html.ActionLink("Home Page", "Index", "Home")</li>
+            <li>@Html.ActionLink("Hotel Chains", "Index", "HotelChain")</li>
+            <li>@Html.ActionLink("Hotels", "Index", "Hotel")</li>
+            <li>@Html.ActionLink("Rooms", "Index", "Room")</li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="booking.html">Booking</a></li>
+        }
+        else
+        {
+            foreach (Menu menu in SessionCache.UserMenus)
+            { 
+                <li>@Html.ActionLink(menu.Description, menu.Action, menu.Controller, new { title = menu.Tooltip })</li>
+            }
+        }
     </ul>
 </div>
 

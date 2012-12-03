@@ -64,6 +64,17 @@ namespace HotelManagement.Services
             return (T)criteria.UniqueResult();
         }
 
+        public virtual IEnumerable<T> GetByUser(User user)
+        {
+            ISession session = NHibernateHelper.GetCurrentSession();
+            ITransaction tran = session.BeginTransaction();
+
+            ICriteria criteria = session.CreateCriteria(typeof(T).Name);
+            criteria.Add(Expression.Eq("User", user));
+
+            return criteria.List().OfType<T>();
+        }
+
         IEnumerable IRepository.Get()
         {
             return Get();
@@ -92,6 +103,11 @@ namespace HotelManagement.Services
         object IRepository.GetByEmail(string email)
         {
             return GetByEmail(email);
+        }
+
+        IEnumerable IRepository.GetByUser(User user)
+        {
+            return GetByUser(user);
         }
     }
 }

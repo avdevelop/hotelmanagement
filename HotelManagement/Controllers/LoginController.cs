@@ -18,34 +18,51 @@ using HotelManagement.Helpers.ModelHelpers;
 
 namespace HotelManagement.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController : BaseController
     {
         IRepository<User> userRepository;
+        IRepository<UserMenu> userMenuRepository;
+        IRepository<Menu> menuRepository;
 
-        public LoginController(IRepository<User> userRepository)
+        public LoginController(IRepository<User> userRepository,
+            IRepository<UserMenu> userMenuRepository,
+            IRepository<Menu> menuRepository)
         {
             this.userRepository = userRepository;
+            this.userMenuRepository = userMenuRepository;
+            this.menuRepository = menuRepository;
         }
 
         //
         // GET: /Login/
+        // GET: /Login/Index
         public ActionResult Index()
         {
-
+            ReturnUrlSet();
             return View("Index");
         }
 
         //
-        // GET: /Login/DoLogin/email/password
-        public ActionResult DoLogin(string email, string password)
+        // GET: /Login/Login/
+        public ActionResult Login(string email, string password)
         {
-            string pass = MiscHelper.EncryptStringAES(password, MiscHelper.AppSetting("SecretEncryptText"));
-
+            string pass = MiscHelper.Encrypt(password);
             User user = userRepository.GetByEmail(email);
             if (user != null && (UserHelper.Login(user, pass) == true || user.Password == String.Empty))
             {
-                SessionCache.CreateSession(user.Id, user.Email);
-                return RedirectToAction("Index", "Home");
+                List<UserMenu> userMenus = userMenuRepository.GetByUser(user).ToList();
+                List<Menu> menus = new List<Menu>();
+
+                foreach (UserMenu userMenu in userMenus)
+                {
+                    menus.Add(menuRepository.Get().FirstOrDefault(m => m.Id == userMenu.Menu.Id));
+                }
+
+                SessionCache.CreateSession(user.Id, 
+                    user.Email,
+                    menus);
+
+                return Redirect((string)TempData["ReturnUrl"]);
             }
             else
             {
@@ -54,6 +71,14 @@ namespace HotelManagement.Controllers
             }
             
             return View("Index");
+        }
+
+        //
+        // GET: /Login/Logout/
+        public ActionResult Logout()
+        {
+            SessionCache.DestroySession();
+            return RedirectToAction("Index", "Home");            
         }
 
     }
