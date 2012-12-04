@@ -1,5 +1,5 @@
 ﻿/***************************************************************************\
-Module Name:    Hotel
+Module Name:    Booking
 Author:         Viral Christian
 Description:    
 
@@ -12,18 +12,15 @@ using System.Web;
 
 namespace HotelManagement.Models
 {
-    public class Hotel
+    public class Booking
     {
         public virtual int Id { get; set; }
-        public virtual string Name { get; set; }
-        public virtual HotelChain HotelChain { get; set; }
-        public virtual string Address1 { get; set; }
-        public virtual string Address2 { get; set; }
-        public virtual string Address3 { get; set; }
-        public virtual string Address4 { get; set; }
-        public virtual string Address5 { get; set; }
-        public virtual bool InOperation { get; set; }
-
+        public virtual User User { get; set; }
+        public virtual string Email { get; set; }
+        public virtual string Phone { get; set; }
+        public virtual DateTime Created { get; set; }
+        public virtual DateTime Modified { get; set; }
+        
         public override bool Equals(object obj)
         {
             if (obj == null)
@@ -31,7 +28,7 @@ namespace HotelManagement.Models
                 return false;
             }
 
-            var t = obj as Hotel;
+            var t = obj as Booking;
             if (t == null)
             {
                 return false;
@@ -46,7 +43,7 @@ namespace HotelManagement.Models
 
         public override int GetHashCode()
         {
-            return (Name + "|" + Id).GetHashCode();
+            return (Created.ToString() + "|" + Id).GetHashCode();
         }
     }
 }

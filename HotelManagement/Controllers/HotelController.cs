@@ -41,7 +41,16 @@ namespace HotelManagement.Controllers
         // GET: /Hotel/Edit/id
         public ActionResult Edit(int id)
         {
+            List<HotelChain> hotelChains = hotelChainRepository.Get().ToList();
+            hotelChains.Insert(0, new HotelChain { Id = 0, Name = String.Empty });
+            SelectList hotelChainList;
+
             var hotel = hotelRepository.Get(id);
+                        
+            hotelChainList = new SelectList(hotelChains, "Id", "Name", hotel.HotelChain.Id);
+            ViewBag.ValidationError = TempData["ValidationError"];            
+
+            ViewBag.HotelChainList = hotelChainList;
             ReturnUrlSet();
             return View("Edit", hotel);
         }

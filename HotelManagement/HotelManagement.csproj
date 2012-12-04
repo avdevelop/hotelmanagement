@@ -135,6 +135,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelChainController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
@@ -151,6 +152,8 @@
     <Compile Include="Helpers\ModelHelpers\RoomTypeHelper.cs" />
     <Compile Include="Helpers\CacheHelpers\SessionCache.cs" />
     <Compile Include="Helpers\ModelHelpers\UserHelper.cs" />
+    <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\BookingDetail.cs" />
     <Compile Include="Models\Hotel.cs" />
     <Compile Include="Models\HotelChain.cs" />
     <Compile Include="Models\Mappings\NHibernateHelper.cs" />
@@ -167,7 +170,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Content Include="Content\css\GraySite.css" />
     <Content Include="Content\css\layout.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\images\main_image.jpg" />
@@ -177,6 +179,7 @@
     <Content Include="Global.asax" />
     <EmbeddedResource Include="hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Models\Mappings\Hotel.hbm.xml" />
     <EmbeddedResource Include="Models\Mappings\HotelChain.hbm.xml" />
@@ -187,6 +190,8 @@
     <EmbeddedResource Include="Models\Mappings\User.hbm.xml" />
     <EmbeddedResource Include="Models\Mappings\UserMenu.hbm.xml" />
     <EmbeddedResource Include="Models\Mappings\UserType.hbm.xml" />
+    <Content Include="Models\Mappings\Booking.hbm.xml" />
+    <Content Include="Models\Mappings\BookingDetail.hbm.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -268,6 +273,9 @@
   <ItemGroup>
     <Content Include="Views\User\Edit.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\AdminMenu.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -284,7 +292,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53238</DevelopmentServerPort>
+          <DevelopmentServerPort>53706</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

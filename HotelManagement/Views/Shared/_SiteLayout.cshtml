@@ -11,6 +11,7 @@
     <link href="../../Content/css/layout.css" rel="stylesheet" type="text/css" />
     <script src="../../Content/scripts/maxheight.js" type="text/javascript"></script>
     <script src="../../Content/scripts/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="../../Content/scripts/script.js" type="text/javascript"></script>
     <!--[if lt IE 7]>
 	<link href="ie_style.css" rel="stylesheet" type="text/css" />
    <script type="text/javascript" src="ie_png.js"></script>
@@ -61,14 +62,7 @@
         </div>
         <!-- footer -->
         <div id="footer">
-            <ul class="nav">
-                <li><a href="index.html">Home</a>|</li>
-                <li><a href="services.html">Services</a>|</li>
-                <li><a href="gallery.html">Gallery</a>|</li>
-                <li><a href="restaurant.html">Restaurant</a>|</li>
-                <li><a href="testimonials.html">Testimonials</a>|</li>
-                <li><a href="booking.html">Booking</a></li>
-            </ul>
+            @RenderPage("~/Views/Shared/AdminMenu.cshtml")
             <div class="wrapper">
                 <div class="fleft">
                     Copyright (c) 2009 FiveStar Hotel</div>
@@ -88,28 +82,3 @@
     </script>
 </body>
 </html>
-
-
-<!--
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    <link href="../../Content/css/GraySite.css" rel="Stylesheet" type="text/css"></link>
-    <script src="../../Content/scripts/script.js" type="text/javascript"></script>
-    <script src="../../Content/scripts/jquery-1.8.3.min.js" type="text/javascript"></script>
-</head>
-<body>
-    <div>        
-        @*RenderPage("~/Views/Shared/Header.cshtml")*@
-        @*RenderPage("~/Views/Shared/MainMenu.cshtml")*@
-    </div>
-    <div>
-        @*RenderBody()*@
-    </div>
-</body>
-</html>
-
--->

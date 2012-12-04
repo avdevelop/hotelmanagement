@@ -3,7 +3,7 @@
 @model IEnumerable<Hotel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Hotels";
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
 }
 
@@ -28,7 +28,7 @@
                 <div>@Html.ActionLink("Edit", "Edit", new { id = hotel.Id })</div>
             </td>
             <td>
-                @using (Html.BeginForm("Delete", "Hotel", FormMethod.Post, new { id = "form" + hotel.Id, @class = "deleteform" }))
+                @using (Html.BeginForm("Delete", "Hotel", FormMethod.Post, new { id = "form" + hotel.Id, @class = "userform" }))
                 {
                     @Html.Hidden("id", hotel.Id)
                     <input type="submit" value="Delete" class="linkbutton" />

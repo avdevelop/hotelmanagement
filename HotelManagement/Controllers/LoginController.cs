@@ -60,7 +60,8 @@ namespace HotelManagement.Controllers
 
                 SessionCache.CreateSession(user.Id, 
                     user.Email,
-                    menus);
+                    menus,
+                    user.UserType.Name == "Admin");
 
                 return Redirect((string)TempData["ReturnUrl"]);
             }

@@ -18,5 +18,30 @@ namespace HotelManagement.Models
         public virtual string Name { get; set; }
         public virtual string Value { get; set; }
         public virtual string Description { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            var t = obj as Setting;
+            if (t == null)
+            {
+                return false;
+            }
+
+            if (Id == t.Id)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return (Name + "|" + Id).GetHashCode();
+        }
     }
 }

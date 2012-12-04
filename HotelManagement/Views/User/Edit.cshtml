@@ -1,8 +1,49 @@
-﻿@model User;
+﻿@using HotelManagement.Models;
+@using System.Collections.Generic;
+@using HotelManagement.Helpers.CacheHelpers;
 
+@model User
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit User Details";
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
 }
-
-<h2>Edit</h2>
+<h2>
+    Please update user details:</h2>
+<form action="/User/Create" method="post" class="userform">
+<div class="txt2">
+    @if (ViewBag.ValidationError != null)
+    { 
+        <div class="validationerror">
+            An error occurred while saving the User - @ViewBag.ValidationError</div>
+    }
+    @if (Model.Id == 0)
+    {
+        <fieldset>
+            @Html.LabelFor(u => u.Email)
+            @Html.EditorFor(u => u.Email)
+        </fieldset>
+    }
+    <fieldset>
+        @Html.LabelFor(u => u.Password)
+        @Html.PasswordFor(u => u.Password)
+    </fieldset>
+    @if (SessionCache.IsUserAdmin)
+    {
+        <fieldset>
+            <h3>User Menu Access:</h3>
+        </fieldset>
+        <div>
+            @foreach (Menu menu in @ViewBag.AllMenu)
+            { 
+                <fieldset>
+                    @Html.Label(menu.Name)
+                    @Html.CheckBox(menu.Name, ((IEnumerable<UserMenu>)ViewBag.UserMenu).FirstOrDefault(um => um.Menu.Equals(menu)) != null)
+                </fieldset>
+            }
+        </div>
+    }
+    <fieldset>
+        <input type="submit" value="Add" />
+    </fieldset>
+</div>
+</form>

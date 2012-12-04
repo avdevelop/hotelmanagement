@@ -23,6 +23,18 @@ object {vertical-align:top;outline:none}
 #reservation-form select.select2 {width:127px}
 #reservation-form input {width:23px;text-align:center;border:1px solid #5d3825;background:#1d110b;color:#bca695}
 #reservation-form .button {font-size:1em}
+
+.userform {font-size:medium;font-weight:bold}
+.userform fieldset {border:none}
+.userform field {display:block;height:255px}
+.userform label {display:block;padding-bottom:4px}
+.userform select {border:1px solid #5d3825;background:#1d110b;color:#bca695}
+.userform select.select1 {width:40px;margin-right:10px}
+.userform select.select2 {width:127px}
+.userform input {width:225px;text-align:center;border:1px solid #5d3825;background:#1d110b;color:#bca695}
+.userform button {font-size:1em}
+.userform .submit {background-color:#c30000;color:#ffd455; cursor:pointer;}
+
 /* list */
 ul {list-style:none}
 /* other */
@@ -44,9 +56,10 @@ h2 {font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;color:#c30000;font-siz
 h3 {font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;color:#c30000;font-size:25px;line-height:1em;font-weight:normal;margin-bottom:16px}
 h4 {font-size:.91em}
 h5 {font-size:1.33em;color:#c30000;padding-top:10px;margin-bottom:26px}
-h6 {font-size:1em;color:#e7e7e7}
-.txt1 {font-size:.91em}
-.txt2 {color:#c30000;font-size:1.33em;text-transform:uppercase}
+h6 {font-size:1em;color:#e7e7e7;background-color:#37271c;}
+
+.txt1 {font-size:.91em; width:750px;background-color:#37271c;}
+.txt2 {color:#ffd455;font-size:1.33em;text-transform:uppercase;width:750px;}
 .link1 {display:block;float:left;background:url(images/link1-bgd.gif) left top repeat-x;color:#fff;text-decoration:none}
 .link1 em {display:block;background:url(images/link1-left.gif) no-repeat left top}
 .link1 b {display:block;background:url(images/link1-right.gif) no-repeat right top;padding:2px 15px 2px 15px;font-weight:normal;font-style:normal}
@@ -72,14 +85,14 @@ h6 {font-size:1em;color:#e7e7e7}
 .dept-list dd span {float:left;padding-right:25px}
 .dept-list dd p {text-align:left}
 /* header */
-#header .row-1 {height:136px;}
+#header .row-1 {height:135px;}
 #header .row-2 {height:390px;background:url(images/header-bg.png) no-repeat left bottom}
 #header .row-2.alt {height:278px;background:url(images/header-bg1.png) no-repeat left bottom;width:100%;padding:0;margin:0}
 #header .row-2 .indent {padding:13px 0 0 13px}
 #header .logo {float:left;padding:40px 0 0 45px}
 #header .logo em {position:absolute;top:25px;text-transform:uppercase;font-style:normal;font-size:16px;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-weight:bold;padding-left:5px}
 #header .logo strong {color:#ad0000;font-size:.91em;padding-left:5px}
-#header .phones {float:right;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:25px;line-height:1em;color:#c30000;padding:43px 48px 0 0;letter-spacing:-1px}
+#header .phones {float:right;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:25px;line-height:1em;color:#c30000;padding:25px 48px 0 0;letter-spacing:-1px}
 #header .phones .login a {float:left;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:16px;line-height:1em;color:#ffd455;letter-spacing:-1px}
 .header-box {background:url(images/header-bg1.jpg) no-repeat left top;width:950px;height:364px}
 .header-box .inner {padding:307px 0 0 2px}

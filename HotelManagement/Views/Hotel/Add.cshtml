@@ -2,13 +2,13 @@
 
 @model Hotel
 @{
-    ViewBag.Title = "Add";
+    ViewBag.Title = "Add New Hotel";
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
 }
 
 <h2>Add New Hotel</h2>
 
-<form action="/Hotel/Create" method="post">
+<form action="/Hotel/Create" method="post" class="userform">
 
 <div>
     @if (ViewBag.ValidationError != null)

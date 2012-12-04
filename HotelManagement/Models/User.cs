@@ -41,7 +41,7 @@ namespace HotelManagement.Models
 
         public override int GetHashCode()
         {
-            return (Email).GetHashCode();
+            return (Email + "|" + Id).GetHashCode();
         }
     }
 }

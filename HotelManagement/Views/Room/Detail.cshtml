@@ -3,20 +3,24 @@
 @model Room
 
 @{
-    ViewBag.Title = "Detail";
+    ViewBag.Title = "Room Detail";
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
 }
 
-<h2>Room Detail for @Model.Name</h2>
-<fieldset>
-    <div>
-        @Html.LabelFor(r => r.Id): @Html.Label(@Model.Id.ToString())
-    </div>
+<form class="userform">
+    <h2>Room Detail for @Model.Name</h2>
+    <fieldset>
+        <div>
+            <fieldset>
+                @Html.LabelFor(r => r.Id): @Html.Label(@Model.Id.ToString())
+            </fieldset>            
+        </div>
     
-    <div>
-        @Html.LabelFor(r => r.Name): @Html.Label(@Model.Name)
-    </div>
-    <div>
-        @Html.LabelFor(r => r.RoomType.Name): @Html.Label(@Model.RoomType.Name)
-    </div>
-</fieldset>
+        <div>
+            @Html.LabelFor(r => r.Name): @Html.Label(@Model.Name)
+        </div>
+        <div>
+            @Html.LabelFor(r => r.RoomType.Name): @Html.Label(@Model.RoomType.Name)
+        </div>
+    </fieldset>
+</form>

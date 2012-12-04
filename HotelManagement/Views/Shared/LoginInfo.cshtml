@@ -9,7 +9,7 @@
 else
 { 
     <span class="login">
-        @Html.ActionLink(SessionCache.UserEmail + " ", "Logout", "Login", new { title = "Click for Account Details" })
-        @Html.ActionLink("Logout", "Logout", "Login", new { title = "Click to Logout" })
+        @Html.ActionLink(SessionCache.UserEmail + " ", "Logout", "Login", new { title = "Click for Account Details" })<br />        
+        @Html.ActionLink("Logout", "Logout", "Login", null, new { title = "Click to Logout" })
     </span>
 }

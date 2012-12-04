@@ -19,10 +19,16 @@ namespace HotelManagement.Controllers
     public class UserController : BaseController
     {
         IRepository<User> userRepository;
+        IRepository<Menu> menuRepository;
+        IRepository<UserMenu> userMenuRepository;
 
-        public UserController(IRepository<User> userRepository)
+        public UserController(IRepository<User> userRepository,
+            IRepository<Menu> menuRepository,
+            IRepository<UserMenu> userMenuRepository)
         {
             this.userRepository = userRepository;
+            this.menuRepository = menuRepository;
+            this.userMenuRepository = userMenuRepository;
         }
 
         //
@@ -40,15 +46,16 @@ namespace HotelManagement.Controllers
         {
             ReturnUrlSet();
             if (SessionCache.UserId.HasValue)
-            {
+            {                
+                ViewBag.AllMenu = menuRepository.Get();
+                ViewBag.UserMenu = userMenuRepository.GetByUser(userRepository.GetByEmail(SessionCache.UserEmail));
+
                 return View("Edit", userRepository.Get(SessionCache.UserId.Value));
             }
             else
             {
-                return View("Edit", userRepository.Get(SessionCache.UserId.Value));
+                return RedirectToAction("InvalidParams", "Home");
             }
-            
         }
-
     }
 }

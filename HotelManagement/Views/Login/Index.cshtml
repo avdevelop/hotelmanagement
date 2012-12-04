@@ -4,7 +4,7 @@
 }
 
 <h2>Secure Login</h2>
-<form action="/Login/Login" method="post">
+<form action="/Login/Login" method="post" class="userform">
 <div>
     @if (ViewBag.ValidationError != null)
     { 
@@ -12,14 +12,20 @@
     }
     <fieldset>
         @Html.Label("email", "Email:")
-        @Html.TextBox("email", "", new { maxlength = 100, autocomplete = "off" })
+        @Html.TextBox("email", "", new { @class = "input", maxlength = 100, autocomplete = "off", width = "250" })
     </fieldset>
     <fieldset>
         @Html.Label("password", "Password:")
-        @Html.Password("password", "", new { maxlength = 100, autocomplete = "off" })
-    </fieldset>    
+        @Html.Password("password", "", new { @class = "input", maxlength = 100, autocomplete = "off", width = "250px" })
+    </fieldset>
     <fieldset>
-        <input type="submit" value="Login" />
+        &nbsp;
+    </fieldset>
+    <fieldset>
+        &nbsp;
+    </fieldset>
+    <fieldset>
+        <input type="submit" value="Login" class="submit" />
     </fieldset>
 </div>
 </form>
