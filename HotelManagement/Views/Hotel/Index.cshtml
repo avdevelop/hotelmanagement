@@ -19,8 +19,8 @@
         </th>
     </tr>
     @foreach (Hotel hotel in Model)
-    {
-        <tr>
+    {   
+        <tr id="tr@(hotel.Id)">
             <td>
                 <div>@hotel.Name</div>
             </td>
@@ -28,11 +28,10 @@
                 <div>@Html.ActionLink("Edit", "Edit", new { id = hotel.Id })</div>
             </td>
             <td>
-                @using (Html.BeginForm("Delete", "Hotel", FormMethod.Post, new { id = "form" + hotel.Id, @class = "userform" }))
-                {
+                <form id='form(@hotel.Id)' action="#" method="post" class="userform" >
                     @Html.Hidden("id", hotel.Id)
-                    <input type="submit" value="Delete" class="linkbutton" />
-                }
+                    <input type="submit" value="Delete" class="linkbutton" id="del(@hotel.Id)" /> 
+                </form>
             </td>
         </tr>
     }
@@ -41,11 +40,50 @@
 <div>@Html.ActionLink("Add New Hotel", "Add")</div>
 
 <script type="text/javascript">
-    $("#deleteform").submit(function ()
+
+    function populateBookingMonths()
     {
-        var form = $(this);
-        $.post(form.attr("href"), form.serialize(), function (data) { /*manipulate page*/ }, "text")
-        return false;
+        $.ajaxSetup({ "async": false });
+        $.getJSON('/Booking/BookingMonths', function (data)
+        {
+            var options = $(".select2");
+            $.each(data, function ()
+            {
+                options.append($("<option />").val(this).text(this));
+            });
+        });
+    }
+
+    function populateArrDays()
+    {
+        var selectedVal;
+        $('#arrMonth option:selected').each(function ()
+        {
+            selectedVal = $(this).text();
+        });
+
+        $('#arrDay option').remove();
+
+        $.getJSON('/Booking/BookingDays', { month: selectedVal }, function (data)
+        {
+            var options = $("#arrDay");
+            $.each(data, function ()
+            {
+                options.append($("<option />").val(this).text(this));
+            });
+        });
+    }
+
+    $(function ()
+    {
+        $('.userform input').click(function (event)
+        {
+            event.preventDefault();
+            $('#tr' + event.target.id.replace('del(', '').replace(')', '')).remove();
+        });
+
+        populateBookingMonths();
     });
+
 </script>
 

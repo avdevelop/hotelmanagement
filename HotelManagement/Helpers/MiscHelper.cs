@@ -14,6 +14,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using HotelManagement.Helpers.CacheHelpers;
+using System.Web.Script.Serialization;
 
 namespace HotelManagement.Helpers
 {
@@ -81,5 +82,118 @@ namespace HotelManagement.Helpers
             return Encoding.UTF8.GetString(plainTextBytes, 0, decryptedByteCount);
         }
 
+        public static string ToJson(object data)
+        {
+            JavaScriptSerializer jss = new JavaScriptSerializer();
+            return jss.Serialize(data);
+        }
+
+        public static T FromJson<T>(string data)
+        {
+            JavaScriptSerializer jss = new JavaScriptSerializer();
+            T obj = jss.Deserialize<T>(data);
+            return obj;
+        }
+
+        public static int GetMonth(string month)
+        {
+            switch(month.ToLower())
+            {
+                case "jan":
+                case "january":
+                    return 1;
+
+                case "feb":
+                case "february":
+                    return 2;
+
+                case "mar":
+                case "march":
+                    return 3;
+                    
+                case "apr":
+                case "april":
+                    return 4;
+                    
+                case "may":
+                    return 5;
+                    
+                case "jun":
+                case "june":
+                    return 6;
+                                        
+                case "jul":
+                case "july":
+                    return 7;
+
+                case "aug":
+                case "august":
+                    return 8;
+
+                case "sep":
+                case "september":
+                    return 9;
+
+                case "oct":
+                case "october":
+                    return 10;
+
+                case "nov":
+                case "november":
+                    return 11;
+
+                case "dec":
+                case "december":
+                    return 12;
+
+                default:
+                    return 0;
+            }
+        }
+
+        public static string GetMonth(int month)
+        {
+            switch (month)
+            {
+                case 1:                
+                    return "jan";
+
+                case 2:                
+                    return "feb";
+
+                case 3:
+                    return "mar";
+
+                case 4:
+                    return "apr";
+
+                case 5:
+                    return "may";
+
+                case 6:
+                    return "jun";
+
+                case 7:
+                    return "jul";
+
+                case 8:
+                    return "aug";
+
+                case 9:
+                    return "sep";
+
+                case 10:
+                    return "oct";
+
+                case 11:
+                    return "nov";
+
+                case 12:
+                    return "dec";
+
+                default:
+                    return String.Empty;
+            }
+        }
     }
 }

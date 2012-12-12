@@ -4,13 +4,14 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting.Web;
-using HotelManagement.Services.Interfaces;
+using HotelManagement.Repositories;
 using System.Web.Mvc;
 using NUnit.Framework;
 using Rhino.Mocks;
 using HotelManagement.Models;
 using HotelManagement.Tests.TestHelpers;
 using Rhino.Mocks.Impl;
+using HotelManagement.Repositories.Interfaces;
 
 namespace HotelManagement.Tests.Controllers
 {

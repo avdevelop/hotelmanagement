@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using HotelManagement.Services.Interfaces;
 using NHibernate;
 using HotelManagement.Models.Mappings;
 using HotelManagement.Models;
 using System.Collections;
 using NHibernate.Criterion;
+using HotelManagement.Repositories.Interfaces;
 
-namespace HotelManagement.Services
+namespace HotelManagement.Repositories
 {
     public class NHibernateRepository<T> : IRepository<T>, IRepository where T : class
     {

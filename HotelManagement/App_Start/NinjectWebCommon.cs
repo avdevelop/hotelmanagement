@@ -10,9 +10,9 @@ namespace HotelManagement.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
-    using HotelManagement.Services;
-    using HotelManagement.Services.Interfaces;
+    using HotelManagement.Repositories;
     using HotelManagement.Models;
+    using HotelManagement.Repositories.Interfaces;
 
     public static class NinjectWebCommon 
     {

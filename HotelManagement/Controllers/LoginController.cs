@@ -12,9 +12,10 @@ using System.Web;
 using System.Web.Mvc;
 using HotelManagement.Helpers;
 using HotelManagement.Models;
-using HotelManagement.Services.Interfaces;
+using HotelManagement.Repositories;
 using HotelManagement.Helpers.CacheHelpers;
 using HotelManagement.Helpers.ModelHelpers;
+using HotelManagement.Repositories.Interfaces;
 
 namespace HotelManagement.Controllers
 {

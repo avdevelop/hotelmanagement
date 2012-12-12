@@ -5,7 +5,7 @@ using System.Text;
 using HotelManagement.Models;
 using System.Collections;
 
-namespace HotelManagement.Services.Interfaces
+namespace HotelManagement.Repositories.Interfaces
 {
     public interface IRepository
     {

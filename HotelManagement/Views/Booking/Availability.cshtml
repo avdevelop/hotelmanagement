@@ -1,0 +1,17 @@
+﻿@using System.Collections.Generic;
+@using HotelManagement.Models;
+
+@model IEnumerable<Room>
+@{
+    ViewBag.Title = "CheckAvailability";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<div>
+    @foreach(Room room in Model)
+    {
+        <fieldset>
+            @room.Name
+        </fieldset>
+    }
+</div>

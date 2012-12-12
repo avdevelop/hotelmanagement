@@ -10,8 +10,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using HotelManagement.Services.Interfaces;
+using HotelManagement.Repositories;
 using HotelManagement.Models;
+using HotelManagement.Repositories.Interfaces;
 
 namespace HotelManagement.Controllers
 {
@@ -39,6 +40,18 @@ namespace HotelManagement.Controllers
         public ActionResult InvalidParams()
         {
             return View("InvalidParams");
+        }
+
+        public string TestMessage(string name, int id)
+        {
+            if (name.Length > 0 && id > 0)
+            {
+                return "Valid";
+            }
+            else
+            {
+                return "Invalid";
+            }            
         }
     }
 }

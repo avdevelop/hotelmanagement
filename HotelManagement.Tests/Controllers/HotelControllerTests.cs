@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HotelManagement.Controllers;
-using HotelManagement.Services.Interfaces;
+using HotelManagement.Repositories;
 using HotelManagement.Models;
 using Rhino.Mocks;
 using HotelManagement.Tests.TestHelpers;
@@ -12,6 +12,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.IO;
 using Rhino.Mocks.Impl;
+using HotelManagement.Repositories.Interfaces;
 
 namespace HotelManagement.Tests.Controllers
 {
