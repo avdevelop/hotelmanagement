@@ -13,6 +13,7 @@ using System.Web.Mvc;
 using HotelManagement.Repositories;
 using HotelManagement.Models;
 using HotelManagement.Repositories.Interfaces;
+using HotelManagement.Helpers;
 
 namespace HotelManagement.Controllers
 {
@@ -27,7 +28,7 @@ namespace HotelManagement.Controllers
 
         //
         // GET: /Home/
-        // GET: /Home/Index
+        // GET: /Home/Index        
         public ActionResult Index()
         {
             List<UserMenu> menuItems = userMenuRepository.Get().ToList();

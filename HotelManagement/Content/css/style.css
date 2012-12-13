@@ -1,5 +1,5 @@
 * {margin:0;padding:0}
-html,body {height:100%}
+html,body {height:100%;width:100%;}
 body {background:url(images/body-bg.gif) center top #37271c;font-family:Tahoma,Geneva,sans-serif;font-size:100%;line-height:1.125em;color:#bca695}
 input,select,textarea {font-family:Tahoma,Geneva,sans-serif;font-size:1em}
 .fleft {float:left}
@@ -81,7 +81,7 @@ fieldset {border:none;}
 .title {margin-bottom:20px}
 /* boxes */
 .box {background:#1d110b;width:100%}
-.box .inner {padding:21px 30px 30px 28px}
+.box .inner {padding:21px 30px 30px 28px;background:#1d110b}
 .dept-list {float:left}
 .dept-list dd {clear:both;text-align:right}
 .dept-list dd span {float:left;padding-right:25px}
@@ -90,13 +90,13 @@ fieldset {border:none;}
 #header .row-1 {height:135px;}
 #header .row-2 {height:390px;background:url(images/header-bg.png) no-repeat left bottom}
 #header .row-2.alt {height:278px;background:url(images/header-bg1.png) no-repeat left bottom;width:100%;padding:0;margin:0}
-#header .row-2 .indent {padding:13px 0 0 13px}
+#header .row-2 .indent {padding:13px 0 0 13px;display:block;}
 #header .logo {float:left;padding:40px 0 0 45px}
 #header .logo em {position:absolute;top:25px;text-transform:uppercase;font-style:normal;font-size:16px;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-weight:bold;padding-left:5px}
 #header .logo strong {color:#ad0000;font-size:.91em;padding-left:5px}
 #header .phones {float:right;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:25px;line-height:1em;color:#c30000;padding:25px 48px 0 0;letter-spacing:-1px}
 #header .phones .login a {float:left;font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;font-size:16px;line-height:1em;color:#ffd455;letter-spacing:-1px}
-.header-box {background:url(images/header-bg1.jpg) no-repeat left top;width:950px;height:364px}
+.header-box {background:url(images/header-bg1.jpg) no-repeat left top;width:675px;height:364px;float:right;}
 .header-box .inner {padding:307px 0 0 2px}
 .header-box-small {background:url(images/header-bg-small.jpg) no-repeat left top;width:950px;height:252px;}
 .header-box-small .inner {padding:195px 0 0 2px}

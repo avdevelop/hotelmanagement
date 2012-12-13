@@ -16,7 +16,6 @@ namespace HotelManagement.Controllers
             return View();
         }
 
-
         public void ReturnUrlSet()
         {
             if (HttpContext.Request.UrlReferrer != null)
@@ -29,6 +28,9 @@ namespace HotelManagement.Controllers
             }
         }
 
-
+        public bool RequestValid()
+        {
+            return true;
+        }
     }
 }

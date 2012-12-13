@@ -1,6 +1,6 @@
 ﻿@using HotelManagement.Helpers.CacheHelpers;
 
-@if (SessionCache.IsUserAdmin)
+@if (SessionCache.UserType != null && SessionCache.UserType.Name == "Admin")
 {
     <ul class="nav">
         <li><a href="index.html">Home</a>|</li>

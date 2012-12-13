@@ -10,6 +10,17 @@ namespace HotelManagement.Models
         public virtual int Id { get; set; }
         public virtual string Name { get; set; }
 
+        public UserType()
+        { 
+        
+        }
+
+        public UserType(int id, string name)
+        {
+            Id = id;
+            Name = name;
+        }
+
         public override bool Equals(object obj)
         {
             if (obj == null)
@@ -33,6 +44,12 @@ namespace HotelManagement.Models
         public override int GetHashCode()
         {
             return (Name + "|" + Id).GetHashCode();
-        }
+        }        
+    }
+
+    public enum UserTypeEnum
+    { 
+        Admin = 1,
+        Normal = 2
     }
 }

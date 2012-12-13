@@ -147,6 +147,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Authenticate.cs" />
     <Compile Include="Helpers\CacheHelpers\AppCache.cs" />
     <Compile Include="Helpers\MiscHelper.cs" />
     <Compile Include="Helpers\ModelHelpers\RoomTypeHelper.cs" />
@@ -298,7 +299,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>57319</DevelopmentServerPort>
+          <DevelopmentServerPort>59249</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

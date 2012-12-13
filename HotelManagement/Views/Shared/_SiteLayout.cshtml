@@ -39,6 +39,14 @@
             </div>
             <div class="row-2">
                 <div class="indent">
+                    <!-- booking section begin -->
+                    <div class="aside maxheight">
+                        <!-- box begin -->
+                        @RenderPage("~/Views/Shared/BookingSection.cshtml")
+                        <!-- box end -->
+                    </div>
+                    <!-- booking section end -->
+
                     <!-- header-box begin -->
                     <div class="header-box">
                         @RenderPage("~/Views/Shared/MainMenu.cshtml")                        
@@ -51,12 +59,7 @@
             Lovely Flash templates from TemplateMonster!</div>
         <!-- content -->
         <div id="content">
-            <div class="wrapper">
-                <div class="aside maxheight">
-                    <!-- box begin -->
-                    @RenderPage("~/Views/Shared/BookingSection.cshtml")
-                    <!-- box end -->
-                </div>
+            <div class="wrapper">                
                 @RenderBody()
             </div>
         </div>

@@ -14,6 +14,7 @@ using HotelManagement.Repositories;
 using HotelManagement.Models;
 using HotelManagement.Helpers.CacheHelpers;
 using HotelManagement.Repositories.Interfaces;
+using HotelManagement.Helpers;
 
 namespace HotelManagement.Controllers
 {
@@ -29,6 +30,7 @@ namespace HotelManagement.Controllers
         //
         // GET: /Setting/
         // GET: /Setting/Index
+        [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Index()
         {
             if (SessionCache.UserId != null)
@@ -55,6 +57,7 @@ namespace HotelManagement.Controllers
 
         //
         // GET: /Setting/Edit/id
+        [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Edit(int id)
         {
             if (SessionCache.UserId != null)
@@ -70,6 +73,7 @@ namespace HotelManagement.Controllers
 
         //
         // GET: /Setting/Add
+        [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Add(Setting setting)
         {
             if (SessionCache.UserId != null)
@@ -85,6 +89,7 @@ namespace HotelManagement.Controllers
 
         //
         // POST: /Setting/Create
+        [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Create(Setting setting)
         {
             if (SessionCache.UserId != null)
@@ -109,7 +114,7 @@ namespace HotelManagement.Controllers
         }
 
         //
-        // GET: /Setting/Sucess
+        // GET: /Setting/Sucess        
         public ActionResult Success(string message)
         {
             if (SessionCache.UserId != null)
@@ -124,6 +129,7 @@ namespace HotelManagement.Controllers
 
         //
         // POST: /Setting/Delete/setting
+        [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Delete(Setting setting, int? id)
         {
             if (SessionCache.UserId != null)

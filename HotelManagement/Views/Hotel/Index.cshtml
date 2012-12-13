@@ -78,8 +78,17 @@
     {
         $('.userform input').click(function (event)
         {
+            var hotelId = event.target.id.replace('del(', '').replace(')', '');
+            var hotel = { Id : hotelId };
             event.preventDefault();
-            $('#tr' + event.target.id.replace('del(', '').replace(')', '')).remove();
+
+            if (hotelId)
+            {
+                $.post("Hotel/Delete", $.param(hotel), function (data)
+                {
+                    $('#tr' + hotelId).remove();
+                });                
+            }
         });
 
         populateBookingMonths();

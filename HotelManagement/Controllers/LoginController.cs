@@ -61,10 +61,17 @@ namespace HotelManagement.Controllers
 
                 SessionCache.CreateSession(user.Id, 
                     user.Email,
-                    menus,
-                    user.UserType.Name == "Admin");
+                    menus,                    
+                    user.UserType);
 
-                return Redirect((string)TempData["ReturnUrl"]);
+                if (TempData["ReturnUrl"] == null || String.IsNullOrEmpty((string)TempData["ReturnUrl"]))
+                {
+                    return Redirect("/Home/");
+                }
+                else
+                {
+                    return Redirect((string)TempData["ReturnUrl"]);
+                }                
             }
             else
             {
@@ -77,6 +84,7 @@ namespace HotelManagement.Controllers
 
         //
         // GET: /Login/Logout/
+        [Authenticate(UserTypeEnum.Admin, UserTypeEnum.Normal)]
         public ActionResult Logout()
         {
             SessionCache.DestroySession();

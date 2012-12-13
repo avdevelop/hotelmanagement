@@ -17,22 +17,22 @@ namespace HotelManagement.Helpers.CacheHelpers
     {
         public static void CreateSession(int userId,
             string userEmail,
-            List<Menu> userMenus,
-            bool isUserAdmin)
+            List<Menu> userMenus,            
+            UserType userType)
         {
             UserId = userId;
             UserEmail = userEmail;
             LoginFailCount = 0;
-            UserMenus = userMenus;
-            IsUserAdmin = isUserAdmin;
+            UserMenus = userMenus;            
+            UserType = userType;
         }
 
         public static void DestroySession()
         {
             UserId = null;
             UserEmail = null;
-            LoginFailCount = 0;
-            IsUserAdmin = false;
+            LoginFailCount = 0;            
+            UserType = null;
         }
 
         public static int? UserId
@@ -90,23 +90,18 @@ namespace HotelManagement.Helpers.CacheHelpers
             {
                 HttpContext.Current.Session["SessionCache.UserMenus"] = value;
             }
-        }
+        }        
 
-        public static bool IsUserAdmin
+        public static UserType UserType
         {
             get
             {
-                if (HttpContext.Current.Session["SessionCache.IsUserAdmin"] == null)
-                {
-                    HttpContext.Current.Session["SessionCache.IsUserAdmin"] = false;
-                }
-
-                return (bool)HttpContext.Current.Session["SessionCache.IsUserAdmin"];
+                return (UserType)HttpContext.Current.Session["SessionCache.UserType"];
             }
 
             set
             {
-                HttpContext.Current.Session["SessionCache.IsUserAdmin"] = value;
+                HttpContext.Current.Session["SessionCache.UserType"] = value;
             }
         }
     }

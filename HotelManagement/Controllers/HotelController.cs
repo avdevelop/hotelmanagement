@@ -14,6 +14,7 @@ using HotelManagement.Repositories;
 using HotelManagement.Models;
 using System.Collections;
 using HotelManagement.Repositories.Interfaces;
+using HotelManagement.Helpers;
 
 namespace HotelManagement.Controllers
 {
@@ -40,6 +41,7 @@ namespace HotelManagement.Controllers
 
         //
         // GET: /Hotel/Edit/id
+        [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Edit(int id)
         {
             List<HotelChain> hotelChains = hotelChainRepository.Get().ToList();
@@ -58,6 +60,7 @@ namespace HotelManagement.Controllers
 
         //
         // GET: /Hotel/Add
+        [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Add(Hotel hotel)
         {
             List<HotelChain> hotelChains = hotelChainRepository.Get().ToList();
@@ -82,6 +85,7 @@ namespace HotelManagement.Controllers
 
         //
         // POST: /Hotel/Create
+        [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Create(Hotel hotel)
         {
             string error = ""; // hotelRepository.ValidateSave(hotel);
@@ -109,6 +113,7 @@ namespace HotelManagement.Controllers
 
         //
         // POST: /Hotel/Delete/hotel
+        [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Delete(Hotel hotel, int? id)
         {
             string error = ""; // hotelRepository.ValidateDelete(hotel);

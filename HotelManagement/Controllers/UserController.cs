@@ -14,6 +14,7 @@ using HotelManagement.Repositories;
 using HotelManagement.Models;
 using HotelManagement.Helpers.CacheHelpers;
 using HotelManagement.Repositories.Interfaces;
+using HotelManagement.Helpers;
 
 namespace HotelManagement.Controllers
 {
@@ -42,7 +43,8 @@ namespace HotelManagement.Controllers
         }
 
         //
-        // GET: /User/Edit        
+        // GET: /User/Edit
+        [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Edit()
         {
             ReturnUrlSet();

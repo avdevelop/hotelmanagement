@@ -13,6 +13,7 @@ using System.Web.Mvc;
 using HotelManagement.Repositories;
 using HotelManagement.Models;
 using HotelManagement.Repositories.Interfaces;
+using HotelManagement.Helpers;
 
 namespace HotelManagement.Controllers
 {
@@ -62,6 +63,7 @@ namespace HotelManagement.Controllers
 
         //
         // GET: /Room/Add
+        [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Add(Room room)
         {
             List<Hotel> hotels = hotelRepository.Get().ToList();
@@ -101,6 +103,7 @@ namespace HotelManagement.Controllers
 
         //
         // POST: /Room/Create
+        [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Create(Room room)
         {
             string error = ""; // roomRepository.ValidateSave(room);
@@ -128,6 +131,7 @@ namespace HotelManagement.Controllers
 
         //
         // POST: /Room/Delete/room
+        [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Delete(Room room, int? id)
         {
             string error = ""; // roomRepository.ValidateDelete(room);
