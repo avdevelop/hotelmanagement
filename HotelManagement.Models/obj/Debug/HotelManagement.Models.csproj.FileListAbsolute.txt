@@ -1,0 +1,5 @@
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Models\bin\Debug\HotelManagement.Models.dll
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Models\bin\Debug\HotelManagement.Models.pdb
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Models\obj\Debug\HotelManagement.Models.dll
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Models\obj\Debug\HotelManagement.Models.pdb
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Models\obj\Debug\HotelManagement.Models.csprojResolveAssemblyReference.cache

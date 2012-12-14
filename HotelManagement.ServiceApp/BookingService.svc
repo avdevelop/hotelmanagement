@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="HotelManagement.ServiceApp.BookingService" CodeBehind="BookingService.svc.cs" Factory="Ninject.Extensions.Wcf.NinjectServiceHostFactory" %>

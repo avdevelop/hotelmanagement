@@ -1,0 +1,9 @@
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Repository\bin\Debug\hibernate.cfg.xml
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Repository\bin\Debug\HotelManagement.Repository.dll
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Repository\bin\Debug\HotelManagement.Repository.pdb
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Repository\bin\Debug\Iesi.Collections.dll
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Repository\bin\Debug\NHibernate.dll
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Repository\bin\Debug\Iesi.Collections.xml
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Repository\bin\Debug\NHibernate.xml
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Repository\obj\Debug\HotelManagement.Repository.dll
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Repository\obj\Debug\HotelManagement.Repository.pdb

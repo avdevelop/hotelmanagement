@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("HotelManagement.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Manpower UK Ltd")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("HotelManagement.Tests")]
-[assembly: AssemblyCopyright("Copyright © Manpower UK Ltd 2012")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

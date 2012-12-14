@@ -1,0 +1,4 @@
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Models\bin\Release\HotelManagement.Models.dll
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Models\bin\Release\HotelManagement.Models.pdb
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Models\obj\Release\HotelManagement.Models.dll
+C:\Users\CHRISTV\Desktop\HotelManagement\HotelManagement.Models\obj\Release\HotelManagement.Models.pdb

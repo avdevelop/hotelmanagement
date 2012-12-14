@@ -137,9 +137,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HotelManagement\HotelManagement.csproj">
+    <ProjectReference Include="..\HotelManagement.Models\HotelManagement.Models.csproj">
+      <Project>{E5F44209-C475-4568-BEAC-9E9BC5E41B3D}</Project>
+      <Name>HotelManagement.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelManagement.Web\HotelManagement.Web.csproj">
       <Project>{F660C923-7ABC-41B6-8D80-033F2FA8A259}</Project>
-      <Name>HotelManagement</Name>
+      <Name>HotelManagement.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
