@@ -4,18 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace HotelManagement.ServiceApp
-{
-    [DataContract]
+namespace HotelManagement.Models
+{  
     public class UserMenu
-    {
-        [DataMember]
+    {        
         public virtual int Id { get; set; }
-
-        [DataMember]
         public virtual User User { get; set; }
-
-        [DataMember]
         public virtual Menu Menu { get; set; }
 
         public override bool Equals(object obj)

@@ -12,24 +12,19 @@ using System.Web;
 using System.ComponentModel;
 using System.Runtime.Serialization;
 
-namespace HotelManagement.ServiceApp
-{
-    [DataContract]
+namespace HotelManagement.Models
+{    
     public class Room
-    {
-        [DataMember]
+    {        
         [DisplayName("Room ID")]
         public virtual int Id { get; set; }
-
-        [DataMember]
+                
         [DisplayName("Room Name")]
         public virtual string Name { get; set; }
 
-        [DataMember]
         [DisplayName("Hotel")]
         public virtual Hotel Hotel { get; set; }
 
-        [DataMember]
         [DisplayName("RoomType")]
         public virtual RoomType RoomType { get; set; }
 

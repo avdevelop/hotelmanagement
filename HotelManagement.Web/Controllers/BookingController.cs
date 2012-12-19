@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using HotelManagement.Models;
 using HotelManagement.Helpers;
+using HotelManagement.Web.BookingService;
+using HotelManagement.Web.BookingDetailService;
+using HotelManagement.Web.RoomService;
 
 namespace HotelManagement.Controllers
 {
@@ -14,13 +16,13 @@ namespace HotelManagement.Controllers
         IBookingDetailService bookingDetailService;
         IRoomService roomService;
 
-        public BookingController(IBookingService bookingRepository,
-            IBookingDetailService bookingDetailRepository,
-            IRoomService roomRepository)
+        public BookingController(IBookingService bookingService,
+            IBookingDetailService bookingDetailService,
+            IRoomService roomService)
         {
             this.bookingService = bookingService;
             this.bookingDetailService = bookingDetailService;
-            this.roomService = roomService;
+            this.roomService = roomService;            
         }
 
         //
@@ -49,10 +51,10 @@ namespace HotelManagement.Controllers
         // GET: /Booking/CheckAvailability
         public ActionResult CheckAvailability(string arrDay, string arrMonth, string depDay, string depMonth, int persons)
         {
-            IEnumerable<Room> rooms = roomService.Get().Where(r => r.RoomType.MaxOccupants <= persons);
-            IEnumerable<BookingDetail> bookingDetails = null; // bookingDetailRepository.Get().Where(bd => bd.Date >= DateTime.Parse(arrivalDate) && bd.Date <= DateTime.Parse(departureDate));
+            IEnumerable<HotelManagement.Web.RoomService.RoomDTO> rooms = roomService.GetAll().Where(r => r.RoomTypeDTO.MaxOccupants <= persons);
+            IEnumerable<BookingDetailDTO> bookingDetails = null; // bookingDetailRepository.Get().Where(bd => bd.Date >= DateTime.Parse(arrivalDate) && bd.Date <= DateTime.Parse(departureDate));
 
-            rooms = rooms.Where(r => ! bookingDetails.Any(b => b.Room.Id == r.Id));
+            rooms = rooms.Where(r => ! bookingDetails.Any(b => b.RoomDTO.Id == r.Id));
 
             return View("Availability", rooms);
         }

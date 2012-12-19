@@ -10,26 +10,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using HotelManagement.Models;
 using HotelManagement.Helpers.CacheHelpers;
 using HotelManagement.Helpers;
-using HotelManagement.Repository;
+using HotelManagement.Web.UserTypeService;
+using HotelManagement.Web.UserMenuService;
+using HotelManagement.Web.MenuService;
+using HotelManagement.Web.UserService;
 
 namespace HotelManagement.Controllers
 {
     public class UserController : BaseController
     {
-        IRepository<User> userRepository;
-        IRepository<Menu> menuRepository;
-        IRepository<UserMenu> userMenuRepository;
+        IUserService userService;
+        IMenuService menuService;
+        IUserMenuService userMenuService;
 
-        public UserController(IRepository<User> userRepository,
-            IRepository<Menu> menuRepository,
-            IRepository<UserMenu> userMenuRepository)
+        public UserController(IUserService userService,
+            IMenuService menuService,
+            IUserMenuService userMenuService)
         {
-            this.userRepository = userRepository;
-            this.menuRepository = menuRepository;
-            this.userMenuRepository = userMenuRepository;
+            this.userService = userService;
+            this.menuService = menuService;
+            this.userMenuService = userMenuService;
         }
 
         //
@@ -48,11 +50,11 @@ namespace HotelManagement.Controllers
         {
             ReturnUrlSet();
             if (SessionCache.UserId.HasValue)
-            {                
-                ViewBag.AllMenu = menuRepository.Get();
-                ViewBag.UserMenu = userMenuRepository.GetByUser(userRepository.GetByEmail(SessionCache.UserEmail));
+            {
+                ViewBag.AllMenu = menuService.GetAll();
+                ViewBag.UserMenu = userMenuService.GetByUser(userService.GetByEmail(SessionCache.UserEmail).Id);
 
-                return View("Edit", userRepository.Get(SessionCache.UserId.Value));
+                return View("Edit", userService.GetUser(SessionCache.UserId.Value));
             }
             else
             {

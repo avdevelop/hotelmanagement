@@ -10,19 +10,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using HotelManagement.Models;
 using HotelManagement.Helpers;
-using HotelManagement.Repository;
+using HotelManagement.Web.UserMenuService;
 
 namespace HotelManagement.Controllers
 {
     public class HomeController : BaseController
     {
-        IRepository<UserMenu> userMenuRepository;
+        IUserMenuService userMenuService;
 
-        public HomeController(IRepository<UserMenu> userMenuRepository)
+        public HomeController(IUserMenuService userMenuService)
         {
-            this.userMenuRepository = userMenuRepository;
+            this.userMenuService = userMenuService;
         }
 
         //
@@ -30,8 +29,8 @@ namespace HotelManagement.Controllers
         // GET: /Home/Index        
         public ActionResult Index()
         {
-            List<UserMenu> menuItems = userMenuRepository.Get().ToList();
-            string s = menuItems[0].User.Email;
+            List<UserMenuDTO> menuItems = userMenuService.GetAll().ToList();
+            string s = menuItems[0].UserDTO.Email;
             return View("Index");
         }
 

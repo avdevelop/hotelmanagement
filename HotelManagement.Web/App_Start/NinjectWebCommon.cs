@@ -5,13 +5,21 @@ namespace HotelManagement.App_Start
 {
     using System;
     using System.Web;
-
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
     using Ninject;
-    using Ninject.Web.Common;
-    using HotelManagement.Models;
-    using HotelManagement.Repository;    
+    using Ninject.Web.Common;    
+    using HotelManagement.Web.BookingDetailService;
+    using HotelManagement.Web.BookingService;
+    using HotelManagement.Web.HotelChainService;
+    using HotelManagement.Web.HotelService;
+    using HotelManagement.Web.MenuService;
+    using HotelManagement.Web.RoomService;
+    using HotelManagement.Web.RoomTypeService;
+    using HotelManagement.Web.SettingService;
+    using HotelManagement.Web.UserMenuService;
+    using HotelManagement.Web.UserService;
+    using HotelManagement.Web.UserTypeService;
+
 
     public static class NinjectWebCommon 
     {
@@ -43,7 +51,7 @@ namespace HotelManagement.App_Start
         {
             var kernel = new StandardKernel();
             kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
-            kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
+            kernel.Bind<IBookingService>().To<BookingServiceClient>();
             
             RegisterServices(kernel);
             return kernel;
@@ -55,16 +63,16 @@ namespace HotelManagement.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IRepository<Hotel>>().To<NHibernateRepository<Hotel>>();
-            kernel.Bind<IRepository<HotelChain>>().To<NHibernateRepository<HotelChain>>();
-            kernel.Bind<IRepository<Room>>().To<NHibernateRepository<Room>>();
-            kernel.Bind<IRepository<RoomType>>().To<NHibernateRepository<RoomType>>();
-            kernel.Bind<IRepository<Setting>>().To<NHibernateRepository<Setting>>();
-            kernel.Bind<IRepository<User>>().To<NHibernateRepository<User>>();
-            kernel.Bind<IRepository<UserMenu>>().To<NHibernateRepository<UserMenu>>();
-            kernel.Bind<IRepository<Menu>>().To<NHibernateRepository<Menu>>();
-            kernel.Bind<IRepository<Booking>>().To<NHibernateRepository<Booking>>();
-            kernel.Bind<IRepository<BookingDetail>>().To<NHibernateRepository<BookingDetail>>();
+            kernel.Bind<IHotelService>().To<HotelServiceClient>();
+            kernel.Bind<IHotelChainService>().To<HotelChainServiceClient>();
+            kernel.Bind<IRoomService>().To<RoomServiceClient>();
+            kernel.Bind<IRoomTypeService>().To<RoomTypeServiceClient>();
+            kernel.Bind<ISettingService>().To<SettingServiceClient>();
+            kernel.Bind<IUserService>().To<UserServiceClient>();
+            kernel.Bind<IUserMenuService>().To<UserMenuServiceClient>();
+            kernel.Bind<IMenuService>().To<MenuServiceClient>();
+            kernel.Bind<IBookingService>().To<BookingServiceClient>();
+            kernel.Bind<IBookingDetailService>().To<BookingDetailServiceClient>();
         }
     }
 }

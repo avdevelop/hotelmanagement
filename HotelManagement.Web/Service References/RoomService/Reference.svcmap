@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="548224da-4bb4-4587-a5ea-5305e60cab3c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="Iesi.Collections" />
+      <ReferencedAssembly AssemblyName="Microsoft.CSharp" />
+      <ReferencedAssembly AssemblyName="Microsoft.Web.Infrastructure" />
+      <ReferencedAssembly AssemblyName="mscorlib" />
+      <ReferencedAssembly AssemblyName="NHibernate" />
+      <ReferencedAssembly AssemblyName="Ninject" />
+      <ReferencedAssembly AssemblyName="Ninject.Web.Common" />
+      <ReferencedAssembly AssemblyName="Ninject.Web.Mvc" />
+      <ReferencedAssembly AssemblyName="nunit.framework" />
+      <ReferencedAssembly AssemblyName="Rhino.Mocks" />
+      <ReferencedAssembly AssemblyName="RouteDebugger" />
+      <ReferencedAssembly AssemblyName="System" />
+      <ReferencedAssembly AssemblyName="System.ComponentModel.DataAnnotations" />
+      <ReferencedAssembly AssemblyName="System.Configuration" />
+      <ReferencedAssembly AssemblyName="System.Core" />
+      <ReferencedAssembly AssemblyName="System.Data" />
+      <ReferencedAssembly AssemblyName="System.Data.DataSetExtensions" />
+      <ReferencedAssembly AssemblyName="System.Data.Services" />
+      <ReferencedAssembly AssemblyName="System.Drawing" />
+      <ReferencedAssembly AssemblyName="System.EnterpriseServices" />
+      <ReferencedAssembly AssemblyName="System.Net.Http" />
+      <ReferencedAssembly AssemblyName="System.Net.Http.Formatting" />
+      <ReferencedAssembly AssemblyName="System.Net.Http.WebRequest" />
+      <ReferencedAssembly AssemblyName="System.Runtime.Serialization" />
+      <ReferencedAssembly AssemblyName="System.ServiceModel" />
+      <ReferencedAssembly AssemblyName="System.ServiceModel.Activation" />
+      <ReferencedAssembly AssemblyName="System.ServiceModel.Web" />
+      <ReferencedAssembly AssemblyName="System.Web" />
+      <ReferencedAssembly AssemblyName="System.Web.Abstractions" />
+      <ReferencedAssembly AssemblyName="System.Web.ApplicationServices" />
+      <ReferencedAssembly AssemblyName="System.Web.DynamicData" />
+      <ReferencedAssembly AssemblyName="System.Web.Entity" />
+      <ReferencedAssembly AssemblyName="System.Web.Extensions" />
+      <ReferencedAssembly AssemblyName="System.Web.Helpers" />
+      <ReferencedAssembly AssemblyName="System.Web.Http" />
+      <ReferencedAssembly AssemblyName="System.Web.Http.WebHost" />
+      <ReferencedAssembly AssemblyName="System.Web.Mvc" />
+      <ReferencedAssembly AssemblyName="System.Web.Razor" />
+      <ReferencedAssembly AssemblyName="System.Web.Routing" />
+      <ReferencedAssembly AssemblyName="System.Web.Services" />
+      <ReferencedAssembly AssemblyName="System.Web.WebPages" />
+      <ReferencedAssembly AssemblyName="System.Web.WebPages.Deployment" />
+      <ReferencedAssembly AssemblyName="System.Web.WebPages.Razor" />
+      <ReferencedAssembly AssemblyName="System.Xml" />
+      <ReferencedAssembly AssemblyName="System.Xml.Linq" />
+      <ReferencedAssembly AssemblyName="WebActivator" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50373/RoomService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RoomService.disco" MetadataType="Disco" ID="c63170f0-a4da-4e6a-8768-2f5fab6cdca1" SourceId="1" SourceUrl="http://localhost:50373/RoomService.svc?disco" />
+    <MetadataFile FileName="RoomService.wsdl" MetadataType="Wsdl" ID="5f609116-573b-407c-939e-6a109ab12aec" SourceId="1" SourceUrl="http://localhost:50373/RoomService.svc?wsdl" />
+    <MetadataFile FileName="RoomService.xsd" MetadataType="Schema" ID="0d4ad22a-8dc5-4c2d-aae5-e7b6f1565027" SourceId="1" SourceUrl="http://localhost:50373/RoomService.svc?xsd=xsd2" />
+    <MetadataFile FileName="RoomService1.xsd" MetadataType="Schema" ID="3975e499-24a3-4f19-8900-304a53e08fd9" SourceId="1" SourceUrl="http://localhost:50373/RoomService.svc?xsd=xsd1" />
+    <MetadataFile FileName="RoomService2.xsd" MetadataType="Schema" ID="b79bb8b8-15ae-4c3d-a7ff-68794fe2a05b" SourceId="1" SourceUrl="http://localhost:50373/RoomService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -10,32 +10,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using HotelManagement.Models;
 using HotelManagement.Helpers;
-using HotelManagement.Repository;
+using HotelManagement.Web.RoomService;
+using HotelManagement.Web.HotelService;
+using HotelManagement.Web.RoomTypeService;
+using HotelManagement.Web.UserTypeService;
 
 namespace HotelManagement.Controllers
 {
     public class RoomController : BaseController
     {
-        private IRepository<Room> roomRepository;
-        private IRepository<Hotel> hotelRepository;
-        private IRepository<RoomType> roomTypeRepository;
+        private IRoomService roomService;
+        private IHotelService hotelService;
+        private IRoomTypeService roomTypeService;
 
-        public RoomController(IRepository<Room> roomRepository,
-            IRepository<Hotel> hotelRepository,
-            IRepository<RoomType> roomTypeRepository)
+        public RoomController(IRoomService roomService,
+            IHotelService hotelService,
+            IRoomTypeService roomTypeService)
         {
-            this.roomRepository = roomRepository;
-            this.hotelRepository = hotelRepository;
-            this.roomTypeRepository = roomTypeRepository;
+            this.roomService = roomService;
+            this.hotelService = hotelService;
+            this.roomTypeService = roomTypeService;
         }
         
         //
         // GET: /Room/
         public ActionResult Index()
         {
-            IEnumerable<Room> rooms = roomRepository.Get();
+            IEnumerable<RoomDTO> rooms = roomService.GetAll();
             return View(rooms);
         }
 
@@ -49,7 +51,7 @@ namespace HotelManagement.Controllers
             }
             else
             {
-                var room = roomRepository.Get(id.Value);
+                var room = roomService.GetRoom(id.Value);
 
                 if (room == null)
                 {
@@ -63,16 +65,16 @@ namespace HotelManagement.Controllers
         //
         // GET: /Room/Add
         [Authenticate(UserTypeEnum.Admin)]
-        public ActionResult Add(Room room)
+        public ActionResult Add(RoomDTO room)
         {
-            List<Hotel> hotels = hotelRepository.Get().ToList();
-            hotels.Insert(0, new Hotel() { Id = 0, Name = String.Empty });
+            List<HotelManagement.Web.HotelService.HotelDTO> hotels = hotelService.GetAll().ToList();
+            hotels.Insert(0, new HotelManagement.Web.HotelService.HotelDTO() { Id = 0, Name = String.Empty });
             SelectList hotelList;
 
             if (room == null || TempData["HotelSelectedId"] == null)
             {
                 hotelList = new SelectList(hotels, "Id", "Name");
-                room = new Room();
+                room = new RoomDTO();
             }
             else
             {
@@ -82,13 +84,13 @@ namespace HotelManagement.Controllers
             ViewBag.HotelList = hotelList;
 
             //List<RoomType> roomTypes = roomTypeRepository.Get("Name (MaxOccupants)").ToList();
-            List<RoomType> roomTypes = roomTypeRepository.Get().ToList();
-            roomTypes.Insert(0, new RoomType() { Id = 0, Name = String.Empty });
+            List<HotelManagement.Web.RoomTypeService.RoomTypeDTO> roomTypes = roomTypeService.GetAll().ToList();
+            roomTypes.Insert(0, new HotelManagement.Web.RoomTypeService.RoomTypeDTO() { Id = 0, Name = String.Empty });
             SelectList roomTypeList;
             if (room == null || TempData["RoomTypeSelectedId"] == null)
             {
                 roomTypeList = new SelectList(roomTypes, "Id", "Name");
-                room = new Room();
+                room = new RoomDTO();
             }
             else
             {
@@ -103,20 +105,20 @@ namespace HotelManagement.Controllers
         //
         // POST: /Room/Create
         [Authenticate(UserTypeEnum.Admin)]
-        public ActionResult Create(Room room)
+        public ActionResult Create(RoomDTO room)
         {
             string error = ""; // roomRepository.ValidateSave(room);
 
             if (error.Length == 0)
             {
-                roomRepository.Save(room);
+                roomService.Save(room);
                 return RedirectToAction("Success", "Room", new { message = "Successfully saved the Room." });
             }
             else
             {
                 TempData["ValidationError"] = error;
-                TempData["HotelSelectedId"] = room.Hotel.Id;
-                TempData["RoomTypeSelectedId"] = room.RoomType.Id;
+                TempData["HotelSelectedId"] = room.HotelDTO.Id;
+                TempData["RoomTypeSelectedId"] = room.RoomTypeDTO.Id;
                 return RedirectToAction("Add", "Room", room);
             }
         }
@@ -131,14 +133,14 @@ namespace HotelManagement.Controllers
         //
         // POST: /Room/Delete/room
         [Authenticate(UserTypeEnum.Admin)]
-        public ActionResult Delete(Room room, int? id)
+        public ActionResult Delete(RoomDTO room, int? id)
         {
             string error = ""; // roomRepository.ValidateDelete(room);
 
             if (error.Length == 0)
             {
-                room = roomRepository.Get(room.Id);
-                roomRepository.Delete(room);
+                room = roomService.GetRoom(room.Id);
+                roomService.Delete(room);
                 return View("Success", (object)"Room deleted successfully.");
             }
             else

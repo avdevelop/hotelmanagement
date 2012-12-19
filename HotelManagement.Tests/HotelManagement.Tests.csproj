@@ -121,9 +121,6 @@
     <Reference Include="WebActivator, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\HomeControllerTests.cs" />
-    <Compile Include="Controllers\HotelControllerTests.cs" />
-    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Models\UserMenuTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestHelpers\ActionResultExtensions.cs" />
@@ -146,7 +143,9 @@
       <Name>HotelManagement.Web</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

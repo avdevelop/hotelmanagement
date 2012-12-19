@@ -10,9 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using HotelManagement.Controllers;
-using HotelManagement.Models;
 using System.Collections;
-using HotelManagement.Repository;
+using HotelManagement.Web.SettingService;
 
 namespace HotelManagement.Helpers.CacheHelpers
 {
@@ -26,7 +25,7 @@ namespace HotelManagement.Helpers.CacheHelpers
             {
                 if (HttpContext.Current.Application["AppCache.AppSettings.AppCacheValidity"] == null)
                 {
-                    NHibernateRepository<Setting> service = new NHibernateRepository<Setting>();
+                    SettingServiceClient service = new SettingServiceClient();
                     //HttpContext.Current.Application["AppCache.AppSettings.AppCacheValidity"] = service.GetByName("AppCacheValidity").Value;
                 }
 
@@ -34,7 +33,7 @@ namespace HotelManagement.Helpers.CacheHelpers
             }
         }        
 
-        public static IEnumerable<Setting> AllSettings
+        public static IEnumerable<SettingDTO> AllSettings
         {
             get
             {
@@ -47,11 +46,11 @@ namespace HotelManagement.Helpers.CacheHelpers
 
                 if (HttpContext.Current.Application["AppCache.AppSettings.AllSettings"] == null)
                 {
-                    NHibernateRepository<Setting> service = new NHibernateRepository<Setting>();
-                    HttpContext.Current.Application["AppCache.AppSettings.AllSettings"] = service.Get();
+                    SettingServiceClient service = new SettingServiceClient();
+                    HttpContext.Current.Application["AppCache.AppSettings.AllSettings"] = service.GetAll();
                 }
 
-                return (IEnumerable<Setting>)HttpContext.Current.Application["AppCache.AppSettings.AllSettings"];
+                return (IEnumerable<SettingDTO>)HttpContext.Current.Application["AppCache.AppSettings.AllSettings"];
             }
         }
     }

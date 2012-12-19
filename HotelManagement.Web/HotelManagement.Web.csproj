@@ -159,6 +159,61 @@
     <Compile Include="Helpers\CacheHelpers\SessionCache.cs" />
     <Compile Include="Helpers\ModelHelpers\UserHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\BookingDetailService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BookingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HotelChainService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HotelService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MenuService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RoomService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RoomTypeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SettingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UserMenuService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UserService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UserTypeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -169,17 +224,169 @@
     <Content Include="Content\scripts\maxheight.js" />
     <Content Include="Content\scripts\script.js" />
     <Content Include="Global.asax" />
-    <EmbeddedResource Include="Mappings\Booking.hbm.xml" />
-    <EmbeddedResource Include="Mappings\BookingDetail.hbm.xml" />
-    <EmbeddedResource Include="Mappings\Hotel.hbm.xml" />
-    <EmbeddedResource Include="Mappings\HotelChain.hbm.xml" />
-    <EmbeddedResource Include="Mappings\Menu.hbm.xml" />
-    <EmbeddedResource Include="Mappings\Room.hbm.xml" />
-    <EmbeddedResource Include="Mappings\RoomType.hbm.xml" />
-    <EmbeddedResource Include="Mappings\Setting.hbm.xml" />
-    <EmbeddedResource Include="Mappings\User.hbm.xml" />
-    <EmbeddedResource Include="Mappings\UserMenu.hbm.xml" />
-    <EmbeddedResource Include="Mappings\UserType.hbm.xml" />
+    <None Include="Service References\BookingDetailService\BookingDetailService.wsdl" />
+    <None Include="Service References\BookingDetailService\BookingDetailService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BookingDetailService\BookingDetailService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BookingDetailService\BookingDetailService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BookingDetailService\HotelManagement.Web.BookingDetailService.BookingDetailDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BookingService\BookingService.disco" />
+    <None Include="Service References\BookingService\configuration91.svcinfo" />
+    <None Include="Service References\BookingService\configuration.svcinfo" />
+    <None Include="Service References\BookingService\HotelManagement.Web.BookingService.BookingDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BookingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\BookingDetailService\BookingDetailService.disco" />
+    <None Include="Service References\BookingDetailService\configuration91.svcinfo" />
+    <None Include="Service References\BookingDetailService\configuration.svcinfo" />
+    <None Include="Service References\BookingDetailService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\HotelChainService\HotelChainService.disco" />
+    <None Include="Service References\HotelChainService\configuration91.svcinfo" />
+    <None Include="Service References\HotelChainService\configuration.svcinfo" />
+    <None Include="Service References\HotelChainService\HotelManagement.Web.HotelChainService.HotelChainDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelChainService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\HotelService\HotelManagement.Web.HotelService.HotelDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelService\HotelService.disco" />
+    <None Include="Service References\HotelService\configuration91.svcinfo" />
+    <None Include="Service References\HotelService\configuration.svcinfo" />
+    <None Include="Service References\HotelService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\MenuService\HotelManagement.Web.MenuService.MenuDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MenuService\MenuService.wsdl" />
+    <None Include="Service References\MenuService\MenuService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MenuService\MenuService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MenuService\MenuService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoomService\HotelManagement.Web.RoomService.RoomDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RoomService\RoomService.disco" />
+    <None Include="Service References\RoomService\configuration91.svcinfo" />
+    <None Include="Service References\RoomService\configuration.svcinfo" />
+    <None Include="Service References\RoomService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\RoomTypeService\HotelManagement.Web.RoomTypeService.RoomTypeDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RoomTypeService\RoomTypeService.wsdl" />
+    <None Include="Service References\RoomTypeService\RoomTypeService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoomTypeService\RoomTypeService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoomTypeService\RoomTypeService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SettingService\HotelManagement.Web.SettingService.SettingDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SettingService\SettingService.wsdl" />
+    <None Include="Service References\SettingService\SettingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SettingService\SettingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SettingService\SettingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserMenuService\HotelManagement.Web.UserMenuService.UserMenuDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserMenuService\UserMenuService.wsdl" />
+    <None Include="Service References\UserMenuService\UserMenuService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserMenuService\UserMenuService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserMenuService\UserMenuService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\HotelManagement.Web.UserService.UserDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserService\UserService.disco" />
+    <None Include="Service References\UserService\configuration91.svcinfo" />
+    <None Include="Service References\UserService\configuration.svcinfo" />
+    <None Include="Service References\UserService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UserTypeService\HotelManagement.Web.UserTypeService.UserTypeDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserTypeService\HotelManagement.Web.UserTypeService.UserTypeEnum.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserTypeService\UserTypeService.disco" />
+    <None Include="Service References\UserTypeService\configuration91.svcinfo" />
+    <None Include="Service References\UserTypeService\configuration.svcinfo" />
+    <None Include="Service References\UserTypeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\RoomTypeService\RoomTypeService.disco" />
+    <None Include="Service References\RoomTypeService\configuration91.svcinfo" />
+    <None Include="Service References\RoomTypeService\configuration.svcinfo" />
+    <None Include="Service References\RoomTypeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SettingService\SettingService.disco" />
+    <None Include="Service References\SettingService\configuration91.svcinfo" />
+    <None Include="Service References\SettingService\configuration.svcinfo" />
+    <None Include="Service References\SettingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\MenuService\MenuService.disco" />
+    <None Include="Service References\MenuService\configuration91.svcinfo" />
+    <None Include="Service References\MenuService\configuration.svcinfo" />
+    <None Include="Service References\MenuService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UserMenuService\UserMenuService.disco" />
+    <None Include="Service References\UserMenuService\configuration91.svcinfo" />
+    <None Include="Service References\UserMenuService\configuration.svcinfo" />
+    <None Include="Service References\UserMenuService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -188,6 +395,59 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
+    <None Include="Service References\HotelChainService\HotelChainService.wsdl" />
+    <None Include="Service References\HotelChainService\HotelChainService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HotelChainService\HotelChainService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HotelChainService\HotelChainService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HotelService\HotelService.wsdl" />
+    <None Include="Service References\HotelService\HotelService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HotelService\HotelService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HotelService\HotelService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoomService\RoomService.wsdl" />
+    <None Include="Service References\RoomService\RoomService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoomService\RoomService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RoomService\RoomService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService.wsdl" />
+    <None Include="Service References\UserService\UserService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserTypeService\UserTypeService.wsdl" />
+    <None Include="Service References\UserTypeService\UserTypeService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserTypeService\UserTypeService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserTypeService\UserTypeService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserTypeService\UserTypeService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -271,13 +531,32 @@
     <Content Include="Views\Booking\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HotelManagement.Models\HotelManagement.Models.csproj">
-      <Project>{E5F44209-C475-4568-BEAC-9E9BC5E41B3D}</Project>
-      <Name>HotelManagement.Models</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <WCFMetadataStorage Include="Service References\BookingDetailService\" />
+    <WCFMetadataStorage Include="Service References\BookingService\" />
+    <WCFMetadataStorage Include="Service References\HotelChainService\" />
+    <WCFMetadataStorage Include="Service References\HotelService\" />
+    <WCFMetadataStorage Include="Service References\MenuService\" />
+    <WCFMetadataStorage Include="Service References\RoomService\" />
+    <WCFMetadataStorage Include="Service References\RoomTypeService\" />
+    <WCFMetadataStorage Include="Service References\SettingService\" />
+    <WCFMetadataStorage Include="Service References\UserMenuService\" />
+    <WCFMetadataStorage Include="Service References\UserService\" />
+    <WCFMetadataStorage Include="Service References\UserTypeService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BookingService\BookingService.wsdl" />
+    <None Include="Service References\BookingService\BookingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BookingService\BookingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BookingService\BookingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

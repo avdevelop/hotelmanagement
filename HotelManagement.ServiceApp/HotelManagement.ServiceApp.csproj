@@ -74,8 +74,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BookingDetailService.svc" />
     <Content Include="BookingService.svc" />
     <Content Include="Global.asax" />
+    <Content Include="HotelChainService.svc" />
+    <Content Include="HotelService.svc" />
+    <Content Include="MenuService.svc" />
+    <Content Include="RoomService.svc" />
+    <Content Include="RoomTypeService.svc" />
+    <Content Include="SettingService.svc" />
+    <Content Include="UserMenuService.svc" />
+    <Content Include="UserService.svc" />
+    <Content Include="UserTypeService.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -86,17 +96,65 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="BookingDetailService.svc.cs">
+      <DependentUpon>BookingDetailService.svc</DependentUpon>
+    </Compile>
     <Compile Include="BookingService.svc.cs">
       <DependentUpon>BookingService.svc</DependentUpon>
     </Compile>
+    <Compile Include="DTO\BookingDetailDTO.cs" />
     <Compile Include="DTO\BookingDTO.cs" />
+    <Compile Include="DTO\HotelChainDTO.cs" />
+    <Compile Include="DTO\HotelDTO.cs" />
+    <Compile Include="DTO\MenuDTO.cs" />
+    <Compile Include="DTO\RoomDTO.cs" />
+    <Compile Include="DTO\RoomTypeDTO.cs" />
+    <Compile Include="DTO\SettingDTO.cs" />
     <Compile Include="DTO\UserDTO.cs" />
+    <Compile Include="DTO\UserMenuDTO.cs" />
     <Compile Include="DTO\UserTypeDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HotelChainService.svc.cs">
+      <DependentUpon>HotelChainService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="HotelService.svc.cs">
+      <DependentUpon>HotelService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="IBookingDetailService.cs" />
     <Compile Include="IBookingService.cs" />
+    <Compile Include="IHotelChainService.cs" />
+    <Compile Include="IHotelService.cs" />
+    <Compile Include="IMenuService.cs" />
+    <Compile Include="IRoomService.cs" />
+    <Compile Include="IRoomTypeService.cs" />
+    <Compile Include="ISettingService.cs" />
+    <Compile Include="IUserMenuService.cs" />
+    <Compile Include="IUserService.cs" />
+    <Compile Include="IUserTypeService.cs" />
+    <Compile Include="MenuService.svc.cs">
+      <DependentUpon>MenuService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomService.svc.cs">
+      <DependentUpon>RoomService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="RoomTypeService.svc.cs">
+      <DependentUpon>RoomTypeService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SettingService.svc.cs">
+      <DependentUpon>SettingService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="UserMenuService.svc.cs">
+      <DependentUpon>UserMenuService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="UserService.svc.cs">
+      <DependentUpon>UserService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="UserTypeService.svc.cs">
+      <DependentUpon>UserTypeService.svc</DependentUpon>
+    </Compile>
     <Compile Include="WCFNinject.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -122,8 +180,8 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51539</DevelopmentServerPort>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>50373</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

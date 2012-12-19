@@ -12,20 +12,16 @@ using System.Web;
 using System.ComponentModel;
 using System.Runtime.Serialization;
 
-namespace HotelManagement.ServiceApp
-{
-    [DataContract]
+namespace HotelManagement.Models
+{    
     public class RoomType
     {
-        [DataMember]
         [DisplayName("Room Type ID")]
         public virtual int Id { get; set; }
 
-        [DataMember]
         [DisplayName("Room Type")]
         public virtual string Name { get; set; }
 
-        [DataMember]
         [DisplayName("Maximum Occupancy")]
         public virtual int MaxOccupants { get; set; }
 

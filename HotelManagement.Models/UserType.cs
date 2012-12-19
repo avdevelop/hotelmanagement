@@ -4,57 +4,53 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace HotelManagement.ServiceApp
-{
-    [DataContract]
+namespace HotelManagement.Models
+{    
     public class UserType
-    {
-        [DataMember]
+    {        
         public virtual int Id { get; set; }
-
-        [DataMember]
         public virtual string Name { get; set; }
 
-    //    public UserType()
-    //    { 
-        
-    //    }
+        public UserType()
+        {
 
-    //    public UserType(int id, string name)
-    //    {
-    //        Id = id;
-    //        Name = name;
-    //    }
+        }
 
-    //    public override bool Equals(object obj)
-    //    {
-    //        if (obj == null)
-    //        {
-    //            return false;
-    //        }
+        public UserType(int id, string name)
+        {
+            Id = id;
+            Name = name;
+        }
 
-    //        var t = obj as UserType;
-    //        if (t == null)
-    //        {
-    //            return false;
-    //        }
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
 
-    //        if (Id == t.Id)
-    //        {
-    //            return true;
-    //        }
-    //        return false;
-    //    }
+            var t = obj as UserType;
+            if (t == null)
+            {
+                return false;
+            }
 
-    //    public override int GetHashCode()
-    //    {
-    //        return (Name + "|" + Id).GetHashCode();
-    //    }        
+            if (Id == t.Id)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return (Name + "|" + Id).GetHashCode();
+        }
     }
 
-    //public enum UserTypeEnum
-    //{ 
-    //    Admin = 1,
-    //    Normal = 2
-    //}
+    public enum UserTypeEnum
+    {
+        Admin = 1,
+        Normal = 2
+    }
 }

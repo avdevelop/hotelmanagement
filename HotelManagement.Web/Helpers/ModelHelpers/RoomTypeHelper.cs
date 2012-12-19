@@ -9,13 +9,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using HotelManagement.Models;
+using HotelManagement.Web.RoomTypeService;
 
 namespace HotelManagement.Helpers.ModelHelpers
 {
     public static class RoomTypeHelper
     {
-        public static RoomType Instance(this RoomType roomType, string format)
+        public static RoomTypeDTO Instance(this RoomTypeDTO roomType, string format)
         {
             switch (format)
             { 

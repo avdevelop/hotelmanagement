@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using HotelManagement.ServiceApp.DTO;
 
 namespace HotelManagement.ServiceApp
 {
@@ -12,18 +13,15 @@ namespace HotelManagement.ServiceApp
     public interface IBookingService
     {
         [OperationContract]
-        List<A> GetAll1();
+        IEnumerable<BookingDTO> GetAll();
 
         [OperationContract]
-        IEnumerable<HotelManagement.ServiceApp.DTO.Booking> GetAll();
+        BookingDTO GetBooking(int id);
 
         [OperationContract]
-        Booking GetBooking(int id);
+        void Save(BookingDTO obj);
 
         [OperationContract]
-        void Save(Booking obj);
-
-        [OperationContract]
-        void Delete(Booking obj);
+        void Delete(BookingDTO obj);
     }    
 }

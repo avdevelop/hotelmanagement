@@ -10,22 +10,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using HotelManagement.Models;
 using System.Collections;
 using HotelManagement.Helpers;
-using HotelManagement.Repository;
+using HotelManagement.Web.HotelService;
+using HotelManagement.Web.HotelChainService;
+using HotelManagement.Web.UserTypeService;
 
 namespace HotelManagement.Controllers
 {
     public class HotelController : BaseController
     {
-        private IRepository<Hotel> hotelRepository;
-        private IRepository<HotelChain> hotelChainRepository;
+        private IHotelService hotelService;
+        private IHotelChainService hotelChainService;
 
-        public HotelController(IRepository<Hotel> hotelRepository, IRepository<HotelChain> hotelChainRepository)
+        public HotelController(IHotelService hotelService, IHotelChainService hotelChainService)
         {
-            this.hotelRepository = hotelRepository;
-            this.hotelChainRepository = hotelChainRepository;
+            this.hotelService = hotelService;
+            this.hotelChainService = hotelChainService;
         }
 
         //
@@ -33,7 +34,7 @@ namespace HotelManagement.Controllers
         // GET: /Hotel/Index
         public ActionResult Index()
         {
-            var hotels = hotelRepository.Get();
+            var hotels = hotelService.GetAll();
             ReturnUrlSet();
             return View("Index", hotels);
         }
@@ -43,13 +44,13 @@ namespace HotelManagement.Controllers
         [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Edit(int id)
         {
-            List<HotelChain> hotelChains = hotelChainRepository.Get().ToList();
-            hotelChains.Insert(0, new HotelChain { Id = 0, Name = String.Empty });
+            List<HotelManagement.Web.HotelChainService.HotelChainDTO> hotelChains = hotelChainService.GetAll().ToList();
+            hotelChains.Insert(0, new HotelManagement.Web.HotelChainService.HotelChainDTO { Id = 0, Name = String.Empty });
             SelectList hotelChainList;
 
-            var hotel = hotelRepository.Get(id);
+            var hotel = hotelService.GetHotel(id);
                         
-            hotelChainList = new SelectList(hotelChains, "Id", "Name", hotel.HotelChain.Id);
+            hotelChainList = new SelectList(hotelChains, "Id", "Name", hotel.HotelChainDTO.Id);
             ViewBag.ValidationError = TempData["ValidationError"];            
 
             ViewBag.HotelChainList = hotelChainList;
@@ -60,16 +61,16 @@ namespace HotelManagement.Controllers
         //
         // GET: /Hotel/Add
         [Authenticate(UserTypeEnum.Admin)]
-        public ActionResult Add(Hotel hotel)
+        public ActionResult Add(HotelDTO hotel)
         {
-            List<HotelChain> hotelChains = hotelChainRepository.Get().ToList();
-            hotelChains.Insert(0, new HotelChain { Id = 0, Name = String.Empty });
+            List<HotelManagement.Web.HotelChainService.HotelChainDTO> hotelChains = hotelChainService.GetAll().ToList();
+            hotelChains.Insert(0, new HotelManagement.Web.HotelChainService.HotelChainDTO { Id = 0, Name = String.Empty });
             SelectList hotelChainList;
 
             if (hotel == null || TempData["HotelChainSelectedId"] == null)
             {
                 hotelChainList = new SelectList(hotelChains, "Id", "Name");
-                hotel = new Hotel();
+                hotel = new HotelDTO();
             }
             else
             {
@@ -85,19 +86,19 @@ namespace HotelManagement.Controllers
         //
         // POST: /Hotel/Create
         [Authenticate(UserTypeEnum.Admin)]
-        public ActionResult Create(Hotel hotel)
+        public ActionResult Create(HotelDTO hotel)
         {
             string error = ""; // hotelRepository.ValidateSave(hotel);
             ReturnUrlSet();
             if (error.Length == 0)
             {
-                hotelRepository.Save(hotel);
+                hotelService.Save(hotel);
                 return RedirectToAction("Success", "Hotel", new { message = "Successfully saved the Hotel." });
             }
             else
             {
                 TempData["ValidationError"] = error;
-                TempData["HotelChainSelectedId"] = hotel.HotelChain.Id;
+                TempData["HotelChainSelectedId"] = hotel.HotelChainDTO.Id;
                 return RedirectToAction("Add", "Hotel", hotel);
             }
         }
@@ -113,14 +114,14 @@ namespace HotelManagement.Controllers
         //
         // POST: /Hotel/Delete/hotel
         [Authenticate(UserTypeEnum.Admin)]
-        public ActionResult Delete(Hotel hotel, int? id)
+        public ActionResult Delete(HotelDTO hotel, int? id)
         {
             string error = ""; // hotelRepository.ValidateDelete(hotel);
             ReturnUrlSet();
             if (error.Length == 0)
             {
-                hotel = hotelRepository.Get(hotel.Id);
-                hotelRepository.Delete(hotel);
+                hotel = hotelService.GetHotel(hotel.Id);
+                hotelService.Delete(hotel);
                 return View("Success", (object)"Hotel deleted successfully.");
             }
             else

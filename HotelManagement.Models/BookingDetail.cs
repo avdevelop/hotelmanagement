@@ -11,24 +11,14 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace HotelManagement.ServiceApp
-{
-    [DataContract]
+namespace HotelManagement.Models
+{   
     public class BookingDetail
-    {
-        [DataMember]
+    {        
         public virtual int Id { get; set; }
-
-        [DataMember]
         public virtual Booking Booking { get; set; }
-
-        [DataMember]
         public virtual Room Room { get; set; }
-
-        [DataMember]
         public virtual DateTime Date { get; set; }
-
-        [DataMember]
         public virtual DateTime Deleted { get; set; }
         
         public override bool Equals(object obj)

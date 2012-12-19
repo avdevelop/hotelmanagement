@@ -8,6 +8,8 @@ using Ninject.Extensions.Wcf;
 using Ninject;
 using Ninject.Web.Common;
 using AutoMapper;
+using HotelManagement.Models;
+using HotelManagement.ServiceApp.DTO;
 
 namespace HotelManagement.ServiceApp
 {
@@ -15,13 +17,30 @@ namespace HotelManagement.ServiceApp
     {
         protected override IKernel CreateKernel()
         {
-            Mapper.CreateMap<Booking, HotelManagement.ServiceApp.DTO.Booking>();
-            Mapper.CreateMap<User, HotelManagement.ServiceApp.DTO.User>();
-            Mapper.CreateMap<UserType, HotelManagement.ServiceApp.DTO.UserType>();
+            //Mapper.CreateMap<HotelChain, HotelChainDTO>();
+            //Mapper.CreateMap<HotelChainDTO, HotelChain>();
 
-            //Mapper.CreateMap<IEnumerable<Booking>, IEnumerable<BookingDTO>>();
-            //Mapper.CreateMap<IEnumerable<User>, IEnumerable<UserDTO>>();
-            //Mapper.CreateMap<IEnumerable<UserType>, IEnumerable<UserTypeDTO>>();
+            //Mapper.CreateMap<Hotel, HotelDTO>();
+            //Mapper.CreateMap<HotelDTO, Hotel>();
+            
+            //Mapper.CreateMap<Booking, BookingDTO>();
+            //Mapper.CreateMap<BookingDTO, Booking>();
+
+            //Mapper.CreateMap<User, UserDTO>();
+            //Mapper.CreateMap<UserDTO, User>();
+
+            //Mapper.CreateMap<UserType, UserTypeDTO>();
+            //Mapper.CreateMap<UserTypeDTO, UserType>();
+
+            //Mapper.CreateMap<Setting, SettingDTO>();
+            //Mapper.CreateMap<SettingDTO, Setting>();
+
+            //Mapper.CreateMap<Menu, MenuDTO>();
+            //Mapper.CreateMap<MenuDTO, Menu>();
+
+            //Mapper.CreateMap<UserMenu, UserMenuDTO>();
+            //Mapper.CreateMap<UserMenuDTO, UserMenu>();
+
             Mapper.AssertConfigurationIsValid();
 
 
@@ -35,7 +54,7 @@ namespace HotelManagement.ServiceApp
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            Mapper.AssertConfigurationIsValid();
+           
         }
 
         protected void Session_Start(object sender, EventArgs e)

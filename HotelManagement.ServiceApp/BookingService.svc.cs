@@ -6,6 +6,8 @@ using System.ServiceModel;
 using System.Text;
 using HotelManagement.Repository;
 using AutoMapper;
+using HotelManagement.Models;
+using HotelManagement.ServiceApp.DTO;
 
 namespace HotelManagement.ServiceApp
 {
@@ -17,38 +19,29 @@ namespace HotelManagement.ServiceApp
         public BookingService(IRepository<Booking> bookingRepository)
         {
             this.bookingRepository = bookingRepository;
-        }
+        }        
 
-        public List<A> GetAll1()
-        {
-            List<A> a = new List<A>();
-            a.Add(new A() { id = 1, name = "sdasdsd", b = new B() { mem1 = 11, mem2 = "666"  } });
-            a.Add(new A() { id = 2, name = "ggggg", b = new B() { mem1 = 123, mem2 = "77777" } });
-            a.Add(new A() { id = 3, name = "5555555", b = new B() { mem1 = 1556, mem2 = "88974" } });
-            return  a;
-        }
-
-        public IEnumerable<HotelManagement.ServiceApp.DTO.Booking> GetAll()
+        public IEnumerable<BookingDTO> GetAll()
         {
             IEnumerable<Booking> bookings = bookingRepository.Get().ToList();
-            IEnumerable<HotelManagement.ServiceApp.DTO.Booking> a = Mapper.Map<IEnumerable<Booking>, IEnumerable<HotelManagement.ServiceApp.DTO.Booking>>(bookings);
+            IEnumerable<BookingDTO> a = Mapper.Map<IEnumerable<Booking>, IEnumerable<BookingDTO>>(bookings);
             
             return a;
         }
 
-        public Booking GetBooking(int id)
+        public BookingDTO GetBooking(int id)
         {
-            return bookingRepository.Get(id);
+            return Mapper.Map<Booking, BookingDTO>(bookingRepository.Get(id));
         }
 
-        public void Save(Booking obj)
+        public void Save(BookingDTO obj)
         {
-            bookingRepository.Save(obj);
+            bookingRepository.Save(Mapper.Map<BookingDTO, Booking>(obj));
         }
 
-        public void Delete(Booking obj)
+        public void Delete(BookingDTO obj)
         {
-            bookingRepository.Delete(obj);
+            bookingRepository.Delete(Mapper.Map<BookingDTO,Booking>(obj));
         }        
     }
 }

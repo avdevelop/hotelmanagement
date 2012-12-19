@@ -9,7 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using HotelManagement.Models;
+using HotelManagement.Web.MenuService;
+using HotelManagement.Web.UserService;
 
 namespace HotelManagement.Helpers.CacheHelpers
 {
@@ -17,8 +18,8 @@ namespace HotelManagement.Helpers.CacheHelpers
     {
         public static void CreateSession(int userId,
             string userEmail,
-            List<Menu> userMenus,            
-            UserType userType)
+            List<MenuDTO> userMenus,            
+            UserTypeDTO userType)
         {
             UserId = userId;
             UserEmail = userEmail;
@@ -79,11 +80,11 @@ namespace HotelManagement.Helpers.CacheHelpers
             }
         }
 
-        public static List<Menu> UserMenus
+        public static List<MenuDTO> UserMenus
         {
             get
             {
-                return (List<Menu>)HttpContext.Current.Session["SessionCache.UserMenus"];               
+                return (List<MenuDTO>)HttpContext.Current.Session["SessionCache.UserMenus"];               
             }
 
             set
@@ -92,11 +93,11 @@ namespace HotelManagement.Helpers.CacheHelpers
             }
         }        
 
-        public static UserType UserType
+        public static UserTypeDTO UserType
         {
             get
             {
-                return (UserType)HttpContext.Current.Session["SessionCache.UserType"];
+                return (UserTypeDTO)HttpContext.Current.Session["SessionCache.UserType"];
             }
 
             set

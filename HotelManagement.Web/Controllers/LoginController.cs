@@ -11,26 +11,28 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using HotelManagement.Helpers;
-using HotelManagement.Models;
 using HotelManagement.Helpers.CacheHelpers;
 using HotelManagement.Helpers.ModelHelpers;
-using HotelManagement.Repository;
+using HotelManagement.Web.UserService;
+using HotelManagement.Web.UserMenuService;
+using HotelManagement.Web.MenuService;
+using HotelManagement.Web.UserTypeService;
 
 namespace HotelManagement.Controllers
 {
     public class LoginController : BaseController
     {
-        IRepository<User> userRepository;
-        IRepository<UserMenu> userMenuRepository;
-        IRepository<Menu> menuRepository;
+        IUserService userService;
+        IUserMenuService userMenuService;
+        IMenuService menuService;
 
-        public LoginController(IRepository<User> userRepository,
-            IRepository<UserMenu> userMenuRepository,
-            IRepository<Menu> menuRepository)
+        public LoginController(IUserService userService,
+            IUserMenuService userMenuService,
+            IMenuService menuService)
         {
-            this.userRepository = userRepository;
-            this.userMenuRepository = userMenuRepository;
-            this.menuRepository = menuRepository;
+            this.userService = userService;
+            this.userMenuService = userMenuService;
+            this.menuService = menuService;
         }
 
         //
@@ -47,21 +49,21 @@ namespace HotelManagement.Controllers
         public ActionResult Login(string email, string password)
         {
             string pass = MiscHelper.Encrypt(password);
-            User user = userRepository.GetByEmail(email);
+            HotelManagement.Web.UserService.UserDTO user = userService.GetByEmail(email);
             if (user != null && (UserHelper.Login(user, pass) == true || user.Password == String.Empty))
             {
-                List<UserMenu> userMenus = userMenuRepository.GetByUser(user).ToList();
-                List<Menu> menus = new List<Menu>();
+                List<UserMenuDTO> userMenus = userMenuService.GetByUser(user.Id).ToList();
+                List<HotelManagement.Web.MenuService.MenuDTO> menus = new List<HotelManagement.Web.MenuService.MenuDTO>();
 
-                foreach (UserMenu userMenu in userMenus)
+                foreach (UserMenuDTO userMenu in userMenus)
                 {
-                    menus.Add(menuRepository.Get().FirstOrDefault(m => m.Id == userMenu.Menu.Id));
+                    menus.Add(menuService.GetAll().FirstOrDefault(m => m.Id == userMenu.MenuDTO.Id));
                 }
 
                 SessionCache.CreateSession(user.Id, 
                     user.Email,
                     menus,                    
-                    user.UserType);
+                    user.UserTypeDTO);
 
                 if (TempData["ReturnUrl"] == null || String.IsNullOrEmpty((string)TempData["ReturnUrl"]))
                 {

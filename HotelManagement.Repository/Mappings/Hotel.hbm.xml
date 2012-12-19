@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="HotelManagement.ServiceApp" assembly="HotelManagement.Models">
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="HotelManagement.Models" assembly="HotelManagement.Models">
 
   <class name="Hotel" table="Hotel">    
     <id name="Id">

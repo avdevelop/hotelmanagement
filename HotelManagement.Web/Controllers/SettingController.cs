@@ -10,20 +10,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using HotelManagement.Models;
 using HotelManagement.Helpers.CacheHelpers;
 using HotelManagement.Helpers;
-using HotelManagement.Repository;
+using HotelManagement.Web.SettingService;
+using HotelManagement.Web.UserTypeService;
 
 namespace HotelManagement.Controllers
 {
     public class SettingController : BaseController
     {
-        private IRepository<Setting> settingRepository;
+        private ISettingService settingService;
 
-        public SettingController(IRepository<Setting> settingRepository)
+        public SettingController(ISettingService settingRepository)
         {
-            this.settingRepository = settingRepository;
+            this.settingService = settingRepository;
         }
 
         //
@@ -35,7 +35,7 @@ namespace HotelManagement.Controllers
             if (SessionCache.UserId != null)
             {
 
-                var hotels = settingRepository.Get();
+                var hotels = settingService.GetAll();
 
                 if (HttpContext.Request.UrlReferrer != null)
                 {
@@ -61,7 +61,7 @@ namespace HotelManagement.Controllers
         {
             if (SessionCache.UserId != null)
             {
-                var setting = settingRepository.Get(id);
+                var setting = settingService.GetSetting(id);
                 return View("Edit", setting);
             }
             else
@@ -73,7 +73,7 @@ namespace HotelManagement.Controllers
         //
         // GET: /Setting/Add
         [Authenticate(UserTypeEnum.Admin)]
-        public ActionResult Add(Setting setting)
+        public ActionResult Add(SettingDTO setting)
         {
             if (SessionCache.UserId != null)
             {
@@ -89,7 +89,7 @@ namespace HotelManagement.Controllers
         //
         // POST: /Setting/Create
         [Authenticate(UserTypeEnum.Admin)]
-        public ActionResult Create(Setting setting)
+        public ActionResult Create(SettingDTO setting)
         {
             if (SessionCache.UserId != null)
             {
@@ -97,7 +97,7 @@ namespace HotelManagement.Controllers
 
                 if (error.Length == 0)
                 {
-                    settingRepository.Save(setting);
+                    settingService.Save(setting);
                     return RedirectToAction("Success", "Setting", new { message = "Successfully saved the Setting." });
                 }
                 else
@@ -129,7 +129,7 @@ namespace HotelManagement.Controllers
         //
         // POST: /Setting/Delete/setting
         [Authenticate(UserTypeEnum.Admin)]
-        public ActionResult Delete(Setting setting, int? id)
+        public ActionResult Delete(SettingDTO setting, int? id)
         {
             if (SessionCache.UserId != null)
             {
@@ -137,8 +137,8 @@ namespace HotelManagement.Controllers
 
                 if (error.Length == 0)
                 {
-                    setting = settingRepository.Get(setting.Id);
-                    settingRepository.Delete(setting);
+                    setting = settingService.GetSetting(setting.Id);
+                    settingService.Delete(setting);
                     return View("Success", (object)"Setting deleted successfully.");
                 }
                 else

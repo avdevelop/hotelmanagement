@@ -9,13 +9,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using HotelManagement.Models;
+using HotelManagement.Web.UserService;
 
 namespace HotelManagement.Helpers.ModelHelpers
 {
     public static class UserHelper
     {
-        public static bool Login(User user, string pass)
+        public static bool Login(UserDTO user, string pass)
         {
             if (user.Password.Equals(pass))
             {

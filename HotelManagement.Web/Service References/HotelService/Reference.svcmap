@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6e720db0-6456-4256-99e2-eb90ed82095f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="Iesi.Collections" />
+      <ReferencedAssembly AssemblyName="Microsoft.CSharp" />
+      <ReferencedAssembly AssemblyName="Microsoft.Web.Infrastructure" />
+      <ReferencedAssembly AssemblyName="mscorlib" />
+      <ReferencedAssembly AssemblyName="NHibernate" />
+      <ReferencedAssembly AssemblyName="Ninject" />
+      <ReferencedAssembly AssemblyName="Ninject.Web.Common" />
+      <ReferencedAssembly AssemblyName="Ninject.Web.Mvc" />
+      <ReferencedAssembly AssemblyName="nunit.framework" />
+      <ReferencedAssembly AssemblyName="Rhino.Mocks" />
+      <ReferencedAssembly AssemblyName="RouteDebugger" />
+      <ReferencedAssembly AssemblyName="System" />
+      <ReferencedAssembly AssemblyName="System.ComponentModel.DataAnnotations" />
+      <ReferencedAssembly AssemblyName="System.Configuration" />
+      <ReferencedAssembly AssemblyName="System.Core" />
+      <ReferencedAssembly AssemblyName="System.Data" />
+      <ReferencedAssembly AssemblyName="System.Data.DataSetExtensions" />
+      <ReferencedAssembly AssemblyName="System.Data.Services" />
+      <ReferencedAssembly AssemblyName="System.Drawing" />
+      <ReferencedAssembly AssemblyName="System.EnterpriseServices" />
+      <ReferencedAssembly AssemblyName="System.Net.Http" />
+      <ReferencedAssembly AssemblyName="System.Net.Http.Formatting" />
+      <ReferencedAssembly AssemblyName="System.Net.Http.WebRequest" />
+      <ReferencedAssembly AssemblyName="System.Runtime.Serialization" />
+      <ReferencedAssembly AssemblyName="System.ServiceModel" />
+      <ReferencedAssembly AssemblyName="System.ServiceModel.Activation" />
+      <ReferencedAssembly AssemblyName="System.ServiceModel.Web" />
+      <ReferencedAssembly AssemblyName="System.Web" />
+      <ReferencedAssembly AssemblyName="System.Web.Abstractions" />
+      <ReferencedAssembly AssemblyName="System.Web.ApplicationServices" />
+      <ReferencedAssembly AssemblyName="System.Web.DynamicData" />
+      <ReferencedAssembly AssemblyName="System.Web.Entity" />
+      <ReferencedAssembly AssemblyName="System.Web.Extensions" />
+      <ReferencedAssembly AssemblyName="System.Web.Helpers" />
+      <ReferencedAssembly AssemblyName="System.Web.Http" />
+      <ReferencedAssembly AssemblyName="System.Web.Http.WebHost" />
+      <ReferencedAssembly AssemblyName="System.Web.Mvc" />
+      <ReferencedAssembly AssemblyName="System.Web.Razor" />
+      <ReferencedAssembly AssemblyName="System.Web.Routing" />
+      <ReferencedAssembly AssemblyName="System.Web.Services" />
+      <ReferencedAssembly AssemblyName="System.Web.WebPages" />
+      <ReferencedAssembly AssemblyName="System.Web.WebPages.Deployment" />
+      <ReferencedAssembly AssemblyName="System.Web.WebPages.Razor" />
+      <ReferencedAssembly AssemblyName="System.Xml" />
+      <ReferencedAssembly AssemblyName="System.Xml.Linq" />
+      <ReferencedAssembly AssemblyName="WebActivator" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50373/HotelService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="HotelService.wsdl" MetadataType="Wsdl" ID="a7268819-f3a2-4737-aba8-3a1fa619c8d3" SourceId="1" SourceUrl="http://localhost:50373/HotelService.svc?wsdl" />
+    <MetadataFile FileName="HotelService.xsd" MetadataType="Schema" ID="d599f542-2f8f-47d4-a515-93088544d0e5" SourceId="1" SourceUrl="http://localhost:50373/HotelService.svc?xsd=xsd0" />
+    <MetadataFile FileName="HotelService1.xsd" MetadataType="Schema" ID="2cbd01e7-b31d-4e3d-b7cc-66569bde13de" SourceId="1" SourceUrl="http://localhost:50373/HotelService.svc?xsd=xsd2" />
+    <MetadataFile FileName="HotelService.disco" MetadataType="Disco" ID="a9010ae7-aeb5-47d9-88bd-6b15195df184" SourceId="1" SourceUrl="http://localhost:50373/HotelService.svc?disco" />
+    <MetadataFile FileName="HotelService2.xsd" MetadataType="Schema" ID="341655ff-667e-44bd-9d4a-b78a48d866f2" SourceId="1" SourceUrl="http://localhost:50373/HotelService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

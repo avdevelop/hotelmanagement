@@ -11,30 +11,17 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace HotelManagement.ServiceApp
-{
-    [DataContract]
-    [KnownType(typeof(User))]
+namespace HotelManagement.Models
+{    
     public class Booking
-    {
-        [DataMember]
-        public virtual int Id { get; set; }
-
-        [DataMember]
+    {        
+        public virtual int Id { get; set; }       
         public virtual User User { get; set; }
-
-        [DataMember]
         public virtual string Email { get; set; }
-
-        [DataMember]
         public virtual string Phone { get; set; }
-
-        [DataMember]
         public virtual DateTime Created { get; set; }
-
-        [DataMember]
         public virtual DateTime Modified { get; set; }
-
+        
         public override bool Equals(object obj)
         {
             if (obj == null)

@@ -11,30 +11,16 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace HotelManagement.ServiceApp
-{
-    [DataContract]
+namespace HotelManagement.Models
+{    
     public class Menu
-    {
-        [DataMember]
+    {        
         public virtual int Id { get; set; }
-
-        [DataMember]
         public virtual string Name { get; set; }
-
-        [DataMember]
         public virtual string Description { get; set; }
-
-        [DataMember]
         public virtual int Order { get; set; }
-
-        [DataMember]
         public virtual string Action { get; set; }
-
-        [DataMember]
         public virtual string Controller { get; set; }
-
-        [DataMember]
         public virtual string Tooltip { get; set; }
 
         public override bool Equals(object obj)

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UserTypeService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50373/UserTypeService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50373/UserTypeService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50373/UserTypeService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/HotelManagement.ServiceApp.DTO" />
+      <xsd:import schemaLocation="http://localhost:50373/UserTypeService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/HotelManagement.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUserTypeService_GetAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAll" />
+  </wsdl:message>
+  <wsdl:message name="IUserTypeService_GetAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserTypeService_GetUserType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserType" />
+  </wsdl:message>
+  <wsdl:message name="IUserTypeService_GetUserType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserTypeService_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save" />
+  </wsdl:message>
+  <wsdl:message name="IUserTypeService_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserTypeService_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="IUserTypeService_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserTypeService_UserType_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserType" />
+  </wsdl:message>
+  <wsdl:message name="IUserTypeService_UserType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUserTypeService">
+    <wsdl:operation name="GetAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserTypeService/GetAll" message="tns:IUserTypeService_GetAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserTypeService/GetAllResponse" message="tns:IUserTypeService_GetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserTypeService/GetUserType" message="tns:IUserTypeService_GetUserType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserTypeService/GetUserTypeResponse" message="tns:IUserTypeService_GetUserType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserTypeService/Save" message="tns:IUserTypeService_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserTypeService/SaveResponse" message="tns:IUserTypeService_Save_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserTypeService/Delete" message="tns:IUserTypeService_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserTypeService/DeleteResponse" message="tns:IUserTypeService_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserTypeService/UserType" message="tns:IUserTypeService_UserType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserTypeService/UserTypeResponse" message="tns:IUserTypeService_UserType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUserTypeService" type="tns:IUserTypeService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAll">
+      <soap:operation soapAction="http://tempuri.org/IUserTypeService/GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserType">
+      <soap:operation soapAction="http://tempuri.org/IUserTypeService/GetUserType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <soap:operation soapAction="http://tempuri.org/IUserTypeService/Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/IUserTypeService/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserType">
+      <soap:operation soapAction="http://tempuri.org/IUserTypeService/UserType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserTypeService">
+    <wsdl:port name="BasicHttpBinding_IUserTypeService" binding="tns:BasicHttpBinding_IUserTypeService">
+      <soap:address location="http://localhost:50373/UserTypeService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
