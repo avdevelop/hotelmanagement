@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using HotelManagement.ServiceApp.DTO;
+using HotelManagement.DTO;
 using HotelManagement.Models;
 
 namespace HotelManagement.ServiceApp

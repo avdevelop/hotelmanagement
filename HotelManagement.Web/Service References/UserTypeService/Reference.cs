@@ -9,100 +9,26 @@
 //------------------------------------------------------------------------------
 
 namespace HotelManagement.Web.UserTypeService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UserTypeDTO", Namespace="http://schemas.datacontract.org/2004/07/HotelManagement.ServiceApp.DTO")]
-    [System.SerializableAttribute()]
-    public partial class UserTypeDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UserTypeEnum", Namespace="http://schemas.datacontract.org/2004/07/HotelManagement.Models")]
-    public enum UserTypeEnum : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Admin = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Normal = 2,
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserTypeService.IUserTypeService")]
     public interface IUserTypeService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserTypeService/GetAll", ReplyAction="http://tempuri.org/IUserTypeService/GetAllResponse")]
-        HotelManagement.Web.UserTypeService.UserTypeDTO[] GetAll();
+        HotelManagement.DTO.UserTypeDTO[] GetAll();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserTypeService/GetUserType", ReplyAction="http://tempuri.org/IUserTypeService/GetUserTypeResponse")]
-        HotelManagement.Web.UserTypeService.UserTypeDTO GetUserType(int id);
+        HotelManagement.DTO.UserTypeDTO GetUserType(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserTypeService/Save", ReplyAction="http://tempuri.org/IUserTypeService/SaveResponse")]
-        void Save(HotelManagement.Web.UserTypeService.UserTypeDTO obj);
+        void Save(HotelManagement.DTO.UserTypeDTO obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserTypeService/Delete", ReplyAction="http://tempuri.org/IUserTypeService/DeleteResponse")]
-        void Delete(HotelManagement.Web.UserTypeService.UserTypeDTO obj);
+        void Delete(HotelManagement.DTO.UserTypeDTO obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserTypeService/UserType", ReplyAction="http://tempuri.org/IUserTypeService/UserTypeResponse")]
-        HotelManagement.Web.UserTypeService.UserTypeEnum UserType(int id);
+        HotelManagement.DTO.UserTypeEnum UserType(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -132,23 +58,23 @@ namespace HotelManagement.Web.UserTypeService {
                 base(binding, remoteAddress) {
         }
         
-        public HotelManagement.Web.UserTypeService.UserTypeDTO[] GetAll() {
+        public HotelManagement.DTO.UserTypeDTO[] GetAll() {
             return base.Channel.GetAll();
         }
         
-        public HotelManagement.Web.UserTypeService.UserTypeDTO GetUserType(int id) {
+        public HotelManagement.DTO.UserTypeDTO GetUserType(int id) {
             return base.Channel.GetUserType(id);
         }
         
-        public void Save(HotelManagement.Web.UserTypeService.UserTypeDTO obj) {
+        public void Save(HotelManagement.DTO.UserTypeDTO obj) {
             base.Channel.Save(obj);
         }
         
-        public void Delete(HotelManagement.Web.UserTypeService.UserTypeDTO obj) {
+        public void Delete(HotelManagement.DTO.UserTypeDTO obj) {
             base.Channel.Delete(obj);
         }
         
-        public HotelManagement.Web.UserTypeService.UserTypeEnum UserType(int id) {
+        public HotelManagement.DTO.UserTypeEnum UserType(int id) {
             return base.Channel.UserType(id);
         }
     }

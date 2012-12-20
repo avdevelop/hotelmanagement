@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace HotelManagement.ServiceApp.DTO
+namespace HotelManagement.DTO
 {
-    public class RoomDTO
+    public class HotelChainDTO
     {        
         public virtual int Id { get; set; }
         public virtual string Name { get; set; }
-        public virtual HotelDTO HotelDTO { get; set; }
-        public virtual RoomTypeDTO RoomTypeDTO { get; set; }
     }
 }

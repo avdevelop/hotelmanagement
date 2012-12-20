@@ -9,102 +9,23 @@
 //------------------------------------------------------------------------------
 
 namespace HotelManagement.Web.RoomTypeService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RoomTypeDTO", Namespace="http://schemas.datacontract.org/2004/07/HotelManagement.ServiceApp.DTO")]
-    [System.SerializableAttribute()]
-    public partial class RoomTypeDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int MaxOccupantsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int MaxOccupants {
-            get {
-                return this.MaxOccupantsField;
-            }
-            set {
-                if ((this.MaxOccupantsField.Equals(value) != true)) {
-                    this.MaxOccupantsField = value;
-                    this.RaisePropertyChanged("MaxOccupants");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RoomTypeService.IRoomTypeService")]
     public interface IRoomTypeService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoomTypeService/GetAll", ReplyAction="http://tempuri.org/IRoomTypeService/GetAllResponse")]
-        HotelManagement.Web.RoomTypeService.RoomTypeDTO[] GetAll();
+        HotelManagement.DTO.RoomTypeDTO[] GetAll();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoomTypeService/GetRoom", ReplyAction="http://tempuri.org/IRoomTypeService/GetRoomResponse")]
-        HotelManagement.Web.RoomTypeService.RoomTypeDTO GetRoom(int id);
+        HotelManagement.DTO.RoomTypeDTO GetRoom(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoomTypeService/Save", ReplyAction="http://tempuri.org/IRoomTypeService/SaveResponse")]
-        void Save(HotelManagement.Web.RoomTypeService.RoomTypeDTO obj);
+        void Save(HotelManagement.DTO.RoomTypeDTO obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRoomTypeService/Delete", ReplyAction="http://tempuri.org/IRoomTypeService/DeleteResponse")]
-        void Delete(HotelManagement.Web.RoomTypeService.RoomTypeDTO obj);
+        void Delete(HotelManagement.DTO.RoomTypeDTO obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -134,19 +55,19 @@ namespace HotelManagement.Web.RoomTypeService {
                 base(binding, remoteAddress) {
         }
         
-        public HotelManagement.Web.RoomTypeService.RoomTypeDTO[] GetAll() {
+        public HotelManagement.DTO.RoomTypeDTO[] GetAll() {
             return base.Channel.GetAll();
         }
         
-        public HotelManagement.Web.RoomTypeService.RoomTypeDTO GetRoom(int id) {
+        public HotelManagement.DTO.RoomTypeDTO GetRoom(int id) {
             return base.Channel.GetRoom(id);
         }
         
-        public void Save(HotelManagement.Web.RoomTypeService.RoomTypeDTO obj) {
+        public void Save(HotelManagement.DTO.RoomTypeDTO obj) {
             base.Channel.Save(obj);
         }
         
-        public void Delete(HotelManagement.Web.RoomTypeService.RoomTypeDTO obj) {
+        public void Delete(HotelManagement.DTO.RoomTypeDTO obj) {
             base.Channel.Delete(obj);
         }
     }

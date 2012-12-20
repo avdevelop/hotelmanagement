@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using HotelManagement.ServiceApp.DTO;
+using HotelManagement.DTO;
 
 namespace HotelManagement.ServiceApp
 {
@@ -23,5 +23,8 @@ namespace HotelManagement.ServiceApp
 
         [OperationContract]
         void Delete(SettingDTO obj);
+
+        [OperationContract]
+        SettingDTO GetByName(string name);
     }
 }

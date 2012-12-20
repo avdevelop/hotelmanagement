@@ -7,6 +7,7 @@ using HotelManagement.Helpers;
 using HotelManagement.Web.BookingService;
 using HotelManagement.Web.BookingDetailService;
 using HotelManagement.Web.RoomService;
+using HotelManagement.DTO;
 
 namespace HotelManagement.Controllers
 {
@@ -51,10 +52,10 @@ namespace HotelManagement.Controllers
         // GET: /Booking/CheckAvailability
         public ActionResult CheckAvailability(string arrDay, string arrMonth, string depDay, string depMonth, int persons)
         {
-            IEnumerable<HotelManagement.Web.RoomService.RoomDTO> rooms = roomService.GetAll().Where(r => r.RoomTypeDTO.MaxOccupants <= persons);
+            IEnumerable<RoomDTO> rooms = roomService.GetAll().Where(r => r.RoomType.MaxOccupants <= persons);
             IEnumerable<BookingDetailDTO> bookingDetails = null; // bookingDetailRepository.Get().Where(bd => bd.Date >= DateTime.Parse(arrivalDate) && bd.Date <= DateTime.Parse(departureDate));
 
-            rooms = rooms.Where(r => ! bookingDetails.Any(b => b.RoomDTO.Id == r.Id));
+            rooms = rooms.Where(r => ! bookingDetails.Any(b => b.Room.Id == r.Id));
 
             return View("Availability", rooms);
         }

@@ -1,4 +1,4 @@
-﻿@using HotelManagement.Models;
+﻿@using HotelManagement.DTO;
 
 @{
     ViewBag.Title = "Index";
@@ -16,7 +16,7 @@
             Click to edit Room
         </th>
     </tr>
-    @foreach (Room room in Model)
+    @foreach (RoomDTO room in Model)
     {
         <tr>
             <td>

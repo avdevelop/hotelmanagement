@@ -16,6 +16,7 @@ using HotelManagement.Web.UserTypeService;
 using HotelManagement.Web.UserMenuService;
 using HotelManagement.Web.MenuService;
 using HotelManagement.Web.UserService;
+using HotelManagement.DTO;
 
 namespace HotelManagement.Controllers
 {

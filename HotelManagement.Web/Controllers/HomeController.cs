@@ -12,6 +12,7 @@ using System.Web;
 using System.Web.Mvc;
 using HotelManagement.Helpers;
 using HotelManagement.Web.UserMenuService;
+using HotelManagement.DTO;
 
 namespace HotelManagement.Controllers
 {
@@ -30,7 +31,7 @@ namespace HotelManagement.Controllers
         public ActionResult Index()
         {
             List<UserMenuDTO> menuItems = userMenuService.GetAll().ToList();
-            string s = menuItems[0].UserDTO.Email;
+            string s = menuItems[0].User.Email;
             return View("Index");
         }
 

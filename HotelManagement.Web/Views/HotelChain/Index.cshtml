@@ -1,5 +1,5 @@
-﻿@using HotelManagement.Models;
-@using System.Collections;
+﻿@using System.Collections;
+@using HotelManagement.DTO;
 
 @{
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
@@ -7,10 +7,10 @@
 }
 <h2>Index</h2>
         
-@foreach (HotelChain hotelChain in ViewBag.HotelChains)
+@foreach (HotelChainDTO hotelChain in ViewBag.HotelChains)
 { 
     <h1>@hotelChain.Name</h1>
-    foreach (Hotel hotel in ((IEnumerable<Hotel>)ViewBag.Hotels).Where(h => h.HotelChain.Name == hotelChain.Name))
+    foreach (HotelDTO hotel in ((IEnumerable<HotelDTO>)ViewBag.Hotels).Where(h => h.HotelChain.Name == hotelChain.Name))
     { 
             @Html.ActionLink(@hotel.Name, "Index", "Hotel", null, null);<br />
     }

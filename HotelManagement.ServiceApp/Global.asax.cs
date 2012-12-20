@@ -9,38 +9,47 @@ using Ninject;
 using Ninject.Web.Common;
 using AutoMapper;
 using HotelManagement.Models;
-using HotelManagement.ServiceApp.DTO;
+using HotelManagement.DTO;
 
 namespace HotelManagement.ServiceApp
 {
     public class Global : NinjectHttpApplication
     {
         protected override IKernel CreateKernel()
-        {
-            //Mapper.CreateMap<HotelChain, HotelChainDTO>();
-            //Mapper.CreateMap<HotelChainDTO, HotelChain>();
-
-            //Mapper.CreateMap<Hotel, HotelDTO>();
-            //Mapper.CreateMap<HotelDTO, Hotel>();
-            
-            //Mapper.CreateMap<Booking, BookingDTO>();
-            //Mapper.CreateMap<BookingDTO, Booking>();
-
-            //Mapper.CreateMap<User, UserDTO>();
-            //Mapper.CreateMap<UserDTO, User>();
-
-            //Mapper.CreateMap<UserType, UserTypeDTO>();
+        {            
+            Mapper.CreateMap<UserType, UserTypeDTO>();
             //Mapper.CreateMap<UserTypeDTO, UserType>();
 
-            //Mapper.CreateMap<Setting, SettingDTO>();
-            //Mapper.CreateMap<SettingDTO, Setting>();
-
-            //Mapper.CreateMap<Menu, MenuDTO>();
+            Mapper.CreateMap<Menu, MenuDTO>();
             //Mapper.CreateMap<MenuDTO, Menu>();
+            
+            Mapper.CreateMap<User, UserDTO>();
+            //Mapper.CreateMap<UserDTO, User>();
 
-            //Mapper.CreateMap<UserMenu, UserMenuDTO>();
-            //Mapper.CreateMap<UserMenuDTO, UserMenu>();
+            Mapper.CreateMap<UserMenu, UserMenuDTO>();
+            //Mapper.CreateMap<UserMenuDTO, UserMenu>();            
 
+            Mapper.CreateMap<HotelChain, HotelChainDTO>();
+            //Mapper.CreateMap<HotelChainDTO, HotelChain>();
+
+            Mapper.CreateMap<Hotel, HotelDTO>();
+            //Mapper.CreateMap<HotelDTO, Hotel>();
+
+            Mapper.CreateMap<RoomType, RoomTypeDTO>();
+            //Mapper.CreateMap<RoomTypeDTO, RoomType>();
+
+            Mapper.CreateMap<Room, RoomDTO>();
+            //Mapper.CreateMap<RoomDTO, Room>();
+            
+            Mapper.CreateMap<Booking, BookingDTO>();
+            //Mapper.CreateMap<BookingDTO, Booking>();
+
+            Mapper.CreateMap<BookingDetail, BookingDetailDTO>();
+            //Mapper.CreateMap<BookingDetailDTO, BookingDetail>();
+            
+            Mapper.CreateMap<Setting, SettingDTO>();
+            //Mapper.CreateMap<SettingDTO, Setting>();
+            
             Mapper.AssertConfigurationIsValid();
 
 

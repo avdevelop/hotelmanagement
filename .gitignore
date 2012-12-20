@@ -355,3 +355,16 @@ TestResults
 /HotelManagement.Web/Bin/System.Web.WebPages.Deployment.xml
 /HotelManagement.Web/Bin/System.Web.WebPages.Razor.xml
 /HotelManagement.Web/Bin/System.Web.WebPages.xml
+/HotelManagement.DTO/bin/Debug/HotelManagement.DTO.dll
+/HotelManagement.DTO/bin/Debug/HotelManagement.DTO.pdb
+/HotelManagement.DTO/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/HotelManagement.DTO/obj/Debug/HotelManagement.DTO.csproj.FileListAbsolute.txt
+/HotelManagement.DTO/obj/Debug/HotelManagement.DTO.dll
+/HotelManagement.DTO/obj/Debug/HotelManagement.DTO.pdb
+/HotelManagement.ServiceApp/Bin/HotelManagement.DTO.dll
+/HotelManagement.ServiceApp/Bin/HotelManagement.DTO.pdb
+/HotelManagement.Tests/bin/Debug/HotelManagement.DTO.dll
+/HotelManagement.Tests/bin/Debug/HotelManagement.DTO.pdb
+/HotelManagement.Web/Bin/HotelManagement.DTO.dll
+/HotelManagement.Web/Bin/HotelManagement.DTO.pdb
+/HotelManagement.Web/obj/Debug/HotelManagement.Web.csprojResolveAssemblyReference.cache

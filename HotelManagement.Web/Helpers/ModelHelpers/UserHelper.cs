@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using HotelManagement.Web.UserService;
+using HotelManagement.DTO;
 
 namespace HotelManagement.Helpers.ModelHelpers
 {

@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement.Repository"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement.ServiceApp", "HotelManagement.ServiceApp\HotelManagement.ServiceApp.csproj", "{87CBA539-B50C-4F86-8DEA-1C72B55ADD7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelManagement.DTO", "HotelManagement.DTO\HotelManagement.DTO.csproj", "{6EA81A9C-0FD2-47D7-B575-C6CCDA879359}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{87CBA539-B50C-4F86-8DEA-1C72B55ADD7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87CBA539-B50C-4F86-8DEA-1C72B55ADD7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87CBA539-B50C-4F86-8DEA-1C72B55ADD7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EA81A9C-0FD2-47D7-B575-C6CCDA879359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EA81A9C-0FD2-47D7-B575-C6CCDA879359}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EA81A9C-0FD2-47D7-B575-C6CCDA879359}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EA81A9C-0FD2-47D7-B575-C6CCDA879359}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

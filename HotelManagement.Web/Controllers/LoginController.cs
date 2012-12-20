@@ -17,6 +17,7 @@ using HotelManagement.Web.UserService;
 using HotelManagement.Web.UserMenuService;
 using HotelManagement.Web.MenuService;
 using HotelManagement.Web.UserTypeService;
+using HotelManagement.DTO;
 
 namespace HotelManagement.Controllers
 {
@@ -49,21 +50,21 @@ namespace HotelManagement.Controllers
         public ActionResult Login(string email, string password)
         {
             string pass = MiscHelper.Encrypt(password);
-            HotelManagement.Web.UserService.UserDTO user = userService.GetByEmail(email);
+            UserDTO user = userService.GetByEmail(email);
             if (user != null && (UserHelper.Login(user, pass) == true || user.Password == String.Empty))
             {
                 List<UserMenuDTO> userMenus = userMenuService.GetByUser(user.Id).ToList();
-                List<HotelManagement.Web.MenuService.MenuDTO> menus = new List<HotelManagement.Web.MenuService.MenuDTO>();
+                List<MenuDTO> menus = new List<MenuDTO>();
 
                 foreach (UserMenuDTO userMenu in userMenus)
                 {
-                    menus.Add(menuService.GetAll().FirstOrDefault(m => m.Id == userMenu.MenuDTO.Id));
+                    menus.Add(menuService.GetAll().FirstOrDefault(m => m.Id == userMenu.Menu.Id));
                 }
 
                 SessionCache.CreateSession(user.Id, 
                     user.Email,
                     menus,                    
-                    user.UserTypeDTO);
+                    user.UserType);
 
                 if (TempData["ReturnUrl"] == null || String.IsNullOrEmpty((string)TempData["ReturnUrl"]))
                 {

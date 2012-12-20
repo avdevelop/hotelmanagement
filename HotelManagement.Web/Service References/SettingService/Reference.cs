@@ -9,118 +9,26 @@
 //------------------------------------------------------------------------------
 
 namespace HotelManagement.Web.SettingService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SettingDTO", Namespace="http://schemas.datacontract.org/2004/07/HotelManagement.ServiceApp.DTO")]
-    [System.SerializableAttribute()]
-    public partial class SettingDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Value {
-            get {
-                return this.ValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
-                    this.ValueField = value;
-                    this.RaisePropertyChanged("Value");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SettingService.ISettingService")]
     public interface ISettingService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISettingService/GetAll", ReplyAction="http://tempuri.org/ISettingService/GetAllResponse")]
-        HotelManagement.Web.SettingService.SettingDTO[] GetAll();
+        HotelManagement.DTO.SettingDTO[] GetAll();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISettingService/GetSetting", ReplyAction="http://tempuri.org/ISettingService/GetSettingResponse")]
-        HotelManagement.Web.SettingService.SettingDTO GetSetting(int id);
+        HotelManagement.DTO.SettingDTO GetSetting(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISettingService/Save", ReplyAction="http://tempuri.org/ISettingService/SaveResponse")]
-        void Save(HotelManagement.Web.SettingService.SettingDTO obj);
+        void Save(HotelManagement.DTO.SettingDTO obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISettingService/Delete", ReplyAction="http://tempuri.org/ISettingService/DeleteResponse")]
-        void Delete(HotelManagement.Web.SettingService.SettingDTO obj);
+        void Delete(HotelManagement.DTO.SettingDTO obj);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISettingService/GetByName", ReplyAction="http://tempuri.org/ISettingService/GetByNameResponse")]
+        HotelManagement.DTO.SettingDTO GetByName(string name);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -150,20 +58,24 @@ namespace HotelManagement.Web.SettingService {
                 base(binding, remoteAddress) {
         }
         
-        public HotelManagement.Web.SettingService.SettingDTO[] GetAll() {
+        public HotelManagement.DTO.SettingDTO[] GetAll() {
             return base.Channel.GetAll();
         }
         
-        public HotelManagement.Web.SettingService.SettingDTO GetSetting(int id) {
+        public HotelManagement.DTO.SettingDTO GetSetting(int id) {
             return base.Channel.GetSetting(id);
         }
         
-        public void Save(HotelManagement.Web.SettingService.SettingDTO obj) {
+        public void Save(HotelManagement.DTO.SettingDTO obj) {
             base.Channel.Save(obj);
         }
         
-        public void Delete(HotelManagement.Web.SettingService.SettingDTO obj) {
+        public void Delete(HotelManagement.DTO.SettingDTO obj) {
             base.Channel.Delete(obj);
+        }
+        
+        public HotelManagement.DTO.SettingDTO GetByName(string name) {
+            return base.Channel.GetByName(name);
         }
     }
 }

@@ -9,166 +9,23 @@
 //------------------------------------------------------------------------------
 
 namespace HotelManagement.Web.MenuService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MenuDTO", Namespace="http://schemas.datacontract.org/2004/07/HotelManagement.ServiceApp.DTO")]
-    [System.SerializableAttribute()]
-    public partial class MenuDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ActionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ControllerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OrderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TooltipField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Action {
-            get {
-                return this.ActionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ActionField, value) != true)) {
-                    this.ActionField = value;
-                    this.RaisePropertyChanged("Action");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Controller {
-            get {
-                return this.ControllerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ControllerField, value) != true)) {
-                    this.ControllerField = value;
-                    this.RaisePropertyChanged("Controller");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Order {
-            get {
-                return this.OrderField;
-            }
-            set {
-                if ((this.OrderField.Equals(value) != true)) {
-                    this.OrderField = value;
-                    this.RaisePropertyChanged("Order");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Tooltip {
-            get {
-                return this.TooltipField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TooltipField, value) != true)) {
-                    this.TooltipField = value;
-                    this.RaisePropertyChanged("Tooltip");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MenuService.IMenuService")]
     public interface IMenuService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMenuService/GetAll", ReplyAction="http://tempuri.org/IMenuService/GetAllResponse")]
-        HotelManagement.Web.MenuService.MenuDTO[] GetAll();
+        HotelManagement.DTO.MenuDTO[] GetAll();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMenuService/GetMenu", ReplyAction="http://tempuri.org/IMenuService/GetMenuResponse")]
-        HotelManagement.Web.MenuService.MenuDTO GetMenu(int id);
+        HotelManagement.DTO.MenuDTO GetMenu(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMenuService/Save", ReplyAction="http://tempuri.org/IMenuService/SaveResponse")]
-        void Save(HotelManagement.Web.MenuService.MenuDTO obj);
+        void Save(HotelManagement.DTO.MenuDTO obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMenuService/Delete", ReplyAction="http://tempuri.org/IMenuService/DeleteResponse")]
-        void Delete(HotelManagement.Web.MenuService.MenuDTO obj);
+        void Delete(HotelManagement.DTO.MenuDTO obj);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -198,19 +55,19 @@ namespace HotelManagement.Web.MenuService {
                 base(binding, remoteAddress) {
         }
         
-        public HotelManagement.Web.MenuService.MenuDTO[] GetAll() {
+        public HotelManagement.DTO.MenuDTO[] GetAll() {
             return base.Channel.GetAll();
         }
         
-        public HotelManagement.Web.MenuService.MenuDTO GetMenu(int id) {
+        public HotelManagement.DTO.MenuDTO GetMenu(int id) {
             return base.Channel.GetMenu(id);
         }
         
-        public void Save(HotelManagement.Web.MenuService.MenuDTO obj) {
+        public void Save(HotelManagement.DTO.MenuDTO obj) {
             base.Channel.Save(obj);
         }
         
-        public void Delete(HotelManagement.Web.MenuService.MenuDTO obj) {
+        public void Delete(HotelManagement.DTO.MenuDTO obj) {
             base.Channel.Delete(obj);
         }
     }

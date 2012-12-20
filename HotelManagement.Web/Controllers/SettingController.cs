@@ -13,7 +13,7 @@ using System.Web.Mvc;
 using HotelManagement.Helpers.CacheHelpers;
 using HotelManagement.Helpers;
 using HotelManagement.Web.SettingService;
-using HotelManagement.Web.UserTypeService;
+using HotelManagement.DTO;
 
 namespace HotelManagement.Controllers
 {

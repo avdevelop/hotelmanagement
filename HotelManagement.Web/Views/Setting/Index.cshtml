@@ -1,5 +1,6 @@
-﻿@using HotelManagement.Models;
-@model IEnumerable<Setting>
+﻿@using HotelManagement.DTO;
+
+@model IEnumerable<SettingDTO>
 
 @{
     ViewBag.Title = "Settings";
@@ -16,7 +17,7 @@
             Click to edit
         </th>
     </tr>
-    @foreach (Setting setting in Model)
+    @foreach (SettingDTO setting in Model)
     {
         <tr>
             <td>

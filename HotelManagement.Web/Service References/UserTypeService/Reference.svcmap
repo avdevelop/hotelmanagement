@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="17c75a39-cd0b-4721-a399-0535935bf654" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c32df193-6319-4213-a0be-4953f5bea09e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -14,52 +14,7 @@
     <UseSerializerForFaults>true</UseSerializerForFaults>
     <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
     <ReferencedAssemblies>
-      <ReferencedAssembly AssemblyName="Iesi.Collections" />
-      <ReferencedAssembly AssemblyName="Microsoft.CSharp" />
-      <ReferencedAssembly AssemblyName="Microsoft.Web.Infrastructure" />
-      <ReferencedAssembly AssemblyName="mscorlib" />
-      <ReferencedAssembly AssemblyName="NHibernate" />
-      <ReferencedAssembly AssemblyName="Ninject" />
-      <ReferencedAssembly AssemblyName="Ninject.Web.Common" />
-      <ReferencedAssembly AssemblyName="Ninject.Web.Mvc" />
-      <ReferencedAssembly AssemblyName="nunit.framework" />
-      <ReferencedAssembly AssemblyName="Rhino.Mocks" />
-      <ReferencedAssembly AssemblyName="RouteDebugger" />
-      <ReferencedAssembly AssemblyName="System" />
-      <ReferencedAssembly AssemblyName="System.ComponentModel.DataAnnotations" />
-      <ReferencedAssembly AssemblyName="System.Configuration" />
-      <ReferencedAssembly AssemblyName="System.Core" />
-      <ReferencedAssembly AssemblyName="System.Data" />
-      <ReferencedAssembly AssemblyName="System.Data.DataSetExtensions" />
-      <ReferencedAssembly AssemblyName="System.Data.Services" />
-      <ReferencedAssembly AssemblyName="System.Drawing" />
-      <ReferencedAssembly AssemblyName="System.EnterpriseServices" />
-      <ReferencedAssembly AssemblyName="System.Net.Http" />
-      <ReferencedAssembly AssemblyName="System.Net.Http.Formatting" />
-      <ReferencedAssembly AssemblyName="System.Net.Http.WebRequest" />
-      <ReferencedAssembly AssemblyName="System.Runtime.Serialization" />
-      <ReferencedAssembly AssemblyName="System.ServiceModel" />
-      <ReferencedAssembly AssemblyName="System.ServiceModel.Activation" />
-      <ReferencedAssembly AssemblyName="System.ServiceModel.Web" />
-      <ReferencedAssembly AssemblyName="System.Web" />
-      <ReferencedAssembly AssemblyName="System.Web.Abstractions" />
-      <ReferencedAssembly AssemblyName="System.Web.ApplicationServices" />
-      <ReferencedAssembly AssemblyName="System.Web.DynamicData" />
-      <ReferencedAssembly AssemblyName="System.Web.Entity" />
-      <ReferencedAssembly AssemblyName="System.Web.Extensions" />
-      <ReferencedAssembly AssemblyName="System.Web.Helpers" />
-      <ReferencedAssembly AssemblyName="System.Web.Http" />
-      <ReferencedAssembly AssemblyName="System.Web.Http.WebHost" />
-      <ReferencedAssembly AssemblyName="System.Web.Mvc" />
-      <ReferencedAssembly AssemblyName="System.Web.Razor" />
-      <ReferencedAssembly AssemblyName="System.Web.Routing" />
-      <ReferencedAssembly AssemblyName="System.Web.Services" />
-      <ReferencedAssembly AssemblyName="System.Web.WebPages" />
-      <ReferencedAssembly AssemblyName="System.Web.WebPages.Deployment" />
-      <ReferencedAssembly AssemblyName="System.Web.WebPages.Razor" />
-      <ReferencedAssembly AssemblyName="System.Xml" />
-      <ReferencedAssembly AssemblyName="System.Xml.Linq" />
-      <ReferencedAssembly AssemblyName="WebActivator" />
+      <ReferencedAssembly AssemblyName="HotelManagement.DTO" />
     </ReferencedAssemblies>
     <ReferencedDataContractTypes />
     <ServiceContractMappings />
@@ -68,12 +23,11 @@
     <MetadataSource Address="http://localhost:50373/UserTypeService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="UserTypeService1.xsd" MetadataType="Schema" ID="a3048583-b1a1-46b2-addc-3b4eb787dacf" SourceId="1" SourceUrl="http://localhost:50373/UserTypeService.svc?xsd=xsd1" />
-    <MetadataFile FileName="UserTypeService.wsdl" MetadataType="Wsdl" ID="91662455-3738-4532-a557-c904cd2d3ff6" SourceId="1" SourceUrl="http://localhost:50373/UserTypeService.svc?wsdl" />
-    <MetadataFile FileName="UserTypeService.xsd" MetadataType="Schema" ID="107979b1-159b-4d93-bbb5-925736186ae2" SourceId="1" SourceUrl="http://localhost:50373/UserTypeService.svc?xsd=xsd2" />
-    <MetadataFile FileName="UserTypeService.disco" MetadataType="Disco" ID="a1cb729e-c4b6-42ef-9cfc-1e18db32a2b7" SourceId="1" SourceUrl="http://localhost:50373/UserTypeService.svc?disco" />
-    <MetadataFile FileName="UserTypeService3.xsd" MetadataType="Schema" ID="7cb5990c-4caa-4cb2-a369-41fc1f14aa0b" SourceId="1" SourceUrl="http://localhost:50373/UserTypeService.svc?xsd=xsd3" />
-    <MetadataFile FileName="UserTypeService2.xsd" MetadataType="Schema" ID="7463230f-572b-4ea3-9d91-9c9fee4a51e3" SourceId="1" SourceUrl="http://localhost:50373/UserTypeService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserTypeService1.xsd" MetadataType="Schema" ID="6f902bbb-ddc3-42c5-a8c6-6a74f2a041ef" SourceId="1" SourceUrl="http://localhost:50373/UserTypeService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserTypeService.disco" MetadataType="Disco" ID="b18caf9d-aa6d-4ebb-aa16-ab2634e64398" SourceId="1" SourceUrl="http://localhost:50373/UserTypeService.svc?disco" />
+    <MetadataFile FileName="UserTypeService.xsd" MetadataType="Schema" ID="d3b2d054-b26e-4cc1-9030-374335b91264" SourceId="1" SourceUrl="http://localhost:50373/UserTypeService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserTypeService.wsdl" MetadataType="Wsdl" ID="1cab352c-e3bd-44a4-a85a-86a89703ab0c" SourceId="1" SourceUrl="http://localhost:50373/UserTypeService.svc?wsdl" />
+    <MetadataFile FileName="UserTypeService3.xsd" MetadataType="Schema" ID="d2e6719b-1ce8-4c69-97ce-3b1086087768" SourceId="1" SourceUrl="http://localhost:50373/UserTypeService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

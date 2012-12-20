@@ -1,8 +1,8 @@
-﻿@using HotelManagement.Models;
+﻿@using HotelManagement.DTO;
 @using System.Collections.Generic;
 @using HotelManagement.Helpers.CacheHelpers;
 
-@model User
+@model UserDTO
 @{
     ViewBag.Title = "Edit User Details";
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
@@ -33,11 +33,11 @@
             <h3>User Menu Access:</h3>
         </fieldset>
         <div>
-            @foreach (Menu menu in @ViewBag.AllMenu)
+            @foreach (MenuDTO menu in @ViewBag.AllMenu)
             { 
                 <fieldset>
                     @Html.Label(menu.Name)
-                    @Html.CheckBox(menu.Name, ((IEnumerable<UserMenu>)ViewBag.UserMenu).FirstOrDefault(um => um.Menu.Equals(menu)) != null)
+                    @Html.CheckBox(menu.Name, ((IEnumerable<UserMenuDTO>)ViewBag.UserMenu).FirstOrDefault(um => um.Menu.Equals(menu)) != null)
                 </fieldset>
             }
         </div>

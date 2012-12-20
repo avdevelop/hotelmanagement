@@ -1,6 +1,6 @@
-﻿@using HotelManagement.Models;
+﻿@using HotelManagement.DTO;
 
-@model IEnumerable<Hotel>
+@model IEnumerable<HotelDTO>
 
 @{
     ViewBag.Title = "Hotels";
@@ -18,7 +18,7 @@
             Click to edit
         </th>
     </tr>
-    @foreach (Hotel hotel in Model)
+    @foreach (HotelDTO hotel in Model)
     {   
         <tr id="tr@(hotel.Id)">
             <td>

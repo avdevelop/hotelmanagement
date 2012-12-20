@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5134e6a3-490f-46e0-b464-4719add68fa0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bcec8245-c12f-41f0-8e71-4ad60603be37" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -14,63 +14,20 @@
     <UseSerializerForFaults>true</UseSerializerForFaults>
     <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
     <ReferencedAssemblies>
-      <ReferencedAssembly AssemblyName="Iesi.Collections" />
-      <ReferencedAssembly AssemblyName="Microsoft.CSharp" />
-      <ReferencedAssembly AssemblyName="Microsoft.Web.Infrastructure" />
-      <ReferencedAssembly AssemblyName="mscorlib" />
-      <ReferencedAssembly AssemblyName="NHibernate" />
-      <ReferencedAssembly AssemblyName="Ninject" />
-      <ReferencedAssembly AssemblyName="Ninject.Web.Common" />
-      <ReferencedAssembly AssemblyName="Ninject.Web.Mvc" />
-      <ReferencedAssembly AssemblyName="nunit.framework" />
-      <ReferencedAssembly AssemblyName="Rhino.Mocks" />
-      <ReferencedAssembly AssemblyName="RouteDebugger" />
-      <ReferencedAssembly AssemblyName="System" />
-      <ReferencedAssembly AssemblyName="System.ComponentModel.DataAnnotations" />
-      <ReferencedAssembly AssemblyName="System.Configuration" />
-      <ReferencedAssembly AssemblyName="System.Core" />
-      <ReferencedAssembly AssemblyName="System.Data" />
-      <ReferencedAssembly AssemblyName="System.Data.DataSetExtensions" />
-      <ReferencedAssembly AssemblyName="System.Data.Services" />
-      <ReferencedAssembly AssemblyName="System.Drawing" />
-      <ReferencedAssembly AssemblyName="System.EnterpriseServices" />
-      <ReferencedAssembly AssemblyName="System.Net.Http.Formatting" />
-      <ReferencedAssembly AssemblyName="System.Runtime.Serialization" />
-      <ReferencedAssembly AssemblyName="System.ServiceModel" />
-      <ReferencedAssembly AssemblyName="System.ServiceModel.Activation" />
-      <ReferencedAssembly AssemblyName="System.ServiceModel.Web" />
-      <ReferencedAssembly AssemblyName="System.Web" />
-      <ReferencedAssembly AssemblyName="System.Web.Abstractions" />
-      <ReferencedAssembly AssemblyName="System.Web.ApplicationServices" />
-      <ReferencedAssembly AssemblyName="System.Web.DynamicData" />
-      <ReferencedAssembly AssemblyName="System.Web.Entity" />
-      <ReferencedAssembly AssemblyName="System.Web.Extensions" />
-      <ReferencedAssembly AssemblyName="System.Web.Helpers" />
-      <ReferencedAssembly AssemblyName="System.Web.Http" />
-      <ReferencedAssembly AssemblyName="System.Web.Http.WebHost" />
-      <ReferencedAssembly AssemblyName="System.Web.Mvc" />
-      <ReferencedAssembly AssemblyName="System.Web.Razor" />
-      <ReferencedAssembly AssemblyName="System.Web.Routing" />
-      <ReferencedAssembly AssemblyName="System.Web.Services" />
-      <ReferencedAssembly AssemblyName="System.Web.WebPages" />
-      <ReferencedAssembly AssemblyName="System.Web.WebPages.Deployment" />
-      <ReferencedAssembly AssemblyName="System.Web.WebPages.Razor" />
-      <ReferencedAssembly AssemblyName="System.Xml" />
-      <ReferencedAssembly AssemblyName="System.Xml.Linq" />
-      <ReferencedAssembly AssemblyName="WebActivator" />
+      <ReferencedAssembly AssemblyName="HotelManagement.DTO" />
     </ReferencedAssemblies>
     <ReferencedDataContractTypes />
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:58323/BookingService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:50373/BookingService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="BookingService.xsd" MetadataType="Schema" ID="0c38d6bc-9d66-4f65-993b-a21a4bd45d86" SourceId="1" SourceUrl="http://localhost:58323/BookingService.svc?xsd=xsd2" />
-    <MetadataFile FileName="BookingService1.xsd" MetadataType="Schema" ID="80c776c3-0919-4396-b975-14d97fe85c4a" SourceId="1" SourceUrl="http://localhost:58323/BookingService.svc?xsd=xsd1" />
-    <MetadataFile FileName="BookingService.wsdl" MetadataType="Wsdl" ID="b7e040b0-db1c-4f03-989c-f3ffea407945" SourceId="1" SourceUrl="http://localhost:58323/BookingService.svc?wsdl" />
-    <MetadataFile FileName="BookingService2.xsd" MetadataType="Schema" ID="e9268c58-caa4-4b55-814a-401e8d3ad930" SourceId="1" SourceUrl="http://localhost:58323/BookingService.svc?xsd=xsd0" />
-    <MetadataFile FileName="BookingService.disco" MetadataType="Disco" ID="0da5b539-c1b5-4b7e-87c9-e21e268e6d90" SourceId="1" SourceUrl="http://localhost:58323/BookingService.svc?disco" />
+    <MetadataFile FileName="BookingService.xsd" MetadataType="Schema" ID="41c56c22-14dc-4185-85ad-88a94ec33820" SourceId="1" SourceUrl="http://localhost:50373/BookingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BookingService.disco" MetadataType="Disco" ID="2f440537-8da5-4c46-866e-f741888c8a11" SourceId="1" SourceUrl="http://localhost:50373/BookingService.svc?disco" />
+    <MetadataFile FileName="BookingService1.xsd" MetadataType="Schema" ID="b8d71494-14d7-4ad9-8738-c9ab583bdd7b" SourceId="1" SourceUrl="http://localhost:50373/BookingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BookingService.wsdl" MetadataType="Wsdl" ID="57d62888-9674-459b-acb3-1c025cf52283" SourceId="1" SourceUrl="http://localhost:50373/BookingService.svc?wsdl" />
+    <MetadataFile FileName="BookingService2.xsd" MetadataType="Schema" ID="aab0a840-d447-43a3-a3a8-57ea0a55897a" SourceId="1" SourceUrl="http://localhost:50373/BookingService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

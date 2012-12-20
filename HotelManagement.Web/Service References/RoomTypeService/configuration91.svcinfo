@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="tkPfkAOG65SnvQwetdc5nUW6kyU=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="YnGApM1nJq4Sa3f8IYe3VKVs2h0=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IRoomTypeService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IRoomTypeService" contract="RoomTypeService.IRoomTypeService" bindingType="basicHttpBinding" address="http://localhost:50489/RoomTypeService.svc" bindingConfiguration="BasicHttpBinding_IRoomTypeService">
+    <endpoint name="BasicHttpBinding_IRoomTypeService" contract="RoomTypeService.IRoomTypeService" bindingType="basicHttpBinding" address="http://localhost:50373/RoomTypeService.svc" bindingConfiguration="BasicHttpBinding_IRoomTypeService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:50489/RoomTypeService.svc</serializedValue>
+          <serializedValue>http://localhost:50373/RoomTypeService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

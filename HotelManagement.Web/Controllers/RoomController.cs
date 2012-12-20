@@ -14,7 +14,7 @@ using HotelManagement.Helpers;
 using HotelManagement.Web.RoomService;
 using HotelManagement.Web.HotelService;
 using HotelManagement.Web.RoomTypeService;
-using HotelManagement.Web.UserTypeService;
+using HotelManagement.DTO;
 
 namespace HotelManagement.Controllers
 {
@@ -67,8 +67,8 @@ namespace HotelManagement.Controllers
         [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Add(RoomDTO room)
         {
-            List<HotelManagement.Web.HotelService.HotelDTO> hotels = hotelService.GetAll().ToList();
-            hotels.Insert(0, new HotelManagement.Web.HotelService.HotelDTO() { Id = 0, Name = String.Empty });
+            List<HotelDTO> hotels = hotelService.GetAll().ToList();
+            hotels.Insert(0, new HotelDTO() { Id = 0, Name = String.Empty });
             SelectList hotelList;
 
             if (room == null || TempData["HotelSelectedId"] == null)
@@ -84,8 +84,8 @@ namespace HotelManagement.Controllers
             ViewBag.HotelList = hotelList;
 
             //List<RoomType> roomTypes = roomTypeRepository.Get("Name (MaxOccupants)").ToList();
-            List<HotelManagement.Web.RoomTypeService.RoomTypeDTO> roomTypes = roomTypeService.GetAll().ToList();
-            roomTypes.Insert(0, new HotelManagement.Web.RoomTypeService.RoomTypeDTO() { Id = 0, Name = String.Empty });
+            List<RoomTypeDTO> roomTypes = roomTypeService.GetAll().ToList();
+            roomTypes.Insert(0, new RoomTypeDTO() { Id = 0, Name = String.Empty });
             SelectList roomTypeList;
             if (room == null || TempData["RoomTypeSelectedId"] == null)
             {
@@ -117,8 +117,8 @@ namespace HotelManagement.Controllers
             else
             {
                 TempData["ValidationError"] = error;
-                TempData["HotelSelectedId"] = room.HotelDTO.Id;
-                TempData["RoomTypeSelectedId"] = room.RoomTypeDTO.Id;
+                TempData["HotelSelectedId"] = room.Hotel.Id;
+                TempData["RoomTypeSelectedId"] = room.RoomType.Id;
                 return RedirectToAction("Add", "Room", room);
             }
         }

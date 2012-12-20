@@ -5,26 +5,27 @@ using System.Web;
 using System.Web.Mvc;
 using HotelManagement.Helpers.CacheHelpers;
 using HotelManagement.Web.UserTypeService;
+using HotelManagement.DTO;
 
 namespace HotelManagement.Helpers
 {
     public class Authenticate : FilterAttribute, IAuthorizationFilter
     {
-        private readonly List<HotelManagement.Web.UserService.UserTypeDTO> acceptedUsers;
+        private readonly List<UserTypeDTO> acceptedUsers;
 
         public Authenticate(params UserTypeEnum[] acceptedUserEnums)
         {
-            List<HotelManagement.Web.UserService.UserTypeDTO> userTypes = new List<HotelManagement.Web.UserService.UserTypeDTO>();
+            List<UserTypeDTO> userTypes = new List<UserTypeDTO>();
             
             foreach (UserTypeEnum userType in acceptedUserEnums)
             {
                 switch (userType)
                 {
                     case UserTypeEnum.Admin:
-                        userTypes.Add(new HotelManagement.Web.UserService.UserTypeDTO() { Id = 1, Name = "Admin" });
+                        userTypes.Add(new UserTypeDTO() { Id = 1, Name = "Admin" });
                         break;
                     case UserTypeEnum.Normal:
-                        userTypes.Add(new HotelManagement.Web.UserService.UserTypeDTO() { Id = 2, Name = "Normal" });
+                        userTypes.Add(new UserTypeDTO() { Id = 2, Name = "Normal" });
                         break;
                 }
             }
@@ -34,7 +35,7 @@ namespace HotelManagement.Helpers
       
         public void OnAuthorization(AuthorizationContext filterContext)
         {
-            HotelManagement.Web.UserService.UserTypeDTO currentUserType = SessionCache.UserType;
+            UserTypeDTO currentUserType = SessionCache.UserType;
 
             if (! acceptedUsers.Contains(currentUserType))
             {

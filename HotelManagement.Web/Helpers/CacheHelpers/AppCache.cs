@@ -11,6 +11,7 @@ using System.Linq;
 using System.Web;
 using HotelManagement.Controllers;
 using System.Collections;
+using HotelManagement.DTO;
 using HotelManagement.Web.SettingService;
 
 namespace HotelManagement.Helpers.CacheHelpers
@@ -26,7 +27,7 @@ namespace HotelManagement.Helpers.CacheHelpers
                 if (HttpContext.Current.Application["AppCache.AppSettings.AppCacheValidity"] == null)
                 {
                     SettingServiceClient service = new SettingServiceClient();
-                    //HttpContext.Current.Application["AppCache.AppSettings.AppCacheValidity"] = service.GetByName("AppCacheValidity").Value;
+                    HttpContext.Current.Application["AppCache.AppSettings.AppCacheValidity"] = service.GetByName("AppCacheValidity").Value;
                 }
 
                 return int.Parse(HttpContext.Current.Application["AppCache.AppSettings.AppCacheValidity"].ToString());

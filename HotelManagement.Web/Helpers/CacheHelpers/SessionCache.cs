@@ -11,6 +11,7 @@ using System.Linq;
 using System.Web;
 using HotelManagement.Web.MenuService;
 using HotelManagement.Web.UserService;
+using HotelManagement.DTO;
 
 namespace HotelManagement.Helpers.CacheHelpers
 {

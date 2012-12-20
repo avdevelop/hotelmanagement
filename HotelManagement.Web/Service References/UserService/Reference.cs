@@ -9,182 +9,26 @@
 //------------------------------------------------------------------------------
 
 namespace HotelManagement.Web.UserService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UserDTO", Namespace="http://schemas.datacontract.org/2004/07/HotelManagement.ServiceApp.DTO")]
-    [System.SerializableAttribute()]
-    public partial class UserDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PasswordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private HotelManagement.Web.UserService.UserTypeDTO UserTypeDTOField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Password {
-            get {
-                return this.PasswordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
-                    this.PasswordField = value;
-                    this.RaisePropertyChanged("Password");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public HotelManagement.Web.UserService.UserTypeDTO UserTypeDTO {
-            get {
-                return this.UserTypeDTOField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserTypeDTOField, value) != true)) {
-                    this.UserTypeDTOField = value;
-                    this.RaisePropertyChanged("UserTypeDTO");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UserTypeDTO", Namespace="http://schemas.datacontract.org/2004/07/HotelManagement.ServiceApp.DTO")]
-    [System.SerializableAttribute()]
-    public partial class UserTypeDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserService.IUserService")]
     public interface IUserService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetAll", ReplyAction="http://tempuri.org/IUserService/GetAllResponse")]
-        HotelManagement.Web.UserService.UserDTO[] GetAll();
+        HotelManagement.DTO.UserDTO[] GetAll();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetUser", ReplyAction="http://tempuri.org/IUserService/GetUserResponse")]
-        HotelManagement.Web.UserService.UserDTO GetUser(int id);
+        HotelManagement.DTO.UserDTO GetUser(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Save", ReplyAction="http://tempuri.org/IUserService/SaveResponse")]
-        void Save(HotelManagement.Web.UserService.UserDTO obj);
+        void Save(HotelManagement.DTO.UserDTO obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Delete", ReplyAction="http://tempuri.org/IUserService/DeleteResponse")]
-        void Delete(HotelManagement.Web.UserService.UserDTO obj);
+        void Delete(HotelManagement.DTO.UserDTO obj);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetByEmail", ReplyAction="http://tempuri.org/IUserService/GetByEmailResponse")]
-        HotelManagement.Web.UserService.UserDTO GetByEmail(string email);
+        HotelManagement.DTO.UserDTO GetByEmail(string email);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -214,23 +58,23 @@ namespace HotelManagement.Web.UserService {
                 base(binding, remoteAddress) {
         }
         
-        public HotelManagement.Web.UserService.UserDTO[] GetAll() {
+        public HotelManagement.DTO.UserDTO[] GetAll() {
             return base.Channel.GetAll();
         }
         
-        public HotelManagement.Web.UserService.UserDTO GetUser(int id) {
+        public HotelManagement.DTO.UserDTO GetUser(int id) {
             return base.Channel.GetUser(id);
         }
         
-        public void Save(HotelManagement.Web.UserService.UserDTO obj) {
+        public void Save(HotelManagement.DTO.UserDTO obj) {
             base.Channel.Save(obj);
         }
         
-        public void Delete(HotelManagement.Web.UserService.UserDTO obj) {
+        public void Delete(HotelManagement.DTO.UserDTO obj) {
             base.Channel.Delete(obj);
         }
         
-        public HotelManagement.Web.UserService.UserDTO GetByEmail(string email) {
+        public HotelManagement.DTO.UserDTO GetByEmail(string email) {
             return base.Channel.GetByEmail(email);
         }
     }

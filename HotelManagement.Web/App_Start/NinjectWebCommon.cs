@@ -50,9 +50,7 @@ namespace HotelManagement.App_Start
         private static IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
-            kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
-            kernel.Bind<IBookingService>().To<BookingServiceClient>();
-            
+            kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);                        
             RegisterServices(kernel);
             return kernel;
         }

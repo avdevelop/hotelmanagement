@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using HotelManagement.Models;
-using HotelManagement.ServiceApp.DTO;
+using HotelManagement.DTO;
 using HotelManagement.Repository;
 using AutoMapper;
 

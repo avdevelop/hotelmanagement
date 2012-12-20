@@ -7,7 +7,7 @@ using System.Text;
 using AutoMapper;
 using HotelManagement.Repository;
 using HotelManagement.Models;
-using HotelManagement.ServiceApp.DTO;
+using HotelManagement.DTO;
 
 namespace HotelManagement.ServiceApp
 {

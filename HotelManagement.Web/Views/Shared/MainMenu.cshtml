@@ -1,6 +1,6 @@
 ﻿@using HotelManagement.Helpers;
-@using HotelManagement.Models;
 @using HotelManagement.Helpers.CacheHelpers;
+@using HotelManagement.DTO;
 
 <div class="inner">
     <ul class="nav">
@@ -15,7 +15,7 @@
         }
         else
         {
-            foreach (Menu menu in SessionCache.UserMenus)
+            foreach (MenuDTO menu in SessionCache.UserMenus)
             { 
                 <li>@Html.ActionLink(menu.Description, menu.Action, menu.Controller, new { title = menu.Tooltip })</li>
             }

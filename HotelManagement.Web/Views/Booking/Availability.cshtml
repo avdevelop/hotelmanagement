@@ -1,14 +1,14 @@
 ﻿@using System.Collections.Generic;
-@using HotelManagement.Models;
+@using HotelManagement.DTO;
 
-@model IEnumerable<Room>
+@model IEnumerable<RoomDTO>
 @{
     ViewBag.Title = "CheckAvailability";
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
 }
 
 <div>
-    @foreach(Room room in Model)
+    @foreach(RoomDTO room in Model)
     {
         <fieldset>
             @room.Name

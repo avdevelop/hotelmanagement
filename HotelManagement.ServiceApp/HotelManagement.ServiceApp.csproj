@@ -102,17 +102,6 @@
     <Compile Include="BookingService.svc.cs">
       <DependentUpon>BookingService.svc</DependentUpon>
     </Compile>
-    <Compile Include="DTO\BookingDetailDTO.cs" />
-    <Compile Include="DTO\BookingDTO.cs" />
-    <Compile Include="DTO\HotelChainDTO.cs" />
-    <Compile Include="DTO\HotelDTO.cs" />
-    <Compile Include="DTO\MenuDTO.cs" />
-    <Compile Include="DTO\RoomDTO.cs" />
-    <Compile Include="DTO\RoomTypeDTO.cs" />
-    <Compile Include="DTO\SettingDTO.cs" />
-    <Compile Include="DTO\UserDTO.cs" />
-    <Compile Include="DTO\UserMenuDTO.cs" />
-    <Compile Include="DTO\UserTypeDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -161,6 +150,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HotelManagement.DTO\HotelManagement.DTO.csproj">
+      <Project>{6EA81A9C-0FD2-47D7-B575-C6CCDA879359}</Project>
+      <Name>HotelManagement.DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HotelManagement.Models\HotelManagement.Models.csproj">
       <Project>{E5F44209-C475-4568-BEAC-9E9BC5E41B3D}</Project>
       <Name>HotelManagement.Models</Name>

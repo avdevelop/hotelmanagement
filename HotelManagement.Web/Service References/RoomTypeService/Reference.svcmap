@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9b647e64-75c2-4685-a6c7-9c47494fc25d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="45cf5f87-67de-4d31-b5e1-85c5e9851bc1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -14,65 +14,20 @@
     <UseSerializerForFaults>true</UseSerializerForFaults>
     <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
     <ReferencedAssemblies>
-      <ReferencedAssembly AssemblyName="Iesi.Collections" />
-      <ReferencedAssembly AssemblyName="Microsoft.CSharp" />
-      <ReferencedAssembly AssemblyName="Microsoft.Web.Infrastructure" />
-      <ReferencedAssembly AssemblyName="mscorlib" />
-      <ReferencedAssembly AssemblyName="NHibernate" />
-      <ReferencedAssembly AssemblyName="Ninject" />
-      <ReferencedAssembly AssemblyName="Ninject.Web.Common" />
-      <ReferencedAssembly AssemblyName="Ninject.Web.Mvc" />
-      <ReferencedAssembly AssemblyName="nunit.framework" />
-      <ReferencedAssembly AssemblyName="Rhino.Mocks" />
-      <ReferencedAssembly AssemblyName="RouteDebugger" />
-      <ReferencedAssembly AssemblyName="System" />
-      <ReferencedAssembly AssemblyName="System.ComponentModel.DataAnnotations" />
-      <ReferencedAssembly AssemblyName="System.Configuration" />
-      <ReferencedAssembly AssemblyName="System.Core" />
-      <ReferencedAssembly AssemblyName="System.Data" />
-      <ReferencedAssembly AssemblyName="System.Data.DataSetExtensions" />
-      <ReferencedAssembly AssemblyName="System.Data.Services" />
-      <ReferencedAssembly AssemblyName="System.Drawing" />
-      <ReferencedAssembly AssemblyName="System.EnterpriseServices" />
-      <ReferencedAssembly AssemblyName="System.Net.Http" />
-      <ReferencedAssembly AssemblyName="System.Net.Http.Formatting" />
-      <ReferencedAssembly AssemblyName="System.Net.Http.WebRequest" />
-      <ReferencedAssembly AssemblyName="System.Runtime.Serialization" />
-      <ReferencedAssembly AssemblyName="System.ServiceModel" />
-      <ReferencedAssembly AssemblyName="System.ServiceModel.Activation" />
-      <ReferencedAssembly AssemblyName="System.ServiceModel.Web" />
-      <ReferencedAssembly AssemblyName="System.Web" />
-      <ReferencedAssembly AssemblyName="System.Web.Abstractions" />
-      <ReferencedAssembly AssemblyName="System.Web.ApplicationServices" />
-      <ReferencedAssembly AssemblyName="System.Web.DynamicData" />
-      <ReferencedAssembly AssemblyName="System.Web.Entity" />
-      <ReferencedAssembly AssemblyName="System.Web.Extensions" />
-      <ReferencedAssembly AssemblyName="System.Web.Helpers" />
-      <ReferencedAssembly AssemblyName="System.Web.Http" />
-      <ReferencedAssembly AssemblyName="System.Web.Http.WebHost" />
-      <ReferencedAssembly AssemblyName="System.Web.Mvc" />
-      <ReferencedAssembly AssemblyName="System.Web.Razor" />
-      <ReferencedAssembly AssemblyName="System.Web.Routing" />
-      <ReferencedAssembly AssemblyName="System.Web.Services" />
-      <ReferencedAssembly AssemblyName="System.Web.WebPages" />
-      <ReferencedAssembly AssemblyName="System.Web.WebPages.Deployment" />
-      <ReferencedAssembly AssemblyName="System.Web.WebPages.Razor" />
-      <ReferencedAssembly AssemblyName="System.Xml" />
-      <ReferencedAssembly AssemblyName="System.Xml.Linq" />
-      <ReferencedAssembly AssemblyName="WebActivator" />
+      <ReferencedAssembly AssemblyName="HotelManagement.DTO" />
     </ReferencedAssemblies>
     <ReferencedDataContractTypes />
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:50489/RoomTypeService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:50373/RoomTypeService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="RoomTypeService.wsdl" MetadataType="Wsdl" ID="23e4cc30-3ba2-4786-acd3-6232670c9265" SourceId="1" SourceUrl="http://localhost:50489/RoomTypeService.svc?wsdl" />
-    <MetadataFile FileName="RoomTypeService.xsd" MetadataType="Schema" ID="7072e69e-4f06-48be-81e9-f8344ed40c47" SourceId="1" SourceUrl="http://localhost:50489/RoomTypeService.svc?xsd=xsd1" />
-    <MetadataFile FileName="RoomTypeService1.xsd" MetadataType="Schema" ID="19aea196-baa7-420f-a6d8-22bf957ab8ae" SourceId="1" SourceUrl="http://localhost:50489/RoomTypeService.svc?xsd=xsd2" />
-    <MetadataFile FileName="RoomTypeService.disco" MetadataType="Disco" ID="f60d5899-3661-4eee-bb7b-99dc973d386c" SourceId="1" SourceUrl="http://localhost:50489/RoomTypeService.svc?disco" />
-    <MetadataFile FileName="RoomTypeService2.xsd" MetadataType="Schema" ID="5061db8f-2414-405d-8941-c62afcad1f06" SourceId="1" SourceUrl="http://localhost:50489/RoomTypeService.svc?xsd=xsd0" />
+    <MetadataFile FileName="RoomTypeService.xsd" MetadataType="Schema" ID="ae0ef2c0-9327-4281-a176-2dd8b9b7fc90" SourceId="1" SourceUrl="http://localhost:50373/RoomTypeService.svc?xsd=xsd2" />
+    <MetadataFile FileName="RoomTypeService1.xsd" MetadataType="Schema" ID="06048c6a-2c2c-4146-8380-0492410d7dd2" SourceId="1" SourceUrl="http://localhost:50373/RoomTypeService.svc?xsd=xsd1" />
+    <MetadataFile FileName="RoomTypeService.wsdl" MetadataType="Wsdl" ID="6e6f3149-77e1-4401-a250-c83d33dab94f" SourceId="1" SourceUrl="http://localhost:50373/RoomTypeService.svc?wsdl" />
+    <MetadataFile FileName="RoomTypeService2.xsd" MetadataType="Schema" ID="e0065741-7b3b-40d0-b51e-2a06fae99d52" SourceId="1" SourceUrl="http://localhost:50373/RoomTypeService.svc?xsd=xsd0" />
+    <MetadataFile FileName="RoomTypeService.disco" MetadataType="Disco" ID="63f76ba5-aef0-4c34-8625-c62ec0dfca2e" SourceId="1" SourceUrl="http://localhost:50373/RoomTypeService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

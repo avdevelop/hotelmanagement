@@ -46,11 +46,5 @@ namespace HotelManagement.Models
         {
             return (Name + "|" + Id).GetHashCode();
         }
-    }
-
-    public enum UserTypeEnum
-    {
-        Admin = 1,
-        Normal = 2
-    }
+    }    
 }

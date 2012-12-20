@@ -14,7 +14,7 @@ using System.Collections;
 using HotelManagement.Helpers;
 using HotelManagement.Web.HotelService;
 using HotelManagement.Web.HotelChainService;
-using HotelManagement.Web.UserTypeService;
+using HotelManagement.DTO;
 
 namespace HotelManagement.Controllers
 {
@@ -44,13 +44,13 @@ namespace HotelManagement.Controllers
         [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Edit(int id)
         {
-            List<HotelManagement.Web.HotelChainService.HotelChainDTO> hotelChains = hotelChainService.GetAll().ToList();
-            hotelChains.Insert(0, new HotelManagement.Web.HotelChainService.HotelChainDTO { Id = 0, Name = String.Empty });
+            List<HotelChainDTO> hotelChains = hotelChainService.GetAll().ToList();
+            hotelChains.Insert(0, new HotelChainDTO { Id = 0, Name = String.Empty });
             SelectList hotelChainList;
 
             var hotel = hotelService.GetHotel(id);
                         
-            hotelChainList = new SelectList(hotelChains, "Id", "Name", hotel.HotelChainDTO.Id);
+            hotelChainList = new SelectList(hotelChains, "Id", "Name", hotel.HotelChain.Id);
             ViewBag.ValidationError = TempData["ValidationError"];            
 
             ViewBag.HotelChainList = hotelChainList;
@@ -63,8 +63,8 @@ namespace HotelManagement.Controllers
         [Authenticate(UserTypeEnum.Admin)]
         public ActionResult Add(HotelDTO hotel)
         {
-            List<HotelManagement.Web.HotelChainService.HotelChainDTO> hotelChains = hotelChainService.GetAll().ToList();
-            hotelChains.Insert(0, new HotelManagement.Web.HotelChainService.HotelChainDTO { Id = 0, Name = String.Empty });
+            List<HotelChainDTO> hotelChains = hotelChainService.GetAll().ToList();
+            hotelChains.Insert(0, new HotelChainDTO { Id = 0, Name = String.Empty });
             SelectList hotelChainList;
 
             if (hotel == null || TempData["HotelChainSelectedId"] == null)
@@ -98,7 +98,7 @@ namespace HotelManagement.Controllers
             else
             {
                 TempData["ValidationError"] = error;
-                TempData["HotelChainSelectedId"] = hotel.HotelChainDTO.Id;
+                TempData["HotelChainSelectedId"] = hotel.HotelChain.Id;
                 return RedirectToAction("Add", "Hotel", hotel);
             }
         }
